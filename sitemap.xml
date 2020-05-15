@@ -2,42 +2,42 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://keitzu.com/2020/regular-expression/</loc>
+    <loc>https://keitzu.com/2020/regular-expression/</loc>
     
-    <lastmod>2020-05-14T11:26:32.515Z</lastmod>
+    <lastmod>2020-05-15T03:21:50.274Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://keitzu.com/tags/index.html</loc>
+    <loc>https://keitzu.com/2019/sequence-list/</loc>
+    
+    <lastmod>2020-05-15T03:07:11.121Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>https://keitzu.com/tags/index.html</loc>
     
     <lastmod>2020-05-13T14:54:03.115Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://keitzu.com/categories/index.html</loc>
+    <loc>https://keitzu.com/categories/index.html</loc>
     
     <lastmod>2020-05-13T14:53:53.036Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://keitzu.com/2019/sequence-list/</loc>
-    
-    <lastmod>2020-05-13T06:53:08.851Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://keitzu.com/about/index.html</loc>
+    <loc>https://keitzu.com/about/index.html</loc>
     
     <lastmod>2020-05-12T08:25:37.629Z</lastmod>
     
   </url>
   
   <url>
-    <loc>http://keitzu.com/404.html</loc>
+    <loc>https://keitzu.com/404.html</loc>
     
     <lastmod>2020-05-12T07:33:03.074Z</lastmod>
     
