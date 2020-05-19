@@ -1,0 +1,123 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+    .container {
+        width: 500px;
+        clear: both;
+        text-align:center;
+    }
+    .container input {
+        width: 100%;
+        clear: both;
+        text-align:center;
+    }
+    </style>
+<meta charset="utf-8">
+<title>密码生成</title>
+<script>
+function generatePsw(){
+	var psw = "";
+	var chars = ["QWERTYUIOP", "ASDFGHJKL", "ZXCVBNM"];
+	var name = document.getElementById("name").value.toUpperCase();
+	var key = document.getElementById("key").value;
+	var level = document.getElementById("level").value.toLowerCase();
+	var type = document.getElementById("type").value;
+	var nameFirst = name.substr(0,1);
+	var nameFirstRow = "";
+	var nameFirstColumn = "";
+	var nameLast = name.substr(-1);
+	var nameLastRow = "";
+	var nameLastColumn = "";
+	psw += nameFirst;
+	psw += nameLast;
+	for (var i=0;i<3;i++){ 
+		if(chars[i].indexOf(nameFirst) != -1){
+			nameFirstRow = i + 1;
+			nameFirstColumn = chars[i].indexOf(nameFirst) + 1;
+			break;
+		}
+	}
+	for (var i=0;i<3;i++){
+		if(chars[i].indexOf(nameLast) != -1){
+			nameLastRow = i + 1;
+			nameLastColumn = chars[i].indexOf(nameLast) + 1;
+			break;
+		}
+	}
+	if(level == 'a'){
+		for (var i=0;i<4;i++){ 
+			psw += name.length;
+		}
+			psw += type;
+			psw += type;
+			psw += level;
+			psw += level;
+	}else if(level == 'b'){
+		var keys = key.split("");
+		psw += keys[0] % nameFirstRow;
+		psw += keys[1] % nameFirstRow;
+		psw += keys[2] % nameLastRow;
+		psw += keys[3] % nameLastRow;
+		psw += type;
+		psw += type;
+		psw += level;
+		psw += String.fromCharCode(level.charCodeAt() + (keys[3] % nameLastRow));
+	}else if(level == 'c'){
+		var keys = key.split("");
+		psw += (keys[0]+keys[1]) % nameFirstColumn;
+		psw += (keys[2]+keys[3]) % nameFirstColumn;
+		psw += (keys[4]+keys[5]) % nameLastColumn;
+		psw += (keys[6]+keys[7]) % nameLastColumn;
+		psw += type;
+		psw += type;
+		psw += String.fromCharCode(level.charCodeAt() + (keys[0] % nameFirstColumn));
+		psw += String.fromCharCode(level.charCodeAt() + (keys[3] % nameLastColumn));
+	}
+	var r=confirm(psw);
+	if (r==true){
+	var copy = document.getElementById("copy");
+      copy.value = psw;
+      copy.select();
+      document.execCommand("copy");
+	}	
+}
+</script>
+<meta name="generator" content="Hexo 4.2.0"></head>
+<body>
+<p style="text-align:center;">应用名称：
+	<input id="name" type="text"/>
+</p>
+<p style="text-align:center;">密钥：
+	<input id="key" type="text" />
+</p>
+<p style="text-align:center;">安全等级：
+<select id="level">
+    <option value="a">等级A</option>  
+    <option value="b">等级B</option>
+    <option value="c">等级C</option> 
+</select>
+</p>
+<p style="text-align:center;">账号类型：
+<select id="type">
+    <option value="+">手机</option>  
+    <option value="@">邮箱</option>
+    <option value=".">其他</option> 
+</select>
+</p>
+<p style="text-align:center;">
+<button type="button" onclick="generatePsw()">生成密码</button>
+</p>
+
+<style type="text/css">
+   .wrapper {position: relative;}
+   #copy {position: absolute;top: 0;left: 0;opacity: 0;z-index: -10;}
+</style>
+
+<div class="wrapper">
+   <textarea id="copy">用于复制</textarea>
+</div>
+
+</body>
+</html>
