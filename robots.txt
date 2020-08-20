@@ -1,10 +1,4 @@
 User-agent: *
 Allow: /
 
-Disallow: /about/
-Disallow: /archives/
-Disallow: /categories/
-Disallow: /tags/
-Disallow: /links/
-
 Sitemap: https://keitzu.com/sitemap.xml
