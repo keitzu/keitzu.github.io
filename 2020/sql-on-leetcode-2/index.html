@@ -1,0 +1,645 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="柯梓">
+  <meta name="keywords" content="">
+  <title>LeetCode部分SQL习题（二） - 柯梓的四畳半世界</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
+
+
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>柯梓的四畳半世界</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/">
+              <i class="iconfont icon-home-fill"></i>
+              首页</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/archives/">
+              <i class="iconfont icon-archive-fill"></i>
+              归档</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/categories/">
+              <i class="iconfont icon-category-fill"></i>
+              分类</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/tags/">
+              <i class="iconfont icon-tags-fill"></i>
+              标签</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/links/">
+              <i class="iconfont icon-link-fill"></i>
+              友链</a>
+          </li>
+        
+          
+          
+          
+          <li class="nav-item">
+            <a class="nav-link" href="/about/">
+              <i class="iconfont icon-user-fill"></i>
+              关于</a>
+          </li>
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="view intro-2" id="background" parallax=true
+         style="background: url('/img/default_background.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container text-center white-text fadeInUp">
+            <span class="h2" id="subtitle">
+              
+            </span>
+
+            
+              
+                <div class="mt-3 post-meta">
+                  <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+                  <time datetime="2020-08-21 19:50">
+                    2020年8月21日 晚上
+                  </time>
+                </div>
+              
+
+              <div class="mt-1">
+                
+                  
+                  <span class="post-meta mr-2">
+                    <i class="iconfont icon-chart"></i>
+                    1.5k 字
+                  </span>
+                
+
+                
+                  
+                  <span class="post-meta mr-2">
+                      <i class="iconfont icon-clock-fill"></i>
+                    
+                    
+                    22
+                     分钟
+                  </span>
+                
+
+                
+              </div>
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <div class="post-content mx-auto" id="post">
+            
+            <article class="markdown-body">
+              <p>SQL是一种特定目的编程语言，用于管理关系数据库管理系统（RDBMS），或在关系流数据管理系统（RDSMS）中进行流处理。<br><a id="more"></a></p>
+<h3 id="595-大的国家"><a href="#595-大的国家" class="headerlink" title="595. 大的国家"></a><a href="https://leetcode-cn.com/problems/big-countries/" target="_blank" rel="noopener">595. 大的国家</a></h3><h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>这里有张 World 表</p>
+<pre><code class="hljs plain">+-----------------+------------+------------+--------------+---------------+
+| name            | continent  | area       | population   | gdp           |
++-----------------+------------+------------+--------------+---------------+
+| Afghanistan     | Asia       | 652230     | 25500100     | 20343000      |
+| Albania         | Europe     | 28748      | 2831741      | 12960000      |
+| Algeria         | Africa     | 2381741    | 37100000     | 188681000     |
+| Andorra         | Europe     | 468        | 78115        | 3712000       |
+| Angola          | Africa     | 1246700    | 20609294     | 100990000     |
++-----------------+------------+------------+--------------+---------------+</code></pre>
+<p>如果一个国家的面积超过300万平方公里，或者人口超过2500万，那么这个国家就是大国家。</p>
+<p>编写一个SQL查询，输出表中所有大国家的名称、人口和面积。</p>
+<p>例如，根据上表，我们应该输出:</p>
+<pre><code class="hljs plain">+--------------+-------------+--------------+
+| name         | population  | area         |
++--------------+-------------+--------------+
+| Afghanistan  | 25500100    | 652230       |
+| Algeria      | 37100000    | 2381741      |
++--------------+-------------+--------------+</code></pre>
+<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><pre><code class="hljs MYSQL">SELECT name, population, area
+FROM World
+WHERE area &gt; 3000000
+    OR population &gt; 25000000</code></pre>
+<h3 id="596-超过5名学生的课"><a href="#596-超过5名学生的课" class="headerlink" title="596. 超过5名学生的课"></a><a href="https://leetcode-cn.com/problems/classes-more-than-5-students/" target="_blank" rel="noopener">596. 超过5名学生的课</a></h3><h4 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h4><p>有一个courses 表 ，有: student (学生) 和 class (课程)。</p>
+<p>请列出所有超过或等于5名学生的课。</p>
+<p>例如,表:</p>
+<pre><code class="hljs plain">+---------+------------+
+| student | class      |
++---------+------------+
+| A       | Math       |
+| B       | English    |
+| C       | Math       |
+| D       | Biology    |
+| E       | Math       |
+| F       | Computer   |
+| G       | Math       |
+| H       | Math       |
+| I       | Math       |
++---------+------------+</code></pre>
+<p>应该输出:</p>
+<pre><code class="hljs plain">+---------+
+| class   |
++---------+
+| Math    |
++---------+</code></pre>
+<h4 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h4><pre><code class="hljs mysql">SELECT class
+FROM 
+(
+    SELECT class, COUNT(DISTINCT student) AS cnt
+    FROM courses
+    GROUP BY class
+)AS temp
+WHERE cnt &gt;&#x3D; 5</code></pre>
+<h3 id="601-体育馆的人流量"><a href="#601-体育馆的人流量" class="headerlink" title="601. 体育馆的人流量"></a><a href="https://leetcode-cn.com/problems/human-traffic-of-stadium/" target="_blank" rel="noopener">601. 体育馆的人流量</a></h3><h4 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h4><p>X 市建了一个新的体育馆，每日人流量信息被记录在这三列信息中：序号 (id)、日期 (visit_date)、 人流量 (people)。</p>
+<p>请编写一个查询语句，找出人流量的高峰期。高峰期时，至少连续三行记录中的人流量不少于100。</p>
+<p>例如，表 stadium：</p>
+<pre><code class="hljs plain">+------+------------+-----------+
+| id   | visit_date | people    |
++------+------------+-----------+
+| 1    | 2017-01-01 | 10        |
+| 2    | 2017-01-02 | 109       |
+| 3    | 2017-01-03 | 150       |
+| 4    | 2017-01-04 | 99        |
+| 5    | 2017-01-05 | 145       |
+| 6    | 2017-01-06 | 1455      |
+| 7    | 2017-01-07 | 199       |
+| 8    | 2017-01-08 | 188       |
++------+------------+-----------+</code></pre>
+<p>对于上面的示例数据，输出为：</p>
+<pre><code class="hljs plain">+------+------------+-----------+
+| id   | visit_date | people    |
++------+------------+-----------+
+| 5    | 2017-01-05 | 145       |
+| 6    | 2017-01-06 | 1455      |
+| 7    | 2017-01-07 | 199       |
+| 8    | 2017-01-08 | 188       |
++------+------------+-----------+</code></pre>
+<p>提示：<br>每天只有一行记录，日期随着 id 的增加而增加。</p>
+<h4 id="题解-2"><a href="#题解-2" class="headerlink" title="题解"></a>题解</h4><pre><code class="hljs mysql">SELECT DISTINCT A.*
+FROM stadium AS A, stadium AS B, stadium AS C
+WHERE   A.people &gt;&#x3D; 100 AND B.people &gt;&#x3D; 100 AND C.people &gt;&#x3D; 100
+    AND(
+        (A.id - B.id &#x3D; -1 AND B.id - C.id &#x3D; -1)
+        OR(A.id - B.id &#x3D; 1 AND A.id - C.id &#x3D; -1)
+        OR(A.id - B.id &#x3D; 1 AND A.id - C.id &#x3D; 2)
+    )
+ORDER BY A.id</code></pre>
+<h3 id="620-有趣的电影"><a href="#620-有趣的电影" class="headerlink" title="620. 有趣的电影"></a><a href="https://leetcode-cn.com/problems/not-boring-movies/" target="_blank" rel="noopener">620. 有趣的电影</a></h3><h4 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h4><p>某城市开了一家新的电影院，吸引了很多人过来看电影。该电影院特别注意用户体验，专门有个 LED显示板做电影推荐，上面公布着影评和相关电影描述。</p>
+<p>作为该电影院的信息部主管，您需要编写一个 SQL查询，找出所有影片描述为非 boring (不无聊) 的并且 id 为奇数 的影片，结果请按等级 rating 排列。</p>
+<p>例如，下表 cinema:</p>
+<pre><code class="hljs plain">+---------+-----------+--------------+-----------+
+|   id    | movie     |  description |  rating   |
++---------+-----------+--------------+-----------+
+|   1     | War       |   great 3D   |   8.9     |
+|   2     | Science   |   fiction    |   8.5     |
+|   3     | irish     |   boring     |   6.2     |
+|   4     | Ice song  |   Fantacy    |   8.6     |
+|   5     | House card|   Interesting|   9.1     |
++---------+-----------+--------------+-----------+</code></pre>
+<p>对于上面的例子，则正确的输出是为：</p>
+<pre><code class="hljs plain">+---------+-----------+--------------+-----------+
+|   id    | movie     |  description |  rating   |
++---------+-----------+--------------+-----------+
+|   5     | House card|   Interesting|   9.1     |
+|   1     | War       |   great 3D   |   8.9     |
++---------+-----------+--------------+-----------+</code></pre>
+<h4 id="题解-3"><a href="#题解-3" class="headerlink" title="题解"></a>题解</h4><pre><code class="hljs mysql">SELECT *
+FROM cinema
+WHERE id % 2 &#x3D; 1 
+    AND description !&#x3D; &#39;boring&#39;
+ORDER BY rating DESC</code></pre>
+<h3 id="626-换座位"><a href="#626-换座位" class="headerlink" title="626. 换座位"></a><a href="https://leetcode-cn.com/problems/exchange-seats/" target="_blank" rel="noopener">626. 换座位</a></h3><h4 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h4><p>小美是一所中学的信息科技老师，她有一张 seat 座位表，平时用来储存学生名字和与他们相对应的座位 id。</p>
+<p>其中纵列的 id 是连续递增的</p>
+<p>小美想改变相邻俩学生的座位。</p>
+<p>你能不能帮她写一个 SQL query 来输出小美想要的结果呢？</p>
+<p>示例：</p>
+<pre><code class="hljs plain">+---------+---------+
+|    id   | student |
++---------+---------+
+|    1    | Abbot   |
+|    2    | Doris   |
+|    3    | Emerson |
+|    4    | Green   |
+|    5    | Jeames  |
++---------+---------+</code></pre>
+<p>假如数据输入的是上表，则输出结果如下：</p>
+<pre><code class="hljs plain">+---------+---------+
+|    id   | student |
++---------+---------+
+|    1    | Doris   |
+|    2    | Abbot   |
+|    3    | Green   |
+|    4    | Emerson |
+|    5    | Jeames  |
++---------+---------+</code></pre>
+<p>注意：</p>
+<p>如果学生人数是奇数，则不需要改变最后一个同学的座位。</p>
+<h4 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h4><pre><code class="hljs mysql">SELECT
+    (CASE
+        WHEN id % 2 !&#x3D; 0 AND id !&#x3D; counts THEN id + 1
+        WHEN id % 2 !&#x3D; 0 AND id &#x3D; counts THEN id
+        ELSE id - 1
+    END) AS id,
+    student
+FROM
+    seat,
+    (SELECT
+        COUNT(*) AS counts
+    FROM
+        seat) AS seat_counts
+ORDER BY id ASC</code></pre>
+<h3 id="627-交换工资"><a href="#627-交换工资" class="headerlink" title="627. 交换工资"></a><a href="https://leetcode-cn.com/problems/swap-salary/" target="_blank" rel="noopener">627. 交换工资</a></h3><h4 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h4><p>给定一个 salary 表，如下所示，有 m = 男性 和 f = 女性 的值。交换所有的 f 和 m 值（例如，将所有 f 值更改为 m，反之亦然）。要求只使用一个更新（Update）语句，并且没有中间的临时表。</p>
+<p>注意，您必只能写一个 Update 语句，请不要编写任何 Select 语句。</p>
+<p>例如：<br><pre><code class="hljs plain">| id   | name | sex  | salary |
+| ---- | ---- | ---- | ------ |
+| 1    | A    | m    | 2500   |
+| 2    | B    | f    | 1500   |
+| 3    | C    | m    | 5500   |
+| 4    | D    | f    | 500    |</code></pre><br>运行你所编写的更新语句之后，将会得到以下表:<br><pre><code class="hljs plain">| id   | name | sex  | salary |
+| ---- | ---- | ---- | ------ |
+| 1    | A    | f    | 2500   |
+| 2    | B    | m    | 1500   |
+| 3    | C    | f    | 5500   |
+| 4    | D    | m    | 500    |</code></pre></p>
+<h4 id="题解-4"><a href="#题解-4" class="headerlink" title="题解"></a>题解</h4><pre><code class="hljs mysql">UPDATE salary
+SET sex &#x3D; CASE sex
+    WHEN &#39;f&#39; THEN &#39;m&#39;
+    ELSE &#39;f&#39;
+    END</code></pre>
+<h3 id="1179-重新格式化部门表"><a href="#1179-重新格式化部门表" class="headerlink" title="1179. 重新格式化部门表"></a><a href="https://leetcode-cn.com/problems/reformat-department-table/" target="_blank" rel="noopener">1179. 重新格式化部门表</a></h3><h4 id="题目-7"><a href="#题目-7" class="headerlink" title="题目"></a>题目</h4><p>部门表 Department：</p>
+<pre><code class="hljs plain">+---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| id            | int     |
+| revenue       | int     |
+| month         | varchar |
++---------------+---------+</code></pre>
+<p>(id, month) 是表的联合主键。<br>这个表格有关于每个部门每月收入的信息。<br>月份（month）可以取下列值 [“Jan”,”Feb”,”Mar”,”Apr”,”May”,”Jun”,”Jul”,”Aug”,”Sep”,”Oct”,”Nov”,”Dec”]。</p>
+<p>编写一个 SQL 查询来重新格式化表，使得新的表中有一个部门 id 列和一些对应 每个月 的收入（revenue）列。</p>
+<p>查询结果格式如下面的示例所示：</p>
+<p>Department 表：</p>
+<pre><code class="hljs plain">+------+---------+-------+
+| id   | revenue | month |
++------+---------+-------+
+| 1    | 8000    | Jan   |
+| 2    | 9000    | Jan   |
+| 3    | 10000   | Feb   |
+| 1    | 7000    | Feb   |
+| 1    | 6000    | Mar   |
++------+---------+-------+</code></pre>
+<p>查询得到的结果表：</p>
+<pre><code class="hljs plain">+------+-------------+-------------+-------------+-----+-------------+
+| id   | Jan_Revenue | Feb_Revenue | Mar_Revenue | ... | Dec_Revenue |
++------+-------------+-------------+-------------+-----+-------------+
+| 1    | 8000        | 7000        | 6000        | ... | null        |
+| 2    | 9000        | null        | null        | ... | null        |
+| 3    | null        | 10000       | null        | ... | null        |
++------+-------------+-------------+-------------+-----+-------------+</code></pre>
+<p>注意，结果表有 13 列 (1个部门 id 列 + 12个月份的收入列)。</p>
+<h4 id="题解-5"><a href="#题解-5" class="headerlink" title="题解"></a>题解</h4><pre><code class="hljs mysql">SELECT id,
+SUM(CASE month WHEN &#39;Jan&#39; THEN revenue END) AS &#39;Jan_Revenue&#39;,
+SUM(CASE month WHEN &#39;Feb&#39; THEN revenue END) AS &#39;Feb_Revenue&#39;,
+SUM(CASE month WHEN &#39;Mar&#39; THEN revenue END) AS &#39;Mar_Revenue&#39;,
+SUM(CASE month WHEN &#39;Apr&#39; THEN revenue END) AS &#39;Apr_Revenue&#39;,
+SUM(CASE month WHEN &#39;May&#39; THEN revenue END) AS &#39;May_Revenue&#39;,
+SUM(CASE month WHEN &#39;Jun&#39; THEN revenue END) AS &#39;Jun_Revenue&#39;,
+SUM(CASE month WHEN &#39;Jul&#39; THEN revenue END) AS &#39;Jul_Revenue&#39;,
+SUM(CASE month WHEN &#39;Aug&#39; THEN revenue END) AS &#39;Aug_Revenue&#39;,
+SUM(CASE month WHEN &#39;Sep&#39; THEN revenue END) AS &#39;Sep_Revenue&#39;,
+SUM(CASE month WHEN &#39;Oct&#39; THEN revenue END) AS &#39;Oct_Revenue&#39;,
+SUM(CASE month WHEN &#39;Nov&#39; THEN revenue END) AS &#39;Nov_Revenue&#39;,
+SUM(CASE month WHEN &#39;Dec&#39; THEN revenue END) AS &#39;Dec_Revenue&#39;
+FROM Department
+GROUP BY id
+ORDER BY id</code></pre>
+
+            </article>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/SQL/">SQL</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <div class="post-prev col-6">
+                    
+                    
+                  </div>
+                  <div class="post-next col-6">
+                    
+                    
+                      <a href="/2020/sql-on-leetcode/">
+                        <span class="hidden-mobile">LeetCode部分SQL习题（一）</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </div>
+                </div>
+              
+            </div>
+
+            
+          </div>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
+      <i class="iconfont icon-love"></i>
+      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
+        <span>Fluid</span></a>
+    </div>
+    
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/js/main.js" ></script>
+
+
+  <script  src="/js/lazyload.js" ></script>
+
+
+
+  
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '.post-content',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 3,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+<!-- Plugins -->
+
+
+
+  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+  <script>
+    var typed = new Typed('#subtitle', {
+      strings: [
+        '  ',
+        "LeetCode部分SQL习题（二）&nbsp;",
+      ],
+      cursorChar: " ",
+      typeSpeed: 50,
+      loop: false,
+    });
+    typed.stop();
+    $(document).ready(function () {
+      $(".typed-cursor").addClass("h2");
+      typed.start();
+    });
+  </script>
+
+
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    var path = "/local-search.xml";
+    var inputArea = document.querySelector("#local-search-input");
+    inputArea.onclick = function () {
+      searchFunc(path, 'local-search-input', 'local-search-result');
+      this.onclick = null
+    }
+  </script>
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+</html>
