@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://keitzu.com/2020/character-strengths/</loc>
+    
+    <lastmod>2020-09-16T05:16:41.576Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://keitzu.com/2020/sql-on-leetcode-2/</loc>
     
     <lastmod>2020-08-22T15:15:45.348Z</lastmod>
@@ -12,13 +19,6 @@
     <loc>https://keitzu.com/2020/sql-on-leetcode/</loc>
     
     <lastmod>2020-08-21T09:33:40.579Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://keitzu.com/2020/character-strengths/</loc>
-    
-    <lastmod>2020-05-20T07:38:18.318Z</lastmod>
     
   </url>
   
