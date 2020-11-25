@@ -2,9 +2,16 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>https://keitzu.com/2019/sequence-list/</loc>
+    
+    <lastmod>2020-11-25T04:31:53.265Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>https://keitzu.com/2020/tool-list/</loc>
     
-    <lastmod>2020-10-23T04:42:38.898Z</lastmod>
+    <lastmod>2020-10-23T04:47:10.966Z</lastmod>
     
   </url>
   
@@ -47,13 +54,6 @@
     <loc>https://keitzu.com/2020/regular-expression/</loc>
     
     <lastmod>2020-05-16T03:17:31.049Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>https://keitzu.com/2019/sequence-list/</loc>
-    
-    <lastmod>2020-05-15T03:28:12.211Z</lastmod>
     
   </url>
   
