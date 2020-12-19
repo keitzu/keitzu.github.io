@@ -1,7 +1,7 @@
+
+
 <!DOCTYPE html>
-<html lang="zh-CN">
-
-
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
 
 
 
@@ -19,22 +19,33 @@
   <meta name="keywords" content="">
   <title>经典排序算法总结 - 柯梓的四叠半世界</title>
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
-<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
-
-
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
@@ -42,7 +53,13 @@
 <!-- 自定义样式保持在最底部 -->
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"keitzu.com","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":50,"cursorChar":"","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
 
 
 <body>
@@ -65,61 +82,85 @@
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/">
-              <i class="iconfont icon-home-fill"></i>
-              首页</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/archives/">
-              <i class="iconfont icon-archive-fill"></i>
-              归档</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/categories/">
-              <i class="iconfont icon-category-fill"></i>
-              分类</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/tags/">
-              <i class="iconfont icon-tags-fill"></i>
-              标签</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/links/">
-              <i class="iconfont icon-link-fill"></i>
-              友链</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/about/">
-              <i class="iconfont icon-user-fill"></i>
-              关于</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
       </ul>
@@ -127,48 +168,53 @@
   </div>
 </nav>
 
-    <div class="view intro-2" id="background" parallax=true
-         style="background: url('https://s3.ax1x.com/2020/11/25/DUjCUe.jpg') no-repeat center center;
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://static.kezi.xyz/images/background/bg-fa74fc6.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="container text-center white-text fadeInUp">
-            <span class="h2" id="subtitle">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="经典排序算法总结">
               
             </span>
 
             
-              
-                <div class="mt-3 post-meta">
-                  <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-05-15 10:30">
-                    2020年5月15日 上午
-                  </time>
-                </div>
-              
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-05-15 10:30" pubdate>
+        2020年5月15日 上午
+      </time>
+    </span>
+  
+</div>
 
-              <div class="mt-1">
-                
-                  
-                  <span class="post-meta mr-2">
-                    <i class="iconfont icon-chart"></i>
-                    1.6k 字
-                  </span>
-                
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.6k 字
+    </span>
+  
 
-                
-                  
-                  <span class="post-meta mr-2">
-                      <i class="iconfont icon-clock-fill"></i>
-                    
-                    
-                    23
-                     分钟
-                  </span>
-                
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      23
+       分钟
+    </span>
+  
 
-                
-              </div>
+  
+  
+</div>
+
             
           </div>
 
@@ -188,9 +234,11 @@
     <div class="col-lg-8 nopadding-md">
       <div class="container nopadding-md" id="board-ctn">
         <div class="py-5" id="board">
-          <div class="post-content mx-auto" id="post">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">经典排序算法总结</h1>
             
-            <article class="markdown-body">
+            <div class="markdown-body">
               <p>排序算法是最基础的算法之一，可以使用的场景也很多。不同的排序算法有不同的优缺点，这里列举了八种常用的排序算法。<br><a id="more"></a><br>各个算法的复杂度和稳定性：</p>
 <div class="table-container">
 <table>
@@ -255,7 +303,7 @@
 </table>
 </div>
 <blockquote>
-<p>本页面所有代码均使用C实现，使用<a href="https://leetcode-cn.com/problems/sort-an-array/" target="_blank" rel="noopener">Leetcode</a>的数组排序进行测试（题目：给你一个整数数组 nums，请你将该数组升序排列）,部分不够高效的排序算法在进行大量数据排序时会超出时间限制。部分排序算法参考<a href="https://leetcode-cn.com/problems/sort-an-array/solution/" target="_blank" rel="noopener">排序数组-题解</a></p>
+<p>本页面所有代码均使用C实现，使用<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sort-an-array/">Leetcode</a>的数组排序进行测试（题目：给你一个整数数组 nums，请你将该数组升序排列）,部分不够高效的排序算法在进行大量数据排序时会超出时间限制。部分排序算法参考<a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/sort-an-array/solution/">排序数组-题解</a></p>
 </blockquote>
 <h3 id="1、冒泡排序"><a href="#1、冒泡排序" class="headerlink" title="1、冒泡排序"></a>1、冒泡排序</h3><h4 id="1-1、步骤"><a href="#1-1、步骤" class="headerlink" title="1.1、步骤"></a>1.1、步骤</h4><ol>
 <li>从头开始比较相邻元素，如果大小顺序错误则交换位置</li>
@@ -263,205 +311,49 @@
 <li>如果某一趟排序未进行交换操作则排序结束</li>
 <li>忽略末尾已排序的元素，重复进行1与2直到排序完成</li>
 </ol>
-<h4 id="1-2、实现"><a href="#1-2、实现" class="headerlink" title="1.2、实现"></a>1.2、实现</h4><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span>* <span class="hljs-title">sortArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums, <span class="hljs-keyword">int</span> numsSize, <span class="hljs-keyword">int</span>* returnSize)</span></span>&#123;
-    *returnSize = numsSize;
-    <span class="hljs-keyword">int</span> i, j;
-    <span class="hljs-keyword">bool</span> isFinished = <span class="hljs-literal">true</span>;
-    <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>; i &lt; numsSize - <span class="hljs-number">1</span>; i++)&#123;
-        <span class="hljs-keyword">for</span>(j = <span class="hljs-number">0</span>; j &lt; numsSize - i - <span class="hljs-number">1</span>; j++)&#123;
-            <span class="hljs-keyword">if</span>(nums[j] &gt; nums[j + <span class="hljs-number">1</span>])&#123;
-                <span class="hljs-keyword">int</span> temp = nums[j];
-                nums[j] = nums[j + <span class="hljs-number">1</span>];
-                nums[j + <span class="hljs-number">1</span>] = temp;
-                isFinished = <span class="hljs-literal">false</span>;
-            &#125;
-        &#125;
-        <span class="hljs-keyword">if</span>(isFinished) <span class="hljs-keyword">break</span>;
-    &#125;
-    <span class="hljs-keyword">return</span> nums;
-&#125;</code></pre>
+<h4 id="1-2、实现"><a href="#1-2、实现" class="headerlink" title="1.2、实现"></a>1.2、实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span>* <span class="hljs-title">sortArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums, <span class="hljs-keyword">int</span> numsSize, <span class="hljs-keyword">int</span>* returnSize)</span></span>&#123;<br>    *returnSize = numsSize;<br>    <span class="hljs-keyword">int</span> i, j;<br>    <span class="hljs-keyword">bool</span> isFinished = <span class="hljs-literal">true</span>;<br>    <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>; i &lt; numsSize - <span class="hljs-number">1</span>; i++)&#123;<br>        <span class="hljs-keyword">for</span>(j = <span class="hljs-number">0</span>; j &lt; numsSize - i - <span class="hljs-number">1</span>; j++)&#123;<br>            <span class="hljs-keyword">if</span>(nums[j] &gt; nums[j + <span class="hljs-number">1</span>])&#123;<br>                <span class="hljs-keyword">int</span> temp = nums[j];<br>                nums[j] = nums[j + <span class="hljs-number">1</span>];<br>                nums[j + <span class="hljs-number">1</span>] = temp;<br>                isFinished = <span class="hljs-literal">false</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(isFinished) <span class="hljs-keyword">break</span>;<br>    &#125;<br>    <span class="hljs-keyword">return</span> nums;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="2、选择排序"><a href="#2、选择排序" class="headerlink" title="2、选择排序"></a>2、选择排序</h3><h4 id="2-1、步骤"><a href="#2-1、步骤" class="headerlink" title="2.1、步骤"></a>2.1、步骤</h4><ol>
 <li>遍历数组找出其中的最小元素</li>
 <li>将最小元素放置到已排序部分队尾</li>
 <li>剩余元素重复1于2直至排序完成</li>
 </ol>
-<h4 id="2-2、实现"><a href="#2-2、实现" class="headerlink" title="2.2、实现"></a>2.2、实现</h4><pre><code class="hljs C"><span class="hljs-function"><span class="hljs-keyword">int</span>* <span class="hljs-title">sortArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums, <span class="hljs-keyword">int</span> numsSize, <span class="hljs-keyword">int</span>* returnSize)</span></span>&#123;
-    *returnSize = numsSize;
-    <span class="hljs-keyword">int</span> i, j, <span class="hljs-built_in">min</span>;
-    <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>; i &lt; numsSize; i++)&#123;
-        <span class="hljs-built_in">min</span> = i;
-        <span class="hljs-keyword">for</span>(j = i; j &lt; numsSize; j++)&#123;
-            <span class="hljs-keyword">if</span>(nums[j] &lt; nums[<span class="hljs-built_in">min</span>])&#123;
-                <span class="hljs-built_in">min</span> = j;
-            &#125;
-        &#125;
-        <span class="hljs-keyword">int</span> temp = nums[i];
-        nums[i] = nums[<span class="hljs-built_in">min</span>];
-        nums[<span class="hljs-built_in">min</span>] = temp;
-    &#125;
-    <span class="hljs-keyword">return</span> nums;
-&#125;</code></pre>
+<h4 id="2-2、实现"><a href="#2-2、实现" class="headerlink" title="2.2、实现"></a>2.2、实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs C"><span class="hljs-function"><span class="hljs-keyword">int</span>* <span class="hljs-title">sortArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums, <span class="hljs-keyword">int</span> numsSize, <span class="hljs-keyword">int</span>* returnSize)</span></span>&#123;<br>    *returnSize = numsSize;<br>    <span class="hljs-keyword">int</span> i, j, min;<br>    <span class="hljs-keyword">for</span>(i = <span class="hljs-number">0</span>; i &lt; numsSize; i++)&#123;<br>        min = i;<br>        <span class="hljs-keyword">for</span>(j = i; j &lt; numsSize; j++)&#123;<br>            <span class="hljs-keyword">if</span>(nums[j] &lt; nums[min])&#123;<br>                min = j;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">int</span> temp = nums[i];<br>        nums[i] = nums[min];<br>        nums[min] = temp;<br>    &#125;<br>    <span class="hljs-keyword">return</span> nums;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="3、插入排序"><a href="#3、插入排序" class="headerlink" title="3、插入排序"></a>3、插入排序</h3><h4 id="3-1、步骤"><a href="#3-1、步骤" class="headerlink" title="3.1、步骤"></a>3.1、步骤</h4><p>在要排序的一组数中，假定前n-1个数已经是有序序列</p>
 <ol>
 <li>找到第n个数插入有序序列的位置k</li>
 <li>将k到n-1位的数后移一位，第k位的值赋值位第n位的值</li>
 <li>重复1与2直到排序完成</li>
 </ol>
-<h4 id="3-2、实现"><a href="#3-2、实现" class="headerlink" title="3.2、实现"></a>3.2、实现</h4><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span>* <span class="hljs-title">sortArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums, <span class="hljs-keyword">int</span> numsSize, <span class="hljs-keyword">int</span>* returnSize)</span></span>&#123;
-    *returnSize = numsSize;
-    <span class="hljs-keyword">int</span> i, j;
-    <span class="hljs-keyword">for</span>(i = <span class="hljs-number">1</span>; i &lt; numsSize; i++)&#123;
-        <span class="hljs-keyword">int</span> temp = nums[i];
-        j = i - <span class="hljs-number">1</span>;
-        <span class="hljs-keyword">while</span>( j &gt;= <span class="hljs-number">0</span> &amp;&amp; temp &lt; nums[j])&#123;
-            nums[j + <span class="hljs-number">1</span>] = nums[j];
-            j--;
-        &#125;
-        nums[j + <span class="hljs-number">1</span>] = temp;
-    &#125;
-    <span class="hljs-keyword">return</span> nums;
-&#125;</code></pre>
+<h4 id="3-2、实现"><a href="#3-2、实现" class="headerlink" title="3.2、实现"></a>3.2、实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span>* <span class="hljs-title">sortArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums, <span class="hljs-keyword">int</span> numsSize, <span class="hljs-keyword">int</span>* returnSize)</span></span>&#123;<br>    *returnSize = numsSize;<br>    <span class="hljs-keyword">int</span> i, j;<br>    <span class="hljs-keyword">for</span>(i = <span class="hljs-number">1</span>; i &lt; numsSize; i++)&#123;<br>        <span class="hljs-keyword">int</span> temp = nums[i];<br>        j = i - <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">while</span>( j &gt;= <span class="hljs-number">0</span> &amp;&amp; temp &lt; nums[j])&#123;<br>            nums[j + <span class="hljs-number">1</span>] = nums[j];<br>            j--;<br>        &#125;<br>        nums[j + <span class="hljs-number">1</span>] = temp;<br>    &#125;<br>    <span class="hljs-keyword">return</span> nums;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="4、希尔排序"><a href="#4、希尔排序" class="headerlink" title="4、希尔排序"></a>4、希尔排序</h3><h4 id="4-1、步骤"><a href="#4-1、步骤" class="headerlink" title="4.1、步骤"></a>4.1、步骤</h4><ol>
 <li>取一个小于n的步长$d_1$，将带待排序元素分为$d_1$组</li>
 <li>对每一组分别进行插入排序</li>
 <li>取第二个步长$d_2$($d_1$&gt;$d_2$),重复1与2直至排序完成</li>
 </ol>
-<h4 id="4-2、实现"><a href="#4-2、实现" class="headerlink" title="4.2、实现"></a>4.2、实现</h4><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span>* <span class="hljs-title">sortArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums, <span class="hljs-keyword">int</span> numsSize, <span class="hljs-keyword">int</span>* returnSize)</span></span>&#123;
-    *returnSize = numsSize;
-    <span class="hljs-keyword">int</span> gap, i, j;
-    <span class="hljs-keyword">int</span> temp;
-    <span class="hljs-keyword">for</span> (gap = numsSize / <span class="hljs-number">2</span>; gap &gt; <span class="hljs-number">0</span>; gap /= <span class="hljs-number">2</span>)
-        <span class="hljs-keyword">for</span> (i = gap; i &lt; numsSize; i++) &#123;
-            temp = nums[i];
-            <span class="hljs-keyword">for</span> (j = i - gap; j &gt;= <span class="hljs-number">0</span> &amp;&amp; nums[j] &gt; temp; j -= gap)
-                nums[j + gap] = nums[j];
-            nums[j + gap] = temp;
-        &#125;
-    <span class="hljs-keyword">return</span> nums;
-&#125;</code></pre>
+<h4 id="4-2、实现"><a href="#4-2、实现" class="headerlink" title="4.2、实现"></a>4.2、实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">int</span>* <span class="hljs-title">sortArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums, <span class="hljs-keyword">int</span> numsSize, <span class="hljs-keyword">int</span>* returnSize)</span></span>&#123;<br>    *returnSize = numsSize;<br>    <span class="hljs-keyword">int</span> gap, i, j;<br>    <span class="hljs-keyword">int</span> temp;<br>    <span class="hljs-keyword">for</span> (gap = numsSize / <span class="hljs-number">2</span>; gap &gt; <span class="hljs-number">0</span>; gap /= <span class="hljs-number">2</span>)<br>        <span class="hljs-keyword">for</span> (i = gap; i &lt; numsSize; i++) &#123;<br>            temp = nums[i];<br>            <span class="hljs-keyword">for</span> (j = i - gap; j &gt;= <span class="hljs-number">0</span> &amp;&amp; nums[j] &gt; temp; j -= gap)<br>                nums[j + gap] = nums[j];<br>            nums[j + gap] = temp;<br>        &#125;<br>    <span class="hljs-keyword">return</span> nums;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="5、2路-归并排序"><a href="#5、2路-归并排序" class="headerlink" title="5、2路-归并排序"></a>5、2路-归并排序</h3><h4 id="5-1、步骤"><a href="#5-1、步骤" class="headerlink" title="5.1、步骤"></a>5.1、步骤</h4><p>假定待排序表中n个元素为n个有序的子表，归并是指将两个有序表合成为一个新的有序表</p>
 <ol>
 <li>将子表两两归并，得到n/2个长度为2或1的有序子表</li>
 <li>重复1直至排序完成</li>
 </ol>
-<h4 id="5-2、实现"><a href="#5-2、实现" class="headerlink" title="5.2、实现"></a>5.2、实现</h4><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums, <span class="hljs-keyword">int</span> startIndex, <span class="hljs-keyword">int</span> midIndex, <span class="hljs-keyword">int</span> endIndex, <span class="hljs-keyword">int</span>* sorted)</span></span>
-<span class="hljs-function"></span>&#123;
-    <span class="hljs-keyword">int</span> left = startIndex;
-    <span class="hljs-keyword">int</span> right = midIndex + <span class="hljs-number">1</span>;
-    <span class="hljs-keyword">int</span> sortedIndex = <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">while</span> (left &lt;= midIndex &amp;&amp; right &lt;= endIndex) &#123;
-        <span class="hljs-keyword">if</span> (nums[left] &lt; nums[right]) &#123;
-            sorted[sortedIndex++] = nums[left++];
-        &#125; <span class="hljs-keyword">else</span> &#123;
-            sorted[sortedIndex++] = nums[right++];
-        &#125;
-    &#125;
-
-    <span class="hljs-keyword">while</span> (left &lt;= midIndex) &#123;
-        sorted[sortedIndex++] = nums[left++];
-    &#125;
-
-    <span class="hljs-keyword">while</span> (right &lt;= endIndex) &#123;
-        sorted[sortedIndex++] = nums[right++];
-    &#125;
-    sortedIndex = <span class="hljs-number">0</span>;
-    <span class="hljs-keyword">while</span> (startIndex &lt;= endIndex) &#123;
-        nums[startIndex++] = sorted[sortedIndex++];
-    &#125;
-    <span class="hljs-keyword">return</span>;
-&#125;
-
-<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">MergeSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums, <span class="hljs-keyword">int</span> startIndex, <span class="hljs-keyword">int</span> endIndex, <span class="hljs-keyword">int</span>* sorted)</span></span>
-<span class="hljs-function"></span>&#123;
-    <span class="hljs-keyword">if</span> (endIndex &lt;= startIndex) &#123;
-        <span class="hljs-keyword">return</span>;
-    &#125;
-    <span class="hljs-keyword">int</span> midIndex = (startIndex + endIndex) / <span class="hljs-number">2</span>;
-
-    MergeSort(nums, startIndex, midIndex, sorted);
-    MergeSort(nums, midIndex + <span class="hljs-number">1</span>, endIndex, sorted);
-    
-    Merge(nums, startIndex, midIndex, endIndex, sorted);
-    <span class="hljs-keyword">return</span>;
-&#125;
-
-<span class="hljs-function"><span class="hljs-keyword">int</span>* <span class="hljs-title">sortArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums, <span class="hljs-keyword">int</span> numsSize, <span class="hljs-keyword">int</span>* returnSize)</span></span>
-<span class="hljs-function"></span>&#123;
-    <span class="hljs-keyword">int</span>* sorted = <span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>) * numsSize);
-    MergeSort(nums, <span class="hljs-number">0</span>, numsSize - <span class="hljs-number">1</span>, sorted);
-    <span class="hljs-built_in">free</span>(sorted);
-    *returnSize = numsSize;
-    <span class="hljs-keyword">return</span> nums;
-&#125;</code></pre>
+<h4 id="5-2、实现"><a href="#5-2、实现" class="headerlink" title="5.2、实现"></a>5.2、实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">Merge</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums, <span class="hljs-keyword">int</span> startIndex, <span class="hljs-keyword">int</span> midIndex, <span class="hljs-keyword">int</span> endIndex, <span class="hljs-keyword">int</span>* sorted)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span> left = startIndex;<br>    <span class="hljs-keyword">int</span> right = midIndex + <span class="hljs-number">1</span>;<br>    <span class="hljs-keyword">int</span> sortedIndex = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span> (left &lt;= midIndex &amp;&amp; right &lt;= endIndex) &#123;<br>        <span class="hljs-keyword">if</span> (nums[left] &lt; nums[right]) &#123;<br>            sorted[sortedIndex++] = nums[left++];<br>        &#125; <span class="hljs-keyword">else</span> &#123;<br>            sorted[sortedIndex++] = nums[right++];<br>        &#125;<br>    &#125;<br><br>    <span class="hljs-keyword">while</span> (left &lt;= midIndex) &#123;<br>        sorted[sortedIndex++] = nums[left++];<br>    &#125;<br><br>    <span class="hljs-keyword">while</span> (right &lt;= endIndex) &#123;<br>        sorted[sortedIndex++] = nums[right++];<br>    &#125;<br>    sortedIndex = <span class="hljs-number">0</span>;<br>    <span class="hljs-keyword">while</span> (startIndex &lt;= endIndex) &#123;<br>        nums[startIndex++] = sorted[sortedIndex++];<br>    &#125;<br>    <span class="hljs-keyword">return</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">MergeSort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums, <span class="hljs-keyword">int</span> startIndex, <span class="hljs-keyword">int</span> endIndex, <span class="hljs-keyword">int</span>* sorted)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">if</span> (endIndex &lt;= startIndex) &#123;<br>        <span class="hljs-keyword">return</span>;<br>    &#125;<br>    <span class="hljs-keyword">int</span> midIndex = (startIndex + endIndex) / <span class="hljs-number">2</span>;<br><br>    MergeSort(nums, startIndex, midIndex, sorted);<br>    MergeSort(nums, midIndex + <span class="hljs-number">1</span>, endIndex, sorted);<br>    <br>    Merge(nums, startIndex, midIndex, endIndex, sorted);<br>    <span class="hljs-keyword">return</span>;<br>&#125;<br><br><span class="hljs-function"><span class="hljs-keyword">int</span>* <span class="hljs-title">sortArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums, <span class="hljs-keyword">int</span> numsSize, <span class="hljs-keyword">int</span>* returnSize)</span></span><br><span class="hljs-function"></span>&#123;<br>    <span class="hljs-keyword">int</span>* sorted = <span class="hljs-built_in">malloc</span>(<span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>) * numsSize);<br>    MergeSort(nums, <span class="hljs-number">0</span>, numsSize - <span class="hljs-number">1</span>, sorted);<br>    <span class="hljs-built_in">free</span>(sorted);<br>    *returnSize = numsSize;<br>    <span class="hljs-keyword">return</span> nums;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="6、快速排序"><a href="#6、快速排序" class="headerlink" title="6、快速排序"></a>6、快速排序</h3><h4 id="6-1、步骤"><a href="#6-1、步骤" class="headerlink" title="6.1、步骤"></a>6.1、步骤</h4><p>快速排序是对冒泡排序的一种改进算法。</p>
 <ol>
 <li>在待排序表中任取一个元素p作为基准</li>
 <li>通过一趟排序将待排序表分为两个子表，其中一个子表所有元素小于p，另一个子表多有元素大于p</li>
 <li>递归地对上面两个字表进行1与2直至排序完成</li>
 </ol>
-<h4 id="6-2、实现"><a href="#6-2、实现" class="headerlink" title="6.2、实现"></a>6.2、实现</h4><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">quicksort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* Nums, <span class="hljs-keyword">int</span> left, <span class="hljs-keyword">int</span> right)</span></span>&#123;
-    <span class="hljs-keyword">if</span>(left&lt;right)&#123;
-        <span class="hljs-keyword">int</span> i=left,j=right,temp=Nums[left];
-        <span class="hljs-keyword">while</span>(i!=j)&#123;
-            <span class="hljs-keyword">while</span>(i&lt;j&amp;&amp;Nums[j]&gt;temp)
-                j--;
-        <span class="hljs-keyword">if</span>(i&lt;j)
-            Nums[i++]=Nums[j];
-        <span class="hljs-keyword">while</span>(i&lt;j&amp;&amp;Nums[i]&lt;temp)
-            i++;
-        <span class="hljs-keyword">if</span>(i&lt;j)
-            Nums[j--]=Nums[i];
-        &#125;
-        Nums[i]=temp;<span class="hljs-comment">//</span>
-        quicksort(Nums,left,i<span class="hljs-number">-1</span>);
-        quicksort(Nums,i+<span class="hljs-number">1</span>,right);
-
-    &#125;
-&#125;
-<span class="hljs-function"><span class="hljs-keyword">int</span>* <span class="hljs-title">sortArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums, <span class="hljs-keyword">int</span> numsSize, <span class="hljs-keyword">int</span>* returnSize)</span></span>&#123;
-    *returnSize=numsSize;
-    quicksort(nums,<span class="hljs-number">0</span>,numsSize<span class="hljs-number">-1</span>);
-    <span class="hljs-keyword">return</span> nums;
-&#125;</code></pre>
+<h4 id="6-2、实现"><a href="#6-2、实现" class="headerlink" title="6.2、实现"></a>6.2、实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">quicksort</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* Nums, <span class="hljs-keyword">int</span> left, <span class="hljs-keyword">int</span> right)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(left&lt;right)&#123;<br>        <span class="hljs-keyword">int</span> i=left,j=right,temp=Nums[left];<br>        <span class="hljs-keyword">while</span>(i!=j)&#123;<br>            <span class="hljs-keyword">while</span>(i&lt;j&amp;&amp;Nums[j]&gt;temp)<br>                j--;<br>        <span class="hljs-keyword">if</span>(i&lt;j)<br>            Nums[i++]=Nums[j];<br>        <span class="hljs-keyword">while</span>(i&lt;j&amp;&amp;Nums[i]&lt;temp)<br>            i++;<br>        <span class="hljs-keyword">if</span>(i&lt;j)<br>            Nums[j--]=Nums[i];<br>        &#125;<br>        Nums[i]=temp;<span class="hljs-comment">//</span><br>        quicksort(Nums,left,i<span class="hljs-number">-1</span>);<br>        quicksort(Nums,i+<span class="hljs-number">1</span>,right);<br><br>    &#125;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span>* <span class="hljs-title">sortArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums, <span class="hljs-keyword">int</span> numsSize, <span class="hljs-keyword">int</span>* returnSize)</span></span>&#123;<br>    *returnSize=numsSize;<br>    quicksort(nums,<span class="hljs-number">0</span>,numsSize<span class="hljs-number">-1</span>);<br>    <span class="hljs-keyword">return</span> nums;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="7、堆排序"><a href="#7、堆排序" class="headerlink" title="7、堆排序"></a>7、堆排序</h3><h4 id="7-1、步骤"><a href="#7-1、步骤" class="headerlink" title="7.1、步骤"></a>7.1、步骤</h4><p>在排序的过程中，将待排序表看成是一棵完全二叉树的顺序存储结构，利用玩完全二叉树中双亲结点和孩子结点之间的内在关系，在当前无序区中选择关键字最大（最小）的元素。</p>
 <ol>
 <li>用待排序表构建初始堆</li>
 <li>输出堆顶元素</li>
 <li>用剩余元素构建大顶堆（小顶堆），重复1与2直至排序完成</li>
 </ol>
-<h4 id="7-2、实现"><a href="#7-2、实现" class="headerlink" title="7.2、实现"></a>7.2、实现</h4><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">AdjustDown</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums,<span class="hljs-keyword">int</span> a,<span class="hljs-keyword">int</span> numsSize)</span></span>&#123;   <span class="hljs-comment">//向下调整</span>
-    <span class="hljs-keyword">int</span> temp = nums[a];
-    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>*a+<span class="hljs-number">1</span>;i&lt;numsSize;i=<span class="hljs-number">2</span>*i+<span class="hljs-number">1</span>)&#123;
-        <span class="hljs-keyword">if</span>(i+<span class="hljs-number">1</span>&lt;numsSize &amp;&amp; nums[i+<span class="hljs-number">1</span>]&gt;nums[i])&#123;
-            i++;
-        &#125;
-        <span class="hljs-keyword">if</span>(temp &gt;= nums[i])&#123;
-            <span class="hljs-keyword">break</span>;
-        &#125;
-        nums[a] = nums[i];
-        a = i;
-    &#125;
-    nums[a] = temp;
-&#125;
-<span class="hljs-function"><span class="hljs-keyword">int</span>* <span class="hljs-title">sortArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums, <span class="hljs-keyword">int</span> numsSize, <span class="hljs-keyword">int</span>* returnSize)</span></span>&#123;
-    (*returnSize) = numsSize;
-    <span class="hljs-keyword">if</span>(numsSize &lt; <span class="hljs-number">1</span>)&#123;
-        <span class="hljs-keyword">return</span> nums;
-    &#125;
-    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=numsSize/<span class="hljs-number">2</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;          <span class="hljs-comment">//建大根堆</span>
-        AdjustDown(nums,i,numsSize);
-    &#125;
-    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=numsSize<span class="hljs-number">-1</span>;i&gt;<span class="hljs-number">0</span>;i--)&#123;       <span class="hljs-comment">//排序</span>
-        <span class="hljs-keyword">int</span> temp = nums[<span class="hljs-number">0</span>];
-        nums[<span class="hljs-number">0</span>] = nums[i];
-        nums[i] = temp;
-        AdjustDown(nums,<span class="hljs-number">0</span>,i);
-    &#125;
-    <span class="hljs-keyword">return</span> nums;
-&#125;</code></pre>
+<h4 id="7-2、实现"><a href="#7-2、实现" class="headerlink" title="7.2、实现"></a>7.2、实现</h4><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><code class="hljs c"><span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">AdjustDown</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums,<span class="hljs-keyword">int</span> a,<span class="hljs-keyword">int</span> numsSize)</span></span>&#123;   <span class="hljs-comment">//向下调整</span><br>    <span class="hljs-keyword">int</span> temp = nums[a];<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=<span class="hljs-number">2</span>*a+<span class="hljs-number">1</span>;i&lt;numsSize;i=<span class="hljs-number">2</span>*i+<span class="hljs-number">1</span>)&#123;<br>        <span class="hljs-keyword">if</span>(i+<span class="hljs-number">1</span>&lt;numsSize &amp;&amp; nums[i+<span class="hljs-number">1</span>]&gt;nums[i])&#123;<br>            i++;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(temp &gt;= nums[i])&#123;<br>            <span class="hljs-keyword">break</span>;<br>        &#125;<br>        nums[a] = nums[i];<br>        a = i;<br>    &#125;<br>    nums[a] = temp;<br>&#125;<br><span class="hljs-function"><span class="hljs-keyword">int</span>* <span class="hljs-title">sortArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>* nums, <span class="hljs-keyword">int</span> numsSize, <span class="hljs-keyword">int</span>* returnSize)</span></span>&#123;<br>    (*returnSize) = numsSize;<br>    <span class="hljs-keyword">if</span>(numsSize &lt; <span class="hljs-number">1</span>)&#123;<br>        <span class="hljs-keyword">return</span> nums;<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=numsSize/<span class="hljs-number">2</span>;i&gt;=<span class="hljs-number">0</span>;i--)&#123;          <span class="hljs-comment">//建大根堆</span><br>        AdjustDown(nums,i,numsSize);<br>    &#125;<br>    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i=numsSize<span class="hljs-number">-1</span>;i&gt;<span class="hljs-number">0</span>;i--)&#123;       <span class="hljs-comment">//排序</span><br>        <span class="hljs-keyword">int</span> temp = nums[<span class="hljs-number">0</span>];<br>        nums[<span class="hljs-number">0</span>] = nums[i];<br>        nums[i] = temp;<br>        AdjustDown(nums,<span class="hljs-number">0</span>,i);<br>    &#125;<br>    <span class="hljs-keyword">return</span> nums;<br>&#125;<br></code></pre></td></tr></table></figure>
 <h3 id="8、基数排序"><a href="#8、基数排序" class="headerlink" title="8、基数排序"></a>8、基数排序</h3><p>基数排序是一种特别的排序方法，它采用多关键字排序思想，借助“分配”和“收集”两种操作对单逻辑关键字进行排序。基数排序又分为最高位优先排序和最低位优先排序。</p>
 
-            </article>
+            </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
@@ -477,21 +369,21 @@
                   <div class="post-meta">
                     <i class="iconfont icon-tags"></i>
                     
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                    
                       <a class="hover-with-bg" href="/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
                     
                       <a class="hover-with-bg" href="/tags/%E6%8E%92%E5%BA%8F/">排序</a>
-                    
-                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
                     
                   </div>
                 
               </div>
               
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
               
               
                 <div class="post-prevnext row">
-                  <div class="post-prev col-6">
+                  <article class="post-prev col-6">
                     
                     
                       <a href="/2020/character-strengths/">
@@ -500,8 +392,8 @@
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
-                  </div>
-                  <div class="post-next col-6">
+                  </article>
+                  <article class="post-next col-6">
                     
                     
                       <a href="/2020/regular-expression/">
@@ -510,13 +402,13 @@
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
-                  </div>
+                  </article>
                 </div>
               
             </div>
 
             
-          </div>
+          </article>
         </div>
       </div>
     </div>
@@ -524,7 +416,7 @@
       <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
         <div id="toc">
   <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div id="tocbot"></div>
+  <div class="toc-body" id="toc-body"></div>
 </div>
 
       </div>
@@ -536,16 +428,15 @@
 
 
     
-  </main>
 
-  
-    <a id="scroll-top-button" href="#" role="button">
-      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-    </a>
-  
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
      aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
@@ -566,123 +457,98 @@
     </div>
   </div>
 </div>
-  
-
-  
-
-  
-
-  <footer class="mt-5">
-  <div class="text-center py-3">
-    <div>
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-      <i class="iconfont icon-love"></i>
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
-        <span>Fluid</span></a>
-    </div>
     
 
     
+  </main>
 
-    
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
+  
+
+  
+
+  
 </footer>
 
 <!-- SCRIPTS -->
-<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
-<script  src="/js/main.js" ></script>
 
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
-  <script  src="/js/lazyload.js" ></script>
-
-
-
-  
-  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
   <script>
-    $(document).ready(function () {
-      var boardCtn = $('#board-ctn');
-      var boardTop = boardCtn.offset().top;
-
-      tocbot.init({
-        tocSelector: '#tocbot',
-        contentSelector: '.post-content',
-        headingSelector: 'h1,h2,h3,h4,h5,h6',
-        linkClass: 'tocbot-link',
-        activeLinkClass: 'tocbot-active-link',
-        listClass: 'tocbot-list',
-        isCollapsedClass: 'tocbot-is-collapsed',
-        collapsibleClass: 'tocbot-is-collapsible',
-        collapseDepth: 3,
-        scrollSmooth: true,
-        headingsOffset: -boardTop
-      });
-      if ($('.toc-list-item').length > 0) {
-        $('#toc').css('visibility', 'visible');
-      }
-    });
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
   </script>
 
 
-
-
-
-
-
-
-
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 <!-- Plugins -->
 
 
+  
+    <script  src="/js/lazyload.js" ></script>
+  
 
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
   <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "经典排序算法总结&nbsp;",
-      ],
-      cursorChar: " ",
-      typeSpeed: 50,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
   </script>
-
-
 
 
 
   <script  src="/js/local-search.js" ></script>
   <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      searchFunc(path, 'local-search-input', 'local-search-result');
-      this.onclick = null
-    }
-  </script>
-
-
-
-  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-  <script>
-    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
-      function () {
-        var element = document.createElement('a');
-        $(element).attr('data-fancybox', 'images');
-        $(element).attr('href', $(this).attr('src'));
-        $(this).wrap(element);
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
       }
-    );
+    })()
   </script>
 
 
@@ -724,7 +590,7 @@
       };
     </script>
 
-    <script async src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-svg.js" ></script>
+    <script async src="https://cdn.jsdelivr.net/npm/mathjax@3.1.2/es5/tex-svg.js" ></script>
 
   
 
@@ -738,6 +604,8 @@
 
 
 
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
 
 
 

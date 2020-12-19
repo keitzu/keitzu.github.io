@@ -1,7 +1,7 @@
+
+
 <!DOCTYPE html>
-<html lang="zh-CN">
-
-
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
 
 
 
@@ -19,22 +19,33 @@
   <meta name="keywords" content="">
   <title>LeetCode部分SQL习题（二） - 柯梓的四叠半世界</title>
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
-<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
-
-
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
@@ -42,7 +53,13 @@
 <!-- 自定义样式保持在最底部 -->
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"keitzu.com","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":50,"cursorChar":"","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
 
 
 <body>
@@ -65,61 +82,85 @@
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/">
-              <i class="iconfont icon-home-fill"></i>
-              首页</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/archives/">
-              <i class="iconfont icon-archive-fill"></i>
-              归档</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/categories/">
-              <i class="iconfont icon-category-fill"></i>
-              分类</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/tags/">
-              <i class="iconfont icon-tags-fill"></i>
-              标签</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/links/">
-              <i class="iconfont icon-link-fill"></i>
-              友链</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/about/">
-              <i class="iconfont icon-user-fill"></i>
-              关于</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
       </ul>
@@ -127,48 +168,53 @@
   </div>
 </nav>
 
-    <div class="view intro-2" id="background" parallax=true
-         style="background: url('https://s3.ax1x.com/2020/11/25/DUjCUe.jpg') no-repeat center center;
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://static.kezi.xyz/images/background/bg-fa74fc6.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="container text-center white-text fadeInUp">
-            <span class="h2" id="subtitle">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="LeetCode部分SQL习题（二）">
               
             </span>
 
             
-              
-                <div class="mt-3 post-meta">
-                  <i class="iconfont icon-date-fill" aria-hidden="true"></i>
-                  <time datetime="2020-08-21 19:50">
-                    2020年8月21日 晚上
-                  </time>
-                </div>
-              
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-08-21 19:50" pubdate>
+        2020年8月21日 晚上
+      </time>
+    </span>
+  
+</div>
 
-              <div class="mt-1">
-                
-                  
-                  <span class="post-meta mr-2">
-                    <i class="iconfont icon-chart"></i>
-                    1.5k 字
-                  </span>
-                
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.5k 字
+    </span>
+  
 
-                
-                  
-                  <span class="post-meta mr-2">
-                      <i class="iconfont icon-clock-fill"></i>
-                    
-                    
-                    22
-                     分钟
-                  </span>
-                
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      22
+       分钟
+    </span>
+  
 
-                
-              </div>
+  
+  
+</div>
+
             
           </div>
 
@@ -188,227 +234,69 @@
     <div class="col-lg-8 nopadding-md">
       <div class="container nopadding-md" id="board-ctn">
         <div class="py-5" id="board">
-          <div class="post-content mx-auto" id="post">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">LeetCode部分SQL习题（二）</h1>
             
-            <article class="markdown-body">
+            <div class="markdown-body">
               <p>SQL是一种特定目的编程语言，用于管理关系数据库管理系统（RDBMS），或在关系流数据管理系统（RDSMS）中进行流处理。<br><a id="more"></a></p>
-<h3 id="595-大的国家"><a href="#595-大的国家" class="headerlink" title="595. 大的国家"></a><a href="https://leetcode-cn.com/problems/big-countries/" target="_blank" rel="noopener">595. 大的国家</a></h3><h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>这里有张 World 表</p>
-<pre><code class="hljs plain">+-----------------+------------+------------+--------------+---------------+
-| name            | continent  | area       | population   | gdp           |
-+-----------------+------------+------------+--------------+---------------+
-| Afghanistan     | Asia       | 652230     | 25500100     | 20343000      |
-| Albania         | Europe     | 28748      | 2831741      | 12960000      |
-| Algeria         | Africa     | 2381741    | 37100000     | 188681000     |
-| Andorra         | Europe     | 468        | 78115        | 3712000       |
-| Angola          | Africa     | 1246700    | 20609294     | 100990000     |
-+-----------------+------------+------------+--------------+---------------+</code></pre>
+<h3 id="595-大的国家"><a href="#595-大的国家" class="headerlink" title="595. 大的国家"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/big-countries/">595. 大的国家</a></h3><h4 id="题目"><a href="#题目" class="headerlink" title="题目"></a>题目</h4><p>这里有张 World 表</p>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">+-----------------+------------+------------+--------------+---------------+<br>|<span class="hljs-string"> name            </span>|<span class="hljs-string"> continent  </span>|<span class="hljs-string"> area       </span>|<span class="hljs-string"> population   </span>|<span class="hljs-string"> gdp           </span>|<br>+-----------------+------------+------------+--------------+---------------+<br>|<span class="hljs-string"> Afghanistan     </span>|<span class="hljs-string"> Asia       </span>|<span class="hljs-string"> 652230     </span>|<span class="hljs-string"> 25500100     </span>|<span class="hljs-string"> 20343000      </span>|<br>|<span class="hljs-string"> Albania         </span>|<span class="hljs-string"> Europe     </span>|<span class="hljs-string"> 28748      </span>|<span class="hljs-string"> 2831741      </span>|<span class="hljs-string"> 12960000      </span>|<br>|<span class="hljs-string"> Algeria         </span>|<span class="hljs-string"> Africa     </span>|<span class="hljs-string"> 2381741    </span>|<span class="hljs-string"> 37100000     </span>|<span class="hljs-string"> 188681000     </span>|<br>|<span class="hljs-string"> Andorra         </span>|<span class="hljs-string"> Europe     </span>|<span class="hljs-string"> 468        </span>|<span class="hljs-string"> 78115        </span>|<span class="hljs-string"> 3712000       </span>|<br>|<span class="hljs-string"> Angola          </span>|<span class="hljs-string"> Africa     </span>|<span class="hljs-string"> 1246700    </span>|<span class="hljs-string"> 20609294     </span>|<span class="hljs-string"> 100990000     </span>|<br>+-----------------+------------+------------+--------------+---------------+<br></code></pre></td></tr></table></figure>
 <p>如果一个国家的面积超过300万平方公里，或者人口超过2500万，那么这个国家就是大国家。</p>
 <p>编写一个SQL查询，输出表中所有大国家的名称、人口和面积。</p>
 <p>例如，根据上表，我们应该输出:</p>
-<pre><code class="hljs plain">+--------------+-------------+--------------+
-| name         | population  | area         |
-+--------------+-------------+--------------+
-| Afghanistan  | 25500100    | 652230       |
-| Algeria      | 37100000    | 2381741      |
-+--------------+-------------+--------------+</code></pre>
-<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><pre><code class="hljs MYSQL">SELECT name, population, area
-FROM World
-WHERE area &gt; 3000000
-    OR population &gt; 25000000</code></pre>
-<h3 id="596-超过5名学生的课"><a href="#596-超过5名学生的课" class="headerlink" title="596. 超过5名学生的课"></a><a href="https://leetcode-cn.com/problems/classes-more-than-5-students/" target="_blank" rel="noopener">596. 超过5名学生的课</a></h3><h4 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h4><p>有一个courses 表 ，有: student (学生) 和 class (课程)。</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-code">+--------------+</span>-------------<span class="hljs-code">+--------------+</span><br>| name         | population  | area         |<br><span class="hljs-code">+--------------+</span>-------------<span class="hljs-code">+--------------+</span><br>| Afghanistan  | 25500100    | 652230       |<br>| Algeria      | 37100000    | 2381741      |<br><span class="hljs-code">+--------------+</span>-------------<span class="hljs-code">+--------------+</span><br></code></pre></td></tr></table></figure>
+<h4 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs MYSQL">SELECT name, population, area<br>FROM World<br>WHERE area &gt; 3000000<br>    OR population &gt; 25000000 <br></code></pre></td></tr></table></figure>
+<h3 id="596-超过5名学生的课"><a href="#596-超过5名学生的课" class="headerlink" title="596. 超过5名学生的课"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/classes-more-than-5-students/">596. 超过5名学生的课</a></h3><h4 id="题目-1"><a href="#题目-1" class="headerlink" title="题目"></a>题目</h4><p>有一个courses 表 ，有: student (学生) 和 class (课程)。</p>
 <p>请列出所有超过或等于5名学生的课。</p>
 <p>例如,表:</p>
-<pre><code class="hljs plain">+---------+------------+
-| student | class      |
-+---------+------------+
-| A       | Math       |
-| B       | English    |
-| C       | Math       |
-| D       | Biology    |
-| E       | Math       |
-| F       | Computer   |
-| G       | Math       |
-| H       | Math       |
-| I       | Math       |
-+---------+------------+</code></pre>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">+---------+------------+<br>|<span class="hljs-string"> student </span>|<span class="hljs-string"> class      </span>|<br>+---------+------------+<br>|<span class="hljs-string"> A       </span>|<span class="hljs-string"> Math       </span>|<br>|<span class="hljs-string"> B       </span>|<span class="hljs-string"> English    </span>|<br>|<span class="hljs-string"> C       </span>|<span class="hljs-string"> Math       </span>|<br>|<span class="hljs-string"> D       </span>|<span class="hljs-string"> Biology    </span>|<br>|<span class="hljs-string"> E       </span>|<span class="hljs-string"> Math       </span>|<br>|<span class="hljs-string"> F       </span>|<span class="hljs-string"> Computer   </span>|<br>|<span class="hljs-string"> G       </span>|<span class="hljs-string"> Math       </span>|<br>|<span class="hljs-string"> H       </span>|<span class="hljs-string"> Math       </span>|<br>|<span class="hljs-string"> I       </span>|<span class="hljs-string"> Math       </span>|<br>+---------+------------+<br></code></pre></td></tr></table></figure>
 <p>应该输出:</p>
-<pre><code class="hljs plain">+---------+
-| class   |
-+---------+
-| Math    |
-+---------+</code></pre>
-<h4 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h4><pre><code class="hljs mysql">SELECT class
-FROM 
-(
-    SELECT class, COUNT(DISTINCT student) AS cnt
-    FROM courses
-    GROUP BY class
-)AS temp
-WHERE cnt &gt;&#x3D; 5</code></pre>
-<h3 id="601-体育馆的人流量"><a href="#601-体育馆的人流量" class="headerlink" title="601. 体育馆的人流量"></a><a href="https://leetcode-cn.com/problems/human-traffic-of-stadium/" target="_blank" rel="noopener">601. 体育馆的人流量</a></h3><h4 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h4><p>X 市建了一个新的体育馆，每日人流量信息被记录在这三列信息中：序号 (id)、日期 (visit_date)、 人流量 (people)。</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-code">+---------+</span><br>| class   |<br><span class="hljs-code">+---------+</span><br>| Math    |<br><span class="hljs-code">+---------+</span><br></code></pre></td></tr></table></figure>
+<h4 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SELECT class<br>FROM <br>(<br>    SELECT class, COUNT(DISTINCT student) AS cnt<br>    FROM courses<br>    GROUP BY class<br>)AS temp<br>WHERE cnt &gt;&#x3D; 5 <br></code></pre></td></tr></table></figure>
+<h3 id="601-体育馆的人流量"><a href="#601-体育馆的人流量" class="headerlink" title="601. 体育馆的人流量"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/human-traffic-of-stadium/">601. 体育馆的人流量</a></h3><h4 id="题目-2"><a href="#题目-2" class="headerlink" title="题目"></a>题目</h4><p>X 市建了一个新的体育馆，每日人流量信息被记录在这三列信息中：序号 (id)、日期 (visit_date)、 人流量 (people)。</p>
 <p>请编写一个查询语句，找出人流量的高峰期。高峰期时，至少连续三行记录中的人流量不少于100。</p>
 <p>例如，表 stadium：</p>
-<pre><code class="hljs plain">+------+------------+-----------+
-| id   | visit_date | people    |
-+------+------------+-----------+
-| 1    | 2017-01-01 | 10        |
-| 2    | 2017-01-02 | 109       |
-| 3    | 2017-01-03 | 150       |
-| 4    | 2017-01-04 | 99        |
-| 5    | 2017-01-05 | 145       |
-| 6    | 2017-01-06 | 1455      |
-| 7    | 2017-01-07 | 199       |
-| 8    | 2017-01-08 | 188       |
-+------+------------+-----------+</code></pre>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">+------+------------+-----------+<br>|<span class="hljs-string"> id   </span>|<span class="hljs-string"> visit_date </span>|<span class="hljs-string"> people    </span>|<br>+------+------------+-----------+<br>|<span class="hljs-string"> 1    </span>|<span class="hljs-string"> 2017-01-01 </span>|<span class="hljs-string"> 10        </span>|<br>|<span class="hljs-string"> 2    </span>|<span class="hljs-string"> 2017-01-02 </span>|<span class="hljs-string"> 109       </span>|<br>|<span class="hljs-string"> 3    </span>|<span class="hljs-string"> 2017-01-03 </span>|<span class="hljs-string"> 150       </span>|<br>|<span class="hljs-string"> 4    </span>|<span class="hljs-string"> 2017-01-04 </span>|<span class="hljs-string"> 99        </span>|<br>|<span class="hljs-string"> 5    </span>|<span class="hljs-string"> 2017-01-05 </span>|<span class="hljs-string"> 145       </span>|<br>|<span class="hljs-string"> 6    </span>|<span class="hljs-string"> 2017-01-06 </span>|<span class="hljs-string"> 1455      </span>|<br>|<span class="hljs-string"> 7    </span>|<span class="hljs-string"> 2017-01-07 </span>|<span class="hljs-string"> 199       </span>|<br>|<span class="hljs-string"> 8    </span>|<span class="hljs-string"> 2017-01-08 </span>|<span class="hljs-string"> 188       </span>|<br>+------+------------+-----------+<br></code></pre></td></tr></table></figure>
 <p>对于上面的示例数据，输出为：</p>
-<pre><code class="hljs plain">+------+------------+-----------+
-| id   | visit_date | people    |
-+------+------------+-----------+
-| 5    | 2017-01-05 | 145       |
-| 6    | 2017-01-06 | 1455      |
-| 7    | 2017-01-07 | 199       |
-| 8    | 2017-01-08 | 188       |
-+------+------------+-----------+</code></pre>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-code">+------+</span>------------<span class="hljs-code">+-----------+</span><br>| id   | visit<span class="hljs-emphasis">_date | people    |</span><br><span class="hljs-emphasis">+------+------------+-----------+</span><br><span class="hljs-emphasis">| 5    | 2017-01-05 | 145       |</span><br><span class="hljs-emphasis">| 6    | 2017-01-06 | 1455      |</span><br><span class="hljs-emphasis">| 7    | 2017-01-07 | 199       |</span><br><span class="hljs-emphasis">| 8    | 2017-01-08 | 188       |</span><br><span class="hljs-emphasis">+------+------------+-----------+</span><br></code></pre></td></tr></table></figure>
 <p>提示：<br>每天只有一行记录，日期随着 id 的增加而增加。</p>
-<h4 id="题解-2"><a href="#题解-2" class="headerlink" title="题解"></a>题解</h4><pre><code class="hljs mysql">SELECT DISTINCT A.*
-FROM stadium AS A, stadium AS B, stadium AS C
-WHERE   A.people &gt;&#x3D; 100 AND B.people &gt;&#x3D; 100 AND C.people &gt;&#x3D; 100
-    AND(
-        (A.id - B.id &#x3D; -1 AND B.id - C.id &#x3D; -1)
-        OR(A.id - B.id &#x3D; 1 AND A.id - C.id &#x3D; -1)
-        OR(A.id - B.id &#x3D; 1 AND A.id - C.id &#x3D; 2)
-    )
-ORDER BY A.id</code></pre>
-<h3 id="620-有趣的电影"><a href="#620-有趣的电影" class="headerlink" title="620. 有趣的电影"></a><a href="https://leetcode-cn.com/problems/not-boring-movies/" target="_blank" rel="noopener">620. 有趣的电影</a></h3><h4 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h4><p>某城市开了一家新的电影院，吸引了很多人过来看电影。该电影院特别注意用户体验，专门有个 LED显示板做电影推荐，上面公布着影评和相关电影描述。</p>
+<h4 id="题解-2"><a href="#题解-2" class="headerlink" title="题解"></a>题解</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SELECT DISTINCT A.*<br>FROM stadium AS A, stadium AS B, stadium AS C<br>WHERE   A.people &gt;&#x3D; 100 AND B.people &gt;&#x3D; 100 AND C.people &gt;&#x3D; 100<br>    AND(<br>        (A.id - B.id &#x3D; -1 AND B.id - C.id &#x3D; -1)<br>        OR(A.id - B.id &#x3D; 1 AND A.id - C.id &#x3D; -1)<br>        OR(A.id - B.id &#x3D; 1 AND A.id - C.id &#x3D; 2)<br>    )<br>ORDER BY A.id<br></code></pre></td></tr></table></figure>
+<h3 id="620-有趣的电影"><a href="#620-有趣的电影" class="headerlink" title="620. 有趣的电影"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/not-boring-movies/">620. 有趣的电影</a></h3><h4 id="题目-3"><a href="#题目-3" class="headerlink" title="题目"></a>题目</h4><p>某城市开了一家新的电影院，吸引了很多人过来看电影。该电影院特别注意用户体验，专门有个 LED显示板做电影推荐，上面公布着影评和相关电影描述。</p>
 <p>作为该电影院的信息部主管，您需要编写一个 SQL查询，找出所有影片描述为非 boring (不无聊) 的并且 id 为奇数 的影片，结果请按等级 rating 排列。</p>
 <p>例如，下表 cinema:</p>
-<pre><code class="hljs plain">+---------+-----------+--------------+-----------+
-|   id    | movie     |  description |  rating   |
-+---------+-----------+--------------+-----------+
-|   1     | War       |   great 3D   |   8.9     |
-|   2     | Science   |   fiction    |   8.5     |
-|   3     | irish     |   boring     |   6.2     |
-|   4     | Ice song  |   Fantacy    |   8.6     |
-|   5     | House card|   Interesting|   9.1     |
-+---------+-----------+--------------+-----------+</code></pre>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">+---------+-----------+--------------+-----------+<br>|<span class="hljs-string">   id    </span>|<span class="hljs-string"> movie     </span>|<span class="hljs-string">  description </span>|<span class="hljs-string">  rating   </span>|<br>+---------+-----------+--------------+-----------+<br>|<span class="hljs-string">   1     </span>|<span class="hljs-string"> War       </span>|<span class="hljs-string">   great 3D   </span>|<span class="hljs-string">   8.9     </span>|<br>|<span class="hljs-string">   2     </span>|<span class="hljs-string"> Science   </span>|<span class="hljs-string">   fiction    </span>|<span class="hljs-string">   8.5     </span>|<br>|<span class="hljs-string">   3     </span>|<span class="hljs-string"> irish     </span>|<span class="hljs-string">   boring     </span>|<span class="hljs-string">   6.2     </span>|<br>|<span class="hljs-string">   4     </span>|<span class="hljs-string"> Ice song  </span>|<span class="hljs-string">   Fantacy    </span>|<span class="hljs-string">   8.6     </span>|<br>|<span class="hljs-string">   5     </span>|<span class="hljs-string"> House card</span>|<span class="hljs-string">   Interesting</span>|<span class="hljs-string">   9.1     </span>|<br>+---------+-----------+--------------+-----------+<br></code></pre></td></tr></table></figure>
 <p>对于上面的例子，则正确的输出是为：</p>
-<pre><code class="hljs plain">+---------+-----------+--------------+-----------+
-|   id    | movie     |  description |  rating   |
-+---------+-----------+--------------+-----------+
-|   5     | House card|   Interesting|   9.1     |
-|   1     | War       |   great 3D   |   8.9     |
-+---------+-----------+--------------+-----------+</code></pre>
-<h4 id="题解-3"><a href="#题解-3" class="headerlink" title="题解"></a>题解</h4><pre><code class="hljs mysql">SELECT *
-FROM cinema
-WHERE id % 2 &#x3D; 1 
-    AND description !&#x3D; &#39;boring&#39;
-ORDER BY rating DESC</code></pre>
-<h3 id="626-换座位"><a href="#626-换座位" class="headerlink" title="626. 换座位"></a><a href="https://leetcode-cn.com/problems/exchange-seats/" target="_blank" rel="noopener">626. 换座位</a></h3><h4 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h4><p>小美是一所中学的信息科技老师，她有一张 seat 座位表，平时用来储存学生名字和与他们相对应的座位 id。</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-code">+---------+</span>-----------<span class="hljs-code">+--------------+</span>-----------+<br>|   id    | movie     |  description |  rating   |<br><span class="hljs-code">+---------+</span>-----------<span class="hljs-code">+--------------+</span>-----------+<br>|   5     | House card|   Interesting|   9.1     |<br>|   1     | War       |   great 3D   |   8.9     |<br><span class="hljs-code">+---------+</span>-----------<span class="hljs-code">+--------------+</span>-----------+<br></code></pre></td></tr></table></figure>
+<h4 id="题解-3"><a href="#题解-3" class="headerlink" title="题解"></a>题解</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SELECT *<br>FROM cinema<br>WHERE id % 2 &#x3D; 1 <br>    AND description !&#x3D; &#39;boring&#39;<br>ORDER BY rating DESC<br></code></pre></td></tr></table></figure>
+<h3 id="626-换座位"><a href="#626-换座位" class="headerlink" title="626. 换座位"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/exchange-seats/">626. 换座位</a></h3><h4 id="题目-4"><a href="#题目-4" class="headerlink" title="题目"></a>题目</h4><p>小美是一所中学的信息科技老师，她有一张 seat 座位表，平时用来储存学生名字和与他们相对应的座位 id。</p>
 <p>其中纵列的 id 是连续递增的</p>
 <p>小美想改变相邻俩学生的座位。</p>
 <p>你能不能帮她写一个 SQL query 来输出小美想要的结果呢？</p>
 <p>示例：</p>
-<pre><code class="hljs plain">+---------+---------+
-|    id   | student |
-+---------+---------+
-|    1    | Abbot   |
-|    2    | Doris   |
-|    3    | Emerson |
-|    4    | Green   |
-|    5    | Jeames  |
-+---------+---------+</code></pre>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-code">+---------+</span>---------+<br>|    id   | student |<br><span class="hljs-code">+---------+</span>---------+<br>|    1    | Abbot   |<br>|    2    | Doris   |<br>|    3    | Emerson |<br>|    4    | Green   |<br>|    5    | Jeames  |<br><span class="hljs-code">+---------+</span>---------+<br></code></pre></td></tr></table></figure>
 <p>假如数据输入的是上表，则输出结果如下：</p>
-<pre><code class="hljs plain">+---------+---------+
-|    id   | student |
-+---------+---------+
-|    1    | Doris   |
-|    2    | Abbot   |
-|    3    | Green   |
-|    4    | Emerson |
-|    5    | Jeames  |
-+---------+---------+</code></pre>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-code">+---------+</span>---------+<br>|    id   | student |<br><span class="hljs-code">+---------+</span>---------+<br>|    1    | Doris   |<br>|    2    | Abbot   |<br>|    3    | Green   |<br>|    4    | Emerson |<br>|    5    | Jeames  |<br><span class="hljs-code">+---------+</span>---------+<br></code></pre></td></tr></table></figure>
 <p>注意：</p>
 <p>如果学生人数是奇数，则不需要改变最后一个同学的座位。</p>
-<h4 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h4><pre><code class="hljs mysql">SELECT
-    (CASE
-        WHEN id % 2 !&#x3D; 0 AND id !&#x3D; counts THEN id + 1
-        WHEN id % 2 !&#x3D; 0 AND id &#x3D; counts THEN id
-        ELSE id - 1
-    END) AS id,
-    student
-FROM
-    seat,
-    (SELECT
-        COUNT(*) AS counts
-    FROM
-        seat) AS seat_counts
-ORDER BY id ASC</code></pre>
-<h3 id="627-交换工资"><a href="#627-交换工资" class="headerlink" title="627. 交换工资"></a><a href="https://leetcode-cn.com/problems/swap-salary/" target="_blank" rel="noopener">627. 交换工资</a></h3><h4 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h4><p>给定一个 salary 表，如下所示，有 m = 男性 和 f = 女性 的值。交换所有的 f 和 m 值（例如，将所有 f 值更改为 m，反之亦然）。要求只使用一个更新（Update）语句，并且没有中间的临时表。</p>
+<h4 id="题目-5"><a href="#题目-5" class="headerlink" title="题目"></a>题目</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SELECT<br>    (CASE<br>        WHEN id % 2 !&#x3D; 0 AND id !&#x3D; counts THEN id + 1<br>        WHEN id % 2 !&#x3D; 0 AND id &#x3D; counts THEN id<br>        ELSE id - 1<br>    END) AS id,<br>    student<br>FROM<br>    seat,<br>    (SELECT<br>        COUNT(*) AS counts<br>    FROM<br>        seat) AS seat_counts<br>ORDER BY id ASC<br></code></pre></td></tr></table></figure>
+<h3 id="627-交换工资"><a href="#627-交换工资" class="headerlink" title="627. 交换工资"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/swap-salary/">627. 交换工资</a></h3><h4 id="题目-6"><a href="#题目-6" class="headerlink" title="题目"></a>题目</h4><p>给定一个 salary 表，如下所示，有 m = 男性 和 f = 女性 的值。交换所有的 f 和 m 值（例如，将所有 f 值更改为 m，反之亦然）。要求只使用一个更新（Update）语句，并且没有中间的临时表。</p>
 <p>注意，您必只能写一个 Update 语句，请不要编写任何 Select 语句。</p>
-<p>例如：<br><pre><code class="hljs plain">| id   | name | sex  | salary |
-| ---- | ---- | ---- | ------ |
-| 1    | A    | m    | 2500   |
-| 2    | B    | f    | 1500   |
-| 3    | C    | m    | 5500   |
-| 4    | D    | f    | 500    |</code></pre><br>运行你所编写的更新语句之后，将会得到以下表:<br><pre><code class="hljs plain">| id   | name | sex  | salary |
-| ---- | ---- | ---- | ------ |
-| 1    | A    | f    | 2500   |
-| 2    | B    | m    | 1500   |
-| 3    | C    | f    | 5500   |
-| 4    | D    | m    | 500    |</code></pre></p>
-<h4 id="题解-4"><a href="#题解-4" class="headerlink" title="题解"></a>题解</h4><pre><code class="hljs mysql">UPDATE salary
-SET sex &#x3D; CASE sex
-    WHEN &#39;f&#39; THEN &#39;m&#39;
-    ELSE &#39;f&#39;
-    END</code></pre>
-<h3 id="1179-重新格式化部门表"><a href="#1179-重新格式化部门表" class="headerlink" title="1179. 重新格式化部门表"></a><a href="https://leetcode-cn.com/problems/reformat-department-table/" target="_blank" rel="noopener">1179. 重新格式化部门表</a></h3><h4 id="题目-7"><a href="#题目-7" class="headerlink" title="题目"></a>题目</h4><p>部门表 Department：</p>
-<pre><code class="hljs plain">+---------------+---------+
-| Column Name   | Type    |
-+---------------+---------+
-| id            | int     |
-| revenue       | int     |
-| month         | varchar |
-+---------------+---------+</code></pre>
+<p>例如：<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">|<span class="hljs-string"> id   </span>|<span class="hljs-string"> name </span>|<span class="hljs-string"> sex  </span>|<span class="hljs-string"> salary </span>|<br>|<span class="hljs-string"> ---- </span>|<span class="hljs-string"> ---- </span>|<span class="hljs-string"> ---- </span>|<span class="hljs-string"> ------ </span>|<br>|<span class="hljs-string"> 1    </span>|<span class="hljs-string"> A    </span>|<span class="hljs-string"> m    </span>|<span class="hljs-string"> 2500   </span>|<br>|<span class="hljs-string"> 2    </span>|<span class="hljs-string"> B    </span>|<span class="hljs-string"> f    </span>|<span class="hljs-string"> 1500   </span>|<br>|<span class="hljs-string"> 3    </span>|<span class="hljs-string"> C    </span>|<span class="hljs-string"> m    </span>|<span class="hljs-string"> 5500   </span>|<br>|<span class="hljs-string"> 4    </span>|<span class="hljs-string"> D    </span>|<span class="hljs-string"> f    </span>|<span class="hljs-string"> 500    </span>|<br></code></pre></td></tr></table></figure><br>运行你所编写的更新语句之后，将会得到以下表:<br><figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">|<span class="hljs-string"> id   </span>|<span class="hljs-string"> name </span>|<span class="hljs-string"> sex  </span>|<span class="hljs-string"> salary </span>|<br>|<span class="hljs-string"> ---- </span>|<span class="hljs-string"> ---- </span>|<span class="hljs-string"> ---- </span>|<span class="hljs-string"> ------ </span>|<br>|<span class="hljs-string"> 1    </span>|<span class="hljs-string"> A    </span>|<span class="hljs-string"> f    </span>|<span class="hljs-string"> 2500   </span>|<br>|<span class="hljs-string"> 2    </span>|<span class="hljs-string"> B    </span>|<span class="hljs-string"> m    </span>|<span class="hljs-string"> 1500   </span>|<br>|<span class="hljs-string"> 3    </span>|<span class="hljs-string"> C    </span>|<span class="hljs-string"> f    </span>|<span class="hljs-string"> 5500   </span>|<br>|<span class="hljs-string"> 4    </span>|<span class="hljs-string"> D    </span>|<span class="hljs-string"> m    </span>|<span class="hljs-string"> 500    </span>|<br></code></pre></td></tr></table></figure></p>
+<h4 id="题解-4"><a href="#题解-4" class="headerlink" title="题解"></a>题解</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs mysql">UPDATE salary<br>SET sex &#x3D; CASE sex<br>    WHEN &#39;f&#39; THEN &#39;m&#39;<br>    ELSE &#39;f&#39;<br>    END<br></code></pre></td></tr></table></figure>
+<h3 id="1179-重新格式化部门表"><a href="#1179-重新格式化部门表" class="headerlink" title="1179. 重新格式化部门表"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/reformat-department-table/">1179. 重新格式化部门表</a></h3><h4 id="题目-7"><a href="#题目-7" class="headerlink" title="题目"></a>题目</h4><p>部门表 Department：</p>
+<figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs asciidoc"><span class="hljs-code">+---------------+</span>---------+<br>| Column Name   | Type    |<br><span class="hljs-code">+---------------+</span>---------+<br>| id            | int     |<br>| revenue       | int     |<br>| month         | varchar |<br><span class="hljs-code">+---------------+</span>---------+<br></code></pre></td></tr></table></figure>
 <p>(id, month) 是表的联合主键。<br>这个表格有关于每个部门每月收入的信息。<br>月份（month）可以取下列值 [“Jan”,”Feb”,”Mar”,”Apr”,”May”,”Jun”,”Jul”,”Aug”,”Sep”,”Oct”,”Nov”,”Dec”]。</p>
 <p>编写一个 SQL 查询来重新格式化表，使得新的表中有一个部门 id 列和一些对应 每个月 的收入（revenue）列。</p>
 <p>查询结果格式如下面的示例所示：</p>
 <p>Department 表：</p>
-<pre><code class="hljs plain">+------+---------+-------+
-| id   | revenue | month |
-+------+---------+-------+
-| 1    | 8000    | Jan   |
-| 2    | 9000    | Jan   |
-| 3    | 10000   | Feb   |
-| 1    | 7000    | Feb   |
-| 1    | 6000    | Mar   |
-+------+---------+-------+</code></pre>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">+------+---------+-------+<br>|<span class="hljs-string"> id   </span>|<span class="hljs-string"> revenue </span>|<span class="hljs-string"> month </span>|<br>+------+---------+-------+<br>|<span class="hljs-string"> 1    </span>|<span class="hljs-string"> 8000    </span>|<span class="hljs-string"> Jan   </span>|<br>|<span class="hljs-string"> 2    </span>|<span class="hljs-string"> 9000    </span>|<span class="hljs-string"> Jan   </span>|<br>|<span class="hljs-string"> 3    </span>|<span class="hljs-string"> 10000   </span>|<span class="hljs-string"> Feb   </span>|<br>|<span class="hljs-string"> 1    </span>|<span class="hljs-string"> 7000    </span>|<span class="hljs-string"> Feb   </span>|<br>|<span class="hljs-string"> 1    </span>|<span class="hljs-string"> 6000    </span>|<span class="hljs-string"> Mar   </span>|<br>+------+---------+-------+<br></code></pre></td></tr></table></figure>
 <p>查询得到的结果表：</p>
-<pre><code class="hljs plain">+------+-------------+-------------+-------------+-----+-------------+
-| id   | Jan_Revenue | Feb_Revenue | Mar_Revenue | ... | Dec_Revenue |
-+------+-------------+-------------+-------------+-----+-------------+
-| 1    | 8000        | 7000        | 6000        | ... | null        |
-| 2    | 9000        | null        | null        | ... | null        |
-| 3    | null        | 10000       | null        | ... | null        |
-+------+-------------+-------------+-------------+-----+-------------+</code></pre>
+<figure class="highlight gherkin"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs gherkin">+------+-------------+-------------+-------------+-----+-------------+<br>|<span class="hljs-string"> id   </span>|<span class="hljs-string"> Jan_Revenue </span>|<span class="hljs-string"> Feb_Revenue </span>|<span class="hljs-string"> Mar_Revenue </span>|<span class="hljs-string"> ... </span>|<span class="hljs-string"> Dec_Revenue </span>|<br>+------+-------------+-------------+-------------+-----+-------------+<br>|<span class="hljs-string"> 1    </span>|<span class="hljs-string"> 8000        </span>|<span class="hljs-string"> 7000        </span>|<span class="hljs-string"> 6000        </span>|<span class="hljs-string"> ... </span>|<span class="hljs-string"> null        </span>|<br>|<span class="hljs-string"> 2    </span>|<span class="hljs-string"> 9000        </span>|<span class="hljs-string"> null        </span>|<span class="hljs-string"> null        </span>|<span class="hljs-string"> ... </span>|<span class="hljs-string"> null        </span>|<br>|<span class="hljs-string"> 3    </span>|<span class="hljs-string"> null        </span>|<span class="hljs-string"> 10000       </span>|<span class="hljs-string"> null        </span>|<span class="hljs-string"> ... </span>|<span class="hljs-string"> null        </span>|<br>+------+-------------+-------------+-------------+-----+-------------+<br></code></pre></td></tr></table></figure>
 <p>注意，结果表有 13 列 (1个部门 id 列 + 12个月份的收入列)。</p>
-<h4 id="题解-5"><a href="#题解-5" class="headerlink" title="题解"></a>题解</h4><pre><code class="hljs mysql">SELECT id,
-SUM(CASE month WHEN &#39;Jan&#39; THEN revenue END) AS &#39;Jan_Revenue&#39;,
-SUM(CASE month WHEN &#39;Feb&#39; THEN revenue END) AS &#39;Feb_Revenue&#39;,
-SUM(CASE month WHEN &#39;Mar&#39; THEN revenue END) AS &#39;Mar_Revenue&#39;,
-SUM(CASE month WHEN &#39;Apr&#39; THEN revenue END) AS &#39;Apr_Revenue&#39;,
-SUM(CASE month WHEN &#39;May&#39; THEN revenue END) AS &#39;May_Revenue&#39;,
-SUM(CASE month WHEN &#39;Jun&#39; THEN revenue END) AS &#39;Jun_Revenue&#39;,
-SUM(CASE month WHEN &#39;Jul&#39; THEN revenue END) AS &#39;Jul_Revenue&#39;,
-SUM(CASE month WHEN &#39;Aug&#39; THEN revenue END) AS &#39;Aug_Revenue&#39;,
-SUM(CASE month WHEN &#39;Sep&#39; THEN revenue END) AS &#39;Sep_Revenue&#39;,
-SUM(CASE month WHEN &#39;Oct&#39; THEN revenue END) AS &#39;Oct_Revenue&#39;,
-SUM(CASE month WHEN &#39;Nov&#39; THEN revenue END) AS &#39;Nov_Revenue&#39;,
-SUM(CASE month WHEN &#39;Dec&#39; THEN revenue END) AS &#39;Dec_Revenue&#39;
-FROM Department
-GROUP BY id
-ORDER BY id</code></pre>
+<h4 id="题解-5"><a href="#题解-5" class="headerlink" title="题解"></a>题解</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs mysql">SELECT id,<br>SUM(CASE month WHEN &#39;Jan&#39; THEN revenue END) AS &#39;Jan_Revenue&#39;,<br>SUM(CASE month WHEN &#39;Feb&#39; THEN revenue END) AS &#39;Feb_Revenue&#39;,<br>SUM(CASE month WHEN &#39;Mar&#39; THEN revenue END) AS &#39;Mar_Revenue&#39;,<br>SUM(CASE month WHEN &#39;Apr&#39; THEN revenue END) AS &#39;Apr_Revenue&#39;,<br>SUM(CASE month WHEN &#39;May&#39; THEN revenue END) AS &#39;May_Revenue&#39;,<br>SUM(CASE month WHEN &#39;Jun&#39; THEN revenue END) AS &#39;Jun_Revenue&#39;,<br>SUM(CASE month WHEN &#39;Jul&#39; THEN revenue END) AS &#39;Jul_Revenue&#39;,<br>SUM(CASE month WHEN &#39;Aug&#39; THEN revenue END) AS &#39;Aug_Revenue&#39;,<br>SUM(CASE month WHEN &#39;Sep&#39; THEN revenue END) AS &#39;Sep_Revenue&#39;,<br>SUM(CASE month WHEN &#39;Oct&#39; THEN revenue END) AS &#39;Oct_Revenue&#39;,<br>SUM(CASE month WHEN &#39;Nov&#39; THEN revenue END) AS &#39;Nov_Revenue&#39;,<br>SUM(CASE month WHEN &#39;Dec&#39; THEN revenue END) AS &#39;Dec_Revenue&#39;<br>FROM Department<br>GROUP BY id<br>ORDER BY id<br></code></pre></td></tr></table></figure>
 
-            </article>
+            </div>
             <hr>
             <div>
               <div class="post-metas mb-3">
@@ -432,11 +320,11 @@ ORDER BY id</code></pre>
                 
               </div>
               
-                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a href="https://zh.wikipedia.org/wiki/Wikipedia:CC_BY-SA_3.0%E5%8D%8F%E8%AE%AE%E6%96%87%E6%9C%AC" target="_blank" rel="nofollow noopener noopener">CC BY-SA 3.0协议</a> 。转载请注明出处！</p>
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
               
               
                 <div class="post-prevnext row">
-                  <div class="post-prev col-6">
+                  <article class="post-prev col-6">
                     
                     
                       <a href="/2020/note-the-power-of-habit/">
@@ -445,8 +333,8 @@ ORDER BY id</code></pre>
                         <span class="visible-mobile">上一篇</span>
                       </a>
                     
-                  </div>
-                  <div class="post-next col-6">
+                  </article>
+                  <article class="post-next col-6">
                     
                     
                       <a href="/2020/sql-on-leetcode/">
@@ -455,13 +343,13 @@ ORDER BY id</code></pre>
                         <i class="iconfont icon-arrowright"></i>
                       </a>
                     
-                  </div>
+                  </article>
                 </div>
               
             </div>
 
             
-          </div>
+          </article>
         </div>
       </div>
     </div>
@@ -469,7 +357,7 @@ ORDER BY id</code></pre>
       <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
         <div id="toc">
   <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
-  <div id="tocbot"></div>
+  <div class="toc-body" id="toc-body"></div>
 </div>
 
       </div>
@@ -481,16 +369,15 @@ ORDER BY id</code></pre>
 
 
     
-  </main>
 
-  
-    <a id="scroll-top-button" href="#" role="button">
-      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-    </a>
-  
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
      aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
@@ -511,123 +398,98 @@ ORDER BY id</code></pre>
     </div>
   </div>
 </div>
-  
-
-  
-
-  
-
-  <footer class="mt-5">
-  <div class="text-center py-3">
-    <div>
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-      <i class="iconfont icon-love"></i>
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
-        <span>Fluid</span></a>
-    </div>
     
 
     
+  </main>
 
-    
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
+  
+
+  
+
+  
 </footer>
 
 <!-- SCRIPTS -->
-<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
-<script  src="/js/main.js" ></script>
 
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
 
-  <script  src="/js/lazyload.js" ></script>
-
-
-
-  
-  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
   <script>
-    $(document).ready(function () {
-      var boardCtn = $('#board-ctn');
-      var boardTop = boardCtn.offset().top;
-
-      tocbot.init({
-        tocSelector: '#tocbot',
-        contentSelector: '.post-content',
-        headingSelector: 'h1,h2,h3,h4,h5,h6',
-        linkClass: 'tocbot-link',
-        activeLinkClass: 'tocbot-active-link',
-        listClass: 'tocbot-list',
-        isCollapsedClass: 'tocbot-is-collapsed',
-        collapsibleClass: 'tocbot-is-collapsible',
-        collapseDepth: 3,
-        scrollSmooth: true,
-        headingsOffset: -boardTop
-      });
-      if ($('.toc-list-item').length > 0) {
-        $('#toc').css('visibility', 'visible');
-      }
-    });
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
   </script>
 
 
-
-
-
-
-
-
-
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 <!-- Plugins -->
 
 
+  
+    <script  src="/js/lazyload.js" ></script>
+  
 
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
   <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "LeetCode部分SQL习题（二）&nbsp;",
-      ],
-      cursorChar: " ",
-      typeSpeed: 50,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
   </script>
-
-
 
 
 
   <script  src="/js/local-search.js" ></script>
   <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      searchFunc(path, 'local-search-input', 'local-search-result');
-      this.onclick = null
-    }
-  </script>
-
-
-
-  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
-
-  <script>
-    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
-      function () {
-        var element = document.createElement('a');
-        $(element).attr('data-fancybox', 'images');
-        $(element).attr('href', $(this).attr('src'));
-        $(this).wrap(element);
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
       }
-    );
+    })()
   </script>
 
 
@@ -644,6 +506,8 @@ ORDER BY id</code></pre>
 
 
 
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
 
 
 

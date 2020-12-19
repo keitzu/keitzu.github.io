@@ -1,7 +1,7 @@
+
+
 <!DOCTYPE html>
-<html lang="zh-CN">
-
-
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
 
 
 
@@ -19,22 +19,17 @@
   <meta name="keywords" content="">
   <title>柯梓的四叠半世界</title>
 
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
-<link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
 
-
-  <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
 
 
 <!-- 主题依赖的图标库，不要自行修改 -->
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_fmb4a04yx8h.css">
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
 
 
 
-<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_pjno9b9zyxs.css">
-
-
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
 
 
 <link  rel="stylesheet" href="/css/main.css" />
@@ -42,7 +37,13 @@
 <!-- 自定义样式保持在最底部 -->
 
 
-<meta name="generator" content="Hexo 4.2.0"></head>
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"keitzu.com","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":50,"cursorChar":"","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
 
 
 <body>
@@ -65,61 +66,85 @@
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/">
-              <i class="iconfont icon-home-fill"></i>
-              首页</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/archives/">
-              <i class="iconfont icon-archive-fill"></i>
-              归档</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/categories/">
-              <i class="iconfont icon-category-fill"></i>
-              分类</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/tags/">
-              <i class="iconfont icon-tags-fill"></i>
-              标签</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/links/">
-              <i class="iconfont icon-link-fill"></i>
-              友链</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
         
           
           
           
-          <li class="nav-item">
-            <a class="nav-link" href="/about/">
-              <i class="iconfont icon-user-fill"></i>
-              关于</a>
-          </li>
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
         
         
           <li class="nav-item" id="search-btn">
-            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;&nbsp;<i
-                class="iconfont icon-search"></i>&nbsp;&nbsp;</a>
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
           </li>
         
       </ul>
@@ -127,13 +152,13 @@
   </div>
 </nav>
 
-    <div class="view intro-2" id="background" parallax=true
-         style="background: url('https://s3.ax1x.com/2020/11/25/DUjCUe.jpg') no-repeat center center;
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://static.kezi.xyz/images/background/bg-fa74fc6.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
-          <div class="container text-center white-text fadeInUp">
-            <span class="h2" id="subtitle">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="Learn to Fail or Fail to Learn">
               
             </span>
 
@@ -166,28 +191,105 @@
     
     
       <div class="col-12 col-md-4 m-auto index-img">
-        <a href="/2020/tool-list/" target="_self">
-          <img src="https://s3.ax1x.com/2020/11/25/DUj9ED.jpg" srcset="/img/loading.gif" alt="常用工具与软件列表">
+        <a href="/2020/leetcode-week-1/" target="_self">
+          <img src="https://static.kezi.xyz/images/cover/leetcode-week-1.jpg" srcset="/img/loading.gif" alt="LeetCode每日一题 - 第一周">
         </a>
       </div>
     
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/tool-list/">常用工具与软件列表</a>
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/leetcode-week-1/">LeetCode每日一题 - 第一周</a>
+      </h1>
 
-      <a href="/2020/tool-list/" class="index-excerpt">
-        
-        
+      <p class="index-excerpt">
+        <a href="/2020/leetcode-week-1/">
           
-        
-        <div>本页面是一个关于个人常用的工具总结，包含了常用工具的名称、用途、下载地址或者链接，用于备份以及分享使用软件。强烈推荐或者常用软件会将名称加粗，列表不定时更新中！</div>
-      </a>
+          
+            
+          
+          力扣（LeetCode）是领扣网络旗下专注于程序员技术成长和企业技术人才服务的品牌，为全球程序员提供了专业的IT 技术职业化提升平台。每日练习LeetCode中的题目可以锻炼解决问题的思维能力，加深计算机数据结构与算法的理解。
+        </a>
+      </p>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-09-22
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-12-13 21:24" pubdate>
+              2020-12-13
+            </time>
           </div>
         
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>
+            
+          </div>
+        
+        
+          <div class="post-meta">
+            <i class="iconfont icon-tags"></i>
+            
+              <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+            
+              <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+            
+              <a href="/tags/LeetCode/">LeetCode</a>
+            
+              <a href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">每日一题</a>
+            
+              <a href="/tags/Java/">Java</a>
+            
+          </div>
+        
+      </div>
+    </article>
+  </div>
+
+  <div class="row mx-auto index-card">
+    
+    
+      <div class="col-12 col-md-4 m-auto index-img">
+        <a href="/2020/tool-list/" target="_self">
+          <img src="https://static.kezi.xyz/images/cover/default.jpg" srcset="/img/loading.gif" alt="常用工具与软件列表">
+        </a>
+      </div>
+    
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/tool-list/">常用工具与软件列表</a>
+      </h1>
+
+      <p class="index-excerpt">
+        <a href="/2020/tool-list/">
+          
+          
+            
+          
+          本页面是一个关于个人常用的工具总结，包含了常用工具的名称、用途、下载地址或者链接，用于备份以及分享使用软件。强烈推荐或者常用软件会将名称加粗，列表不定时更新中！
+        </a>
+      </p>
+
+      <div class="index-btm post-metas">
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-22 08:15" pubdate>
+              2020-09-22
+            </time>
+          </div>
+        
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E5%AE%9E%E7%94%A8%E6%80%BB%E7%BB%93/">实用总结</a>
+            
+          </div>
         
         
           <div class="post-meta">
@@ -199,10 +301,12 @@
             
               <a href="/tags/%E5%BA%94%E7%94%A8/">应用</a>
             
+              <a href="/tags/%E6%80%BB%E7%BB%93/">总结</a>
+            
           </div>
         
       </div>
-    </div>
+    </article>
   </div>
 
   <div class="row mx-auto index-card">
@@ -210,40 +314,57 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/note-the-power-of-habit/" target="_self">
-          <img src="https://s3.ax1x.com/2020/11/25/DUj9ED.jpg" srcset="/img/loading.gif" alt="《习惯的力量》读书笔记">
+          <img src="https://static.kezi.xyz/images/cover/note-the-power-of-habit.jpg" srcset="/img/loading.gif" alt="《习惯的力量》读书笔记">
         </a>
       </div>
     
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/note-the-power-of-habit/">《习惯的力量》读书笔记</a>
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/note-the-power-of-habit/">《习惯的力量》读书笔记</a>
+      </h1>
 
-      <a href="/2020/note-the-power-of-habit/" class="index-excerpt">
-        
-        
+      <p class="index-excerpt">
+        <a href="/2020/note-the-power-of-habit/">
           
-        
-        <div>《习惯的力量》是一本具有开创性的著作！它将让你重新审视自己的习惯。2012年在美国出版，随即成为一本疯行全球的“习惯改造指南”。它融合了目前最顶级的神经学家、心理学家、社会学家、顶尖企业家和优秀市场营销人员关于习惯的最新认知，同时综合了国际一流企业：宝洁、谷歌、微软，世界顶尖大学：哈佛、耶鲁、剑桥和MIT关于“习惯的力量”的最新研究结果！你想知道的所有关于“改变习惯的秘密”，都将在这本书中找到答案</div>
-      </a>
+          
+            
+          
+          《习惯的力量》是一本具有开创性的著作！它将让你重新审视自己的习惯。2012年在美国出版，随即成为一本疯行全球的“习惯改造指南”。它融合了目前最顶级的神经学家、心理学家、社会学家、顶尖企业家和优秀市场营销人员关于习惯的最新认知，同时综合了国际一流企业：宝洁、谷歌、微软，世界顶尖大学：哈佛、耶鲁、剑桥和MIT关于“习惯的力量”的最新研究结果！你想知道的所有关于“改变习惯的秘密”，都将在这本书中找到答案
+        </a>
+      </p>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-09-16
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-09-16 14:26" pubdate>
+              2020-09-16
+            </time>
           </div>
         
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E8%AF%BB%E4%B9%A6%E7%AC%94%E8%AE%B0/">读书笔记</a>
+            
+          </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
-              <a href="/tags/%E4%B9%A0%E6%83%AF/">习惯</a>
+              <a href="/tags/%E4%B9%A0%E6%83%AF%E7%9A%84%E5%8A%9B%E9%87%8F/">习惯的力量</a>
             
               <a href="/tags/%E9%98%85%E8%AF%BB/">阅读</a>
+            
+              <a href="/tags/%E7%AC%94%E8%AE%B0/">笔记</a>
             
           </div>
         
       </div>
-    </div>
+    </article>
   </div>
 
   <div class="row mx-auto index-card">
@@ -251,27 +372,42 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/sql-on-leetcode-2/" target="_self">
-          <img src="https://s3.ax1x.com/2020/11/25/DUj9ED.jpg" srcset="/img/loading.gif" alt="LeetCode部分SQL习题（二）">
+          <img src="https://static.kezi.xyz/images/cover/sql-on-leetcode-2.jpg" srcset="/img/loading.gif" alt="LeetCode部分SQL习题（二）">
         </a>
       </div>
     
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/sql-on-leetcode-2/">LeetCode部分SQL习题（二）</a>
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/sql-on-leetcode-2/">LeetCode部分SQL习题（二）</a>
+      </h1>
 
-      <a href="/2020/sql-on-leetcode-2/" class="index-excerpt">
-        
-        
+      <p class="index-excerpt">
+        <a href="/2020/sql-on-leetcode-2/">
           
-        
-        <div>SQL是一种特定目的编程语言，用于管理关系数据库管理系统（RDBMS），或在关系流数据管理系统（RDSMS）中进行流处理。</div>
-      </a>
+          
+            
+          
+          SQL是一种特定目的编程语言，用于管理关系数据库管理系统（RDBMS），或在关系流数据管理系统（RDSMS）中进行流处理。
+        </a>
+      </p>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-08-21
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-21 19:50" pubdate>
+              2020-08-21
+            </time>
           </div>
         
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+            
+          </div>
         
         
           <div class="post-meta">
@@ -284,7 +420,7 @@
           </div>
         
       </div>
-    </div>
+    </article>
   </div>
 
   <div class="row mx-auto index-card">
@@ -292,27 +428,42 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/sql-on-leetcode/" target="_self">
-          <img src="https://s3.ax1x.com/2020/11/25/DUj9ED.jpg" srcset="/img/loading.gif" alt="LeetCode部分SQL习题（一）">
+          <img src="https://static.kezi.xyz/images/cover/sql-on-leetcode.jpg" srcset="/img/loading.gif" alt="LeetCode部分SQL习题（一）">
         </a>
       </div>
     
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/sql-on-leetcode/">LeetCode部分SQL习题（一）</a>
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/sql-on-leetcode/">LeetCode部分SQL习题（一）</a>
+      </h1>
 
-      <a href="/2020/sql-on-leetcode/" class="index-excerpt">
-        
-        
+      <p class="index-excerpt">
+        <a href="/2020/sql-on-leetcode/">
           
-        
-        <div>SQL是一种特定目的编程语言，用于管理关系数据库管理系统（RDBMS），或在关系流数据管理系统（RDSMS）中进行流处理。</div>
-      </a>
+          
+            
+          
+          SQL是一种特定目的编程语言，用于管理关系数据库管理系统（RDBMS），或在关系流数据管理系统（RDSMS）中进行流处理。
+        </a>
+      </p>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-08-20
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-08-20 10:26" pubdate>
+              2020-08-20
+            </time>
           </div>
         
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E5%BA%93/">数据库</a>
+            
+          </div>
         
         
           <div class="post-meta">
@@ -325,7 +476,7 @@
           </div>
         
       </div>
-    </div>
+    </article>
   </div>
 
   <div class="row mx-auto index-card">
@@ -333,27 +484,42 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/character-strengths/" target="_self">
-          <img src="https://s3.ax1x.com/2020/11/25/DUj9ED.jpg" srcset="/img/loading.gif" alt="24种性格力量测试">
+          <img src="https://static.kezi.xyz/images/cover/default.jpg" srcset="/img/loading.gif" alt="24种性格力量测试">
         </a>
       </div>
     
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/character-strengths/">24种性格力量测试</a>
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/character-strengths/">24种性格力量测试</a>
+      </h1>
 
-      <a href="/2020/character-strengths/" class="index-excerpt">
-        
-        
+      <p class="index-excerpt">
+        <a href="/2020/character-strengths/">
           
-        
-        <div>在哈佛幸福课第13讲中，提到了一种应用自身人格力量来获得积极心态、对抗逆境的方法。VIA（行动价值协会）性格力量手册是由Seligman和Peterson提出，主张通过鉴别人的美德、力量与长处，并利用这些人格力量来获得积极的心态、实现自我和谐的奋斗旅程。</div>
-      </a>
+          
+            
+          
+          在哈佛幸福课第13讲中，提到了一种应用自身人格力量来获得积极心态、对抗逆境的方法。VIA（行动价值协会）性格力量手册是由Seligman和Peterson提出，主张通过鉴别人的美德、力量与长处，并利用这些人格力量来获得积极的心态、实现自我和谐的奋斗旅程。
+        </a>
+      </p>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-05-20
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-05-20 14:56" pubdate>
+              2020-05-20
+            </time>
           </div>
         
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E8%AE%B0%E5%BD%95/">记录</a>
+            
+          </div>
         
         
           <div class="post-meta">
@@ -366,7 +532,7 @@
           </div>
         
       </div>
-    </div>
+    </article>
   </div>
 
   <div class="row mx-auto index-card">
@@ -374,42 +540,57 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/sorting-algorithm/" target="_self">
-          <img src="https://s3.ax1x.com/2020/11/25/DUj9ED.jpg" srcset="/img/loading.gif" alt="经典排序算法总结">
+          <img src="https://static.kezi.xyz/images/cover/default.jpg" srcset="/img/loading.gif" alt="经典排序算法总结">
         </a>
       </div>
     
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/sorting-algorithm/">经典排序算法总结</a>
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/sorting-algorithm/">经典排序算法总结</a>
+      </h1>
 
-      <a href="/2020/sorting-algorithm/" class="index-excerpt">
-        
-        
+      <p class="index-excerpt">
+        <a href="/2020/sorting-algorithm/">
           
-        
-        <div>排序算法是最基础的算法之一，可以使用的场景也很多。不同的排序算法有不同的优缺点，这里列举了八种常用的排序算法。</div>
-      </a>
+          
+            
+          
+          排序算法是最基础的算法之一，可以使用的场景也很多。不同的排序算法有不同的优缺点，这里列举了八种常用的排序算法。
+        </a>
+      </p>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-05-15
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-05-15 10:30" pubdate>
+              2020-05-15
+            </time>
           </div>
         
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>
+            
+          </div>
         
         
           <div class="post-meta">
             <i class="iconfont icon-tags"></i>
             
+              <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+            
               <a href="/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
             
               <a href="/tags/%E6%8E%92%E5%BA%8F/">排序</a>
             
-              <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
-            
           </div>
         
       </div>
-    </div>
+    </article>
   </div>
 
   <div class="row mx-auto index-card">
@@ -417,27 +598,42 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2020/regular-expression/" target="_self">
-          <img src="https://s3.ax1x.com/2020/11/25/DUj9ED.jpg" srcset="/img/loading.gif" alt="常用正则表达式总结">
+          <img src="https://static.kezi.xyz/images/cover/regular-expression.jpg" srcset="/img/loading.gif" alt="常用正则表达式总结">
         </a>
       </div>
     
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2020/regular-expression/">常用正则表达式总结</a>
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2020/regular-expression/">常用正则表达式总结</a>
+      </h1>
 
-      <a href="/2020/regular-expression/" class="index-excerpt">
-        
-        
+      <p class="index-excerpt">
+        <a href="/2020/regular-expression/">
           
-        
-        <div>正则表达式(regular expression)描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。</div>
-      </a>
+          
+            
+          
+          正则表达式(regular expression)描述了一种字符串匹配的模式（pattern），可以用来检查一个串是否含有某种子串、将匹配的子串替换或者从某个串中取出符合某个条件的子串等。
+        </a>
+      </p>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2020-05-13
+            <i class="iconfont icon-date"></i>
+            <time datetime="2020-05-13 14:37" pubdate>
+              2020-05-13
+            </time>
           </div>
         
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E5%AE%9E%E7%94%A8%E6%80%BB%E7%BB%93/">实用总结</a>
+            
+          </div>
         
         
           <div class="post-meta">
@@ -448,7 +644,7 @@
           </div>
         
       </div>
-    </div>
+    </article>
   </div>
 
   <div class="row mx-auto index-card">
@@ -456,27 +652,42 @@
     
       <div class="col-12 col-md-4 m-auto index-img">
         <a href="/2019/sequence-list/" target="_self">
-          <img src="https://s3.ax1x.com/2020/11/25/DUj9ED.jpg" srcset="/img/loading.gif" alt="顺序表相关习题(C语言实现)">
+          <img src="https://static.kezi.xyz/images/cover/default.jpg" srcset="/img/loading.gif" alt="顺序表相关习题(C语言实现)">
         </a>
       </div>
     
-    <div class="col-12 col-md-8 mx-auto index-info">
-      <a class="index-header" href="/2019/sequence-list/">顺序表相关习题(C语言实现)</a>
+    <article class="col-12 col-md-8 mx-auto index-info">
+      <h1 class="index-header">
+        
+        <a href="/2019/sequence-list/">顺序表相关习题(C语言实现)</a>
+      </h1>
 
-      <a href="/2019/sequence-list/" class="index-excerpt">
-        
-        
+      <p class="index-excerpt">
+        <a href="/2019/sequence-list/">
           
-        
-        <div>顺序表的定义线性表的顺序存储又称为顺序表。它是一组地址连续的存储单元，依次存储线性表中的数据元素，从而使得逻辑上相邻的元素在物理上也相邻。</div>
-      </a>
+          
+            
+          
+          顺序表的定义线性表的顺序存储又称为顺序表。它是一组地址连续的存储单元，依次存储线性表中的数据元素，从而使得逻辑上相邻的元素在物理上也相邻。
+        </a>
+      </p>
 
       <div class="index-btm post-metas">
         
           <div class="post-meta mr-3">
-            <i class="iconfont icon-date"></i>&nbsp;2019-08-10
+            <i class="iconfont icon-date"></i>
+            <time datetime="2019-08-10 08:13" pubdate>
+              2019-08-10
+            </time>
           </div>
         
+        
+          <div class="post-meta mr-3">
+            <i class="iconfont icon-category"></i>
+            
+              <a href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>
+            
+          </div>
         
         
           <div class="post-meta">
@@ -484,14 +695,16 @@
             
               <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
             
-              <a href="/tags/%E9%A1%BA%E5%BA%8F%E8%A1%A8/">顺序表</a>
+              <a href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
             
               <a href="/tags/C%E8%AF%AD%E8%A8%80/">C语言</a>
+            
+              <a href="/tags/%E9%A1%BA%E5%BA%8F%E8%A1%A8/">顺序表</a>
             
           </div>
         
       </div>
-    </div>
+    </article>
   </div>
 
 
@@ -504,16 +717,15 @@
         </div>
       </div>
     
-  </main>
 
-  
-    <a id="scroll-top-button" href="#" role="button">
-      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
-    </a>
-  
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
 
-  
-    <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
      aria-hidden="true">
   <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
     <div class="modal-content">
@@ -534,79 +746,94 @@
     </div>
   </div>
 </div>
-  
-
-  
-
-  
-
-  <footer class="mt-5">
-  <div class="text-center py-3">
-    <div>
-      <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a>
-      <i class="iconfont icon-love"></i>
-      <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener">
-        <span>Fluid</span></a>
-    </div>
     
 
     
+  </main>
 
-    
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
   </div>
+  
+
+  
+
+  
 </footer>
 
 <!-- SCRIPTS -->
-<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
-<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
-<script  src="/js/main.js" ></script>
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
 
 
-  <script  src="/js/lazyload.js" ></script>
-
-
-
-
-
-
-
-
-
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
 
 <!-- Plugins -->
 
 
+  
+    <script  src="/js/lazyload.js" ></script>
+  
 
-  <script  src="https://cdn.staticfile.org/typed.js/2.0.11/typed.min.js" ></script>
+
+
+  
+
+
+
+
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
   <script>
-    var typed = new Typed('#subtitle', {
-      strings: [
-        '  ',
-        "Learn to Fail or Fail to Learn&nbsp;",
-      ],
-      cursorChar: " ",
-      typeSpeed: 50,
-      loop: false,
-    });
-    typed.stop();
-    $(document).ready(function () {
-      $(".typed-cursor").addClass("h2");
-      typed.start();
-    });
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
   </script>
-
-
 
 
 
   <script  src="/js/local-search.js" ></script>
   <script>
-    var path = "/local-search.xml";
-    var inputArea = document.querySelector("#local-search-input");
-    inputArea.onclick = function () {
-      searchFunc(path, 'local-search-input', 'local-search-result');
-      this.onclick = null
-    }
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
   </script>
 
 
@@ -623,8 +850,8 @@
 
 
 
-
-
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
 
 
 
