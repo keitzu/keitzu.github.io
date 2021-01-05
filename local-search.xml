@@ -4,37 +4,6 @@
   
   
   <entry>
-    <title>PicGo + 腾讯云快速上传截图 - Hexo博客图床搭建</title>
-    <link href="/2020/picgo/"/>
-    <url>/2020/picgo/</url>
-    
-    <content type="html"><![CDATA[<p><strong>PicGo是一个用于快速上传图片并获取图片 URL 链接的工具，我们可以配置PicGo与对象存储服务来实现截图的快速上传，这里我选用腾讯云对象存储作为示范。</strong></p><a id="more"></a><p>工具列表：</p><ul><li><a href="https://molunerfinn.com/PicGo/">Picgo</a></li><li><a href="https://console.cloud.tencent.com/cos5">腾讯云对象存储</a></li></ul><h2 id="1、PicGo下载"><a href="#1、PicGo下载" class="headerlink" title="1、PicGo下载"></a>1、PicGo下载</h2><p><img src="https://static.kezi.xyz/images/post/2020/picgo-1.png" alt="PicGO主页"></p><p>下载地址：<a href="https://github.com/Molunerfinn/picgo/releases">Picgo</a></p><p> 特色功能</p><ul><li><p>支持拖拽图片上传</p></li><li><p>支持快捷键上传剪贴板里第一张图片</p></li><li><p>Windows 和 macOS 支持右键图片文件通过菜单上传 (v2.1.0+)</p></li><li><p>上传图片后自动复制链接到剪贴板</p></li><li><p>支持自定义复制到剪贴板的链接格式</p></li><li><p>支持修改快捷键，默认快速上传快捷键：<code>command+shift+p</code>（macOS）| <code>control+shift+p</code>（Windows\Linux)</p></li><li><p>支持插件系统，已有插件支持 Gitee、青云等第三方图床</p><ul><li>更多第三方插件以及使用了 PicGo 底层的应用可以在 <a href="https://github.com/PicGo/Awesome-PicGo">Awesome-PicGo</a> 找到。欢迎贡献！    </li></ul></li></ul><p>注意</p><p>请确保你安装了 Node.js， 并且版本 &gt;= 8。</p><h2 id="2、腾讯云相关配置"><a href="#2、腾讯云相关配置" class="headerlink" title="2、腾讯云相关配置"></a>2、腾讯云相关配置</h2><p>打开并登陆<a href="https://console.cloud.tencent.com/cos5/bucket">腾讯COS存储桶列表</a>创建存储桶，访问权限设置为共有读私有写。对象存储新用户有6个月的免费额度。</p><p><img src="https://static.kezi.xyz/images/post/2020/picgo-2.png" alt="创建存储桶"></p><p>打开<a href="https://console.cloud.tencent.com/cam/capi">API密钥管理</a>新建密钥，找到自己的<code>APPID</code>、<code>SecretId</code>、<code>SecretKey</code>。</p><p><img src="https://static.kezi.xyz/images/post/2020/picgo-3.png" alt="密钥管理"></p><h2 id="3、PicGo相关配置"><a href="#3、PicGo相关配置" class="headerlink" title="3、PicGo相关配置"></a>3、PicGo相关配置</h2><p>打开PicGo - 图床设置 - 腾讯云COS，按照提示填写配置信息。</p><p>存储的空间名是你的bucket名字。</p><p>存储的区域需要额外注意，请到bucket列表里打开需要上传的bucket空间，然后如图可以看到对应的区域以及区域代码。</p><p>如果你想把图片上传到你的bucket空间的某个文件夹下，则需要在PicGo里的<code>指定存储路径</code>里加上你的文件夹路径。比如<code>temp/</code>（注意一定要加<code>/</code>）</p><p><img src="https://static.kezi.xyz/images/post/2020/picgo-4.png" alt="腾讯云COS配置"></p><p>记得点击确定以及设置为默认图床。</p><p>然后打开PicGO设置界面设置快捷键</p><p><img src="https://static.kezi.xyz/images/post/2020/picgo-5.png" alt="设置快捷键"></p><p>最小化程序，使用QQ之类的截图然后就可以快捷键上传图片了。图片上传完成之后会自动复制带链接的Markdown图片格式，你也可以自定义格式。</p><p>另外，建议将上传前重命名打开，截图自带的是时间命名，不好管理。</p><p><img src="https://static.kezi.xyz/images/post/2020/picgo-6.png" alt="上传前重命名"></p>]]></content>
-    
-    
-    <categories>
-      
-      <category>实用总结</category>
-      
-    </categories>
-    
-    
-    <tags>
-      
-      <tag>Picgo</tag>
-      
-      <tag>腾讯云</tag>
-      
-      <tag>对象存储</tag>
-      
-      <tag>图床</tag>
-      
-    </tags>
-    
-  </entry>
-  
-  
-  
-  <entry>
     <title>LeetCode每日一题 - 第四周</title>
     <link href="/2021/leetcode-week-4/"/>
     <url>/2021/leetcode-week-4/</url>
@@ -126,6 +95,37 @@
       <tag>每日一题</tag>
       
       <tag>Java</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
+    <title>PicGo + 腾讯云快速上传截图 - Hexo博客图床搭建</title>
+    <link href="/2020/picgo/"/>
+    <url>/2020/picgo/</url>
+    
+    <content type="html"><![CDATA[<p><strong>PicGo是一个用于快速上传图片并获取图片 URL 链接的工具，我们可以配置PicGo与对象存储服务来实现截图的快速上传，这里我选用腾讯云对象存储作为示范。</strong></p><a id="more"></a><p>工具列表：</p><ul><li><a href="https://molunerfinn.com/PicGo/">Picgo</a></li><li><a href="https://console.cloud.tencent.com/cos5">腾讯云对象存储</a></li></ul><h2 id="1、PicGo下载"><a href="#1、PicGo下载" class="headerlink" title="1、PicGo下载"></a>1、PicGo下载</h2><p><img src="https://static.kezi.xyz/images/post/2020/picgo-1.png" alt="PicGO主页"></p><p>下载地址：<a href="https://github.com/Molunerfinn/picgo/releases">Picgo</a></p><p> 特色功能</p><ul><li><p>支持拖拽图片上传</p></li><li><p>支持快捷键上传剪贴板里第一张图片</p></li><li><p>Windows 和 macOS 支持右键图片文件通过菜单上传 (v2.1.0+)</p></li><li><p>上传图片后自动复制链接到剪贴板</p></li><li><p>支持自定义复制到剪贴板的链接格式</p></li><li><p>支持修改快捷键，默认快速上传快捷键：<code>command+shift+p</code>（macOS）| <code>control+shift+p</code>（Windows\Linux)</p></li><li><p>支持插件系统，已有插件支持 Gitee、青云等第三方图床</p><ul><li>更多第三方插件以及使用了 PicGo 底层的应用可以在 <a href="https://github.com/PicGo/Awesome-PicGo">Awesome-PicGo</a> 找到。欢迎贡献！    </li></ul></li></ul><p>注意</p><p>请确保你安装了 Node.js， 并且版本 &gt;= 8。</p><h2 id="2、腾讯云相关配置"><a href="#2、腾讯云相关配置" class="headerlink" title="2、腾讯云相关配置"></a>2、腾讯云相关配置</h2><p>打开并登陆<a href="https://console.cloud.tencent.com/cos5/bucket">腾讯COS存储桶列表</a>创建存储桶，访问权限设置为共有读私有写。对象存储新用户有6个月的免费额度。</p><p><img src="https://static.kezi.xyz/images/post/2020/picgo-2.png" alt="创建存储桶"></p><p>打开<a href="https://console.cloud.tencent.com/cam/capi">API密钥管理</a>新建密钥，找到自己的<code>APPID</code>、<code>SecretId</code>、<code>SecretKey</code>。</p><p><img src="https://static.kezi.xyz/images/post/2020/picgo-3.png" alt="密钥管理"></p><h2 id="3、PicGo相关配置"><a href="#3、PicGo相关配置" class="headerlink" title="3、PicGo相关配置"></a>3、PicGo相关配置</h2><p>打开PicGo - 图床设置 - 腾讯云COS，按照提示填写配置信息。</p><p>存储的空间名是你的bucket名字。</p><p>存储的区域需要额外注意，请到bucket列表里打开需要上传的bucket空间，然后如图可以看到对应的区域以及区域代码。</p><p>如果你想把图片上传到你的bucket空间的某个文件夹下，则需要在PicGo里的<code>指定存储路径</code>里加上你的文件夹路径。比如<code>temp/</code>（注意一定要加<code>/</code>）</p><p><img src="https://static.kezi.xyz/images/post/2020/picgo-4.png" alt="腾讯云COS配置"></p><p>记得点击确定以及设置为默认图床。</p><p>然后打开PicGO设置界面设置快捷键</p><p><img src="https://static.kezi.xyz/images/post/2020/picgo-5.png" alt="设置快捷键"></p><p>最小化程序，使用QQ之类的截图然后就可以快捷键上传图片了。图片上传完成之后会自动复制带链接的Markdown图片格式，你也可以自定义格式。</p><p>另外，建议将上传前重命名打开，截图自带的是时间命名，不好管理。</p><p><img src="https://static.kezi.xyz/images/post/2020/picgo-6.png" alt="上传前重命名"></p>]]></content>
+    
+    
+    <categories>
+      
+      <category>实用总结</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>Picgo</tag>
+      
+      <tag>腾讯云</tag>
+      
+      <tag>对象存储</tag>
+      
+      <tag>图床</tag>
       
     </tags>
     
