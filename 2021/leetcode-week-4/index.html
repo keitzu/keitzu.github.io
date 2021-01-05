@@ -196,7 +196,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      611 字
+      1.1k 字
     </span>
   
 
@@ -206,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      8
+      15
        分钟
     </span>
   
@@ -266,6 +266,27 @@
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">fib</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">if</span>(n == <span class="hljs-number">0</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(n == <span class="hljs-number">1</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> fib(n - <span class="hljs-number">2</span>) + fib(n - <span class="hljs-number">1</span>);<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>循环的方式</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">fib</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span>[] nums = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">3</span>];<br>        nums[<span class="hljs-number">1</span>] = <span class="hljs-number">0</span>;<br>        nums[<span class="hljs-number">2</span>] = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">if</span>(n == <span class="hljs-number">0</span>)&#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>        &#125;<br>        <span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>;<br>        <span class="hljs-keyword">while</span>(i &lt;= n)&#123;<br>            nums[<span class="hljs-number">0</span>] = nums[<span class="hljs-number">1</span>];<br>            nums[<span class="hljs-number">1</span>] = nums[<span class="hljs-number">2</span>];<br>            nums[<span class="hljs-number">2</span>] = nums[<span class="hljs-number">0</span>] + nums[<span class="hljs-number">1</span>];<br>            i++;<br>        &#125;<br>        <span class="hljs-keyword">return</span> nums[<span class="hljs-number">2</span>];<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="830-较大分组的位置"><a href="#830-较大分组的位置" class="headerlink" title="830. 较大分组的位置"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/positions-of-large-groups/">830. 较大分组的位置</a></h2><p>日期：<code>2021/1/5</code></p>
+<p>在一个由小写字母构成的字符串 <code>s</code> 中，包含由一些连续的相同字符所构成的分组。</p>
+<p>例如，在字符串 <code>s = &quot;abbxxxxzyy&quot;</code> 中，就含有 <code>&quot;a&quot;</code>, <code>&quot;bb&quot;</code>, <code>&quot;xxxx&quot;</code>, <code>&quot;z&quot;</code> 和 <code>&quot;yy&quot;</code> 这样的一些分组。</p>
+<p>分组可以用区间 <code>[start, end]</code> 表示，其中 <code>start</code> 和 <code>end</code> 分别表示该分组的起始和终止位置的下标。上例中的 <code>&quot;xxxx&quot;</code> 分组用区间表示为 <code>[3,6]</code> 。</p>
+<p>我们称所有包含大于或等于三个连续字符的分组为 <strong>较大分组</strong> 。</p>
+<p>找到每一个 <strong>较大分组</strong> 的区间，<strong>按起始位置下标递增顺序排序后</strong>，返回结果。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs lua">输入：s = <span class="hljs-string">&quot;abbxxxxzzy&quot;</span><br>输出：<span class="hljs-string">[[3,6]]</span><br>解释：<span class="hljs-string">&quot;xxxx&quot;</span> 是一个起始于 <span class="hljs-number">3</span> 且终止于 <span class="hljs-number">6</span> 的较大分组。<br></code></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs nix">输入：<span class="hljs-attr">s</span> = <span class="hljs-string">&quot;abc&quot;</span><br>输出：[]<br>解释：<span class="hljs-string">&quot;a&quot;</span>,<span class="hljs-string">&quot;b&quot;</span> 和 <span class="hljs-string">&quot;c&quot;</span> 均不是符合要求的较大分组。<br></code></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs lua">输入：s = <span class="hljs-string">&quot;abcdddeeeeaabbbcd&quot;</span><br>输出：<span class="hljs-string">[[3,5],[6,9],[12,14]]</span><br>解释：较大分组为 <span class="hljs-string">&quot;ddd&quot;</span>, <span class="hljs-string">&quot;eeee&quot;</span> 和 <span class="hljs-string">&quot;bbb&quot;</span><br></code></pre></td></tr></table></figure>
+<p><strong>示例 4：</strong></p>
+<figure class="highlight nix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs nix">输入：<span class="hljs-attr">s</span> = <span class="hljs-string">&quot;aba&quot;</span><br>输出：[]<br></code></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= s.length &lt;= 1000</code></li>
+<li><code>s</code> 仅含小写英文字母</li>
+</ul>
+<h3 id="题解-2"><a href="#题解-2" class="headerlink" title="题解"></a>题解</h3><p>依次遍历数组，记录字符出现次数，若大于3则在答案中加入位置。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-keyword">public</span> List&lt;List&lt;Integer&gt;&gt; largeGroupPositions(String s) &#123;<br>        <span class="hljs-keyword">char</span>[] charArray = s.toCharArray();<br>        List&lt;List&lt;Integer&gt;&gt; ans = <span class="hljs-keyword">new</span> ArrayList&lt;List&lt;Integer&gt;&gt;();<br>        List&lt;Integer&gt; pos = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();<br>        <span class="hljs-keyword">int</span> start = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> count = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; s.length(); i++)&#123;<br>            <span class="hljs-keyword">if</span>(charArray[i] == charArray[i - <span class="hljs-number">1</span>])&#123;<br>                count++;<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                <span class="hljs-keyword">if</span>(count &gt; <span class="hljs-number">2</span>)&#123;<br>                    pos.add(start);<br>                    pos.add(i - <span class="hljs-number">1</span>);<br>                    ans.add(pos);<br>                    pos = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();<br>                &#125;<br>                start = i;<br>                count = <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(count &gt; <span class="hljs-number">2</span>)&#123;<br>            pos.add(start);<br>            pos.add(s.length() - <span class="hljs-number">1</span>);<br>            ans.add(pos);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
             </div>
             <hr>
@@ -303,6 +324,12 @@
                 <div class="post-prevnext row">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/picgo/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">PicGo + 腾讯云快速上传截图 - Hexo博客图床搭建</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
