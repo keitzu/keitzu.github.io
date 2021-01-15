@@ -196,7 +196,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      1.1k 字
+      1.2k 字
     </span>
   
 
@@ -273,7 +273,10 @@
 <h4 id="代码实现-2"><a href="#代码实现-2" class="headerlink" title="代码实现"></a>代码实现</h4><p>其他地方无需改动，只需修改查找方法</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-comment">// 查找节点的代表</span><br><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;<br>    <span class="hljs-keyword">if</span>(parent[x] != x)&#123;<br>        <span class="hljs-comment">// 将其父节点指向代表节点</span><br>        parent[x] = find(parent[x]);<br>    &#125;<br>    <span class="hljs-keyword">return</span> parent[x];<br>&#125;<br></code></pre></td></tr></table></figure>
 <p>注意：引入路径压缩会使秩不准确。</p>
-<h2 id="四、-并查集的应用"><a href="#四、-并查集的应用" class="headerlink" title="四、 并查集的应用"></a>四、 并查集的应用</h2>
+<h2 id="四、-并查集的应用"><a href="#四、-并查集的应用" class="headerlink" title="四、 并查集的应用"></a>四、 并查集的应用</h2><p><a href="https://keitzu.com/2021/leetcode-week-5/#1202-%E4%BA%A4%E6%8D%A2%E5%AD%97%E7%AC%A6%E4%B8%B2%E4%B8%AD%E7%9A%84%E5%85%83%E7%B4%A0">1202. 交换字符串中的元素</a></p>
+<p><a href="https://keitzu.com/2021/leetcode-week-5/#684-%E5%86%97%E4%BD%99%E8%BF%9E%E6%8E%A5">684. 冗余连接</a></p>
+<p><a href="https://keitzu.com/2021/leetcode-week-5/#947-%E7%A7%BB%E9%99%A4%E6%9C%80%E5%A4%9A%E7%9A%84%E5%90%8C%E8%A1%8C%E6%88%96%E5%90%8C%E5%88%97%E7%9F%B3%E5%A4%B4">947. 移除最多的同行或同列石头</a></p>
+
             </div>
             <hr>
             <div>
