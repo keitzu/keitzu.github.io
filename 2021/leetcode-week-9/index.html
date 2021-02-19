@@ -1,0 +1,564 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="柯梓">
+  <meta name="keywords" content="">
+  <title>LeetCode每日一题 - 柯梓的四叠半世界</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"keitzu.com","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":50,"cursorChar":"","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>柯梓的四叠半世界</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://static.kezi.xyz/images/background/bg-fa74fc6.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="LeetCode每日一题">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-10 11:08" pubdate>
+        2021年2月10日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      30
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">LeetCode每日一题</h1>
+            
+            <div class="markdown-body">
+              <p>力扣（<em>LeetCode</em>）是领扣网络旗下专注于程序员技术成长和企业技术人才服务的品牌，为全球程序员提供了专业的IT 技术职业化提升平台。每日练习LeetCode中的题目可以锻炼解决问题的思维能力，加深计算机数据结构与算法的理解。</p>
+<a id="more"></a>
+<h2 id="665-非递减数列"><a href="#665-非递减数列" class="headerlink" title="665. 非递减数列"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/non-decreasing-array/">665. 非递减数列</a></h2><p>日期：<code>2021/02/07</code></p>
+<p>给你一个长度为 <code>n</code> 的整数数组，请你判断在 <strong>最多</strong> 改变 <code>1</code> 个元素的情况下，该数组能否变成一个非递减数列。</p>
+<p>我们是这样定义一个非递减数列的： 对于数组中任意的 <code>i</code> <code>(0 &lt;= i &lt;= n-2)</code>，总满足 <code>nums[i] &lt;= nums[i + 1]</code>。</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">输入: nums = [4,2,3]</span><br><span class="hljs-section">输出: true</span><br><span class="hljs-section">解释: 你可以通过把第一个4变成1来使得它成为一个非递减数列。</span><br></code></pre></td></tr></table></figure>
+<p><strong>示例 2:</strong></p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">输入: nums = [4,2,1]</span><br><span class="hljs-section">输出: false</span><br><span class="hljs-section">解释: 你不能在只改变一个元素的情况下将其变为非递减数列。</span><br></code></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 10 ^ 4</code></li>
+<li><code>- 10 ^ 5 &lt;= nums[i] &lt;= 10 ^ 5</code></li>
+</ul>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">checkPossibility</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">1</span>; i &lt; nums.length; i++)&#123;<br>            <span class="hljs-keyword">if</span>(nums[i - <span class="hljs-number">1</span>] &gt; nums[i])&#123;<br>                count++;<br>                <span class="hljs-keyword">if</span>(count &gt; <span class="hljs-number">1</span>)&#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>                &#125;<br>                <span class="hljs-keyword">if</span> (i &gt; <span class="hljs-number">1</span> &amp;&amp; nums[i] &lt; nums[i - <span class="hljs-number">2</span>]) &#123;<br>                    nums[i] = nums[i - <span class="hljs-number">1</span>];<br>                &#125;<br>            &#125;<br><br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="978-最长湍流子数组"><a href="#978-最长湍流子数组" class="headerlink" title="978. 最长湍流子数组"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-turbulent-subarray/">978. 最长湍流子数组</a></h2><p>日期：<code>2021/02/08</code></p>
+<p>当 <code>A</code> 的子数组 <code>A[i], A[i+1], ..., A[j]</code> 满足下列条件时，我们称其为<em>湍流子数组</em>：</p>
+<ul>
+<li>若 <code>i &lt;= k &lt; j</code>，当 <code>k</code> 为奇数时， <code>A[k] &gt; A[k+1]</code>，且当 <code>k</code> 为偶数时，<code>A[k] &lt; A[k+1]</code>；</li>
+<li><strong>或</strong> 若 <code>i &lt;= k &lt; j</code>，当 <code>k</code> 为偶数时，<code>A[k] &gt; A[k+1]</code> ，且当 <code>k</code> 为奇数时， <code>A[k] &lt; A[k+1]</code>。</li>
+</ul>
+<p>也就是说，如果比较符号在子数组中的每个相邻元素对之间翻转，则该子数组是湍流子数组。</p>
+<p>返回 <code>A</code> 的最大湍流子数组的<strong>长度</strong>。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs dns">输入：[<span class="hljs-number">9,4,2,10</span>,<span class="hljs-number">7,8,8,1</span>,<span class="hljs-number">9</span>]<br>输出：<span class="hljs-number">5</span><br>解释：(<span class="hljs-keyword">A</span>[<span class="hljs-number">1</span>] &gt; <span class="hljs-keyword">A</span>[<span class="hljs-number">2</span>] &lt; <span class="hljs-keyword">A</span>[<span class="hljs-number">3</span>] &gt; <span class="hljs-keyword">A</span>[<span class="hljs-number">4</span>] &lt; <span class="hljs-keyword">A</span>[<span class="hljs-number">5</span>])<br></code></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs accesslog">输入：<span class="hljs-string">[4,8,12,16]</span><br>输出：<span class="hljs-number">2</span><br></code></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs css">输入：<span class="hljs-selector-attr">[100]</span><br>输出：1<br></code></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ol>
+<li><code>1 &lt;= A.length &lt;= 40000</code></li>
+<li><code>0 &lt;= A[i] &lt;= 10^9</code></li>
+</ol>
+<h3 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maxTurbulenceSize</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] arr)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> n = arr.length;<br>        <span class="hljs-keyword">int</span> ret = <span class="hljs-number">1</span>;<br>        <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = <span class="hljs-number">0</span>;<br><br>        <span class="hljs-keyword">while</span> (right &lt; n - <span class="hljs-number">1</span>) &#123;<br>            <span class="hljs-keyword">if</span> (left == right) &#123;<br>                <span class="hljs-keyword">if</span> (arr[left] == arr[left + <span class="hljs-number">1</span>]) &#123;<br>                    left++;<br>                &#125;<br>                right++;<br>            &#125; <span class="hljs-keyword">else</span> &#123;<br>                <span class="hljs-keyword">if</span> (arr[right - <span class="hljs-number">1</span>] &lt; arr[right] &amp;&amp; arr[right] &gt; arr[right + <span class="hljs-number">1</span>]) &#123;<br>                    right++;<br>                &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (arr[right - <span class="hljs-number">1</span>] &gt; arr[right] &amp;&amp; arr[right] &lt; arr[right + <span class="hljs-number">1</span>]) &#123;<br>                    right++;<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    left = right;<br>                &#125;<br>            &#125;<br>            ret = Math.max(ret, right - left + <span class="hljs-number">1</span>);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ret;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="992-K-个不同整数的子数组"><a href="#992-K-个不同整数的子数组" class="headerlink" title="992. K 个不同整数的子数组"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/subarrays-with-k-different-integers/">992. K 个不同整数的子数组</a></h2><p>日期：<code>2021/02/09</code></p>
+<p>给定一个正整数数组 <code>A</code>，如果 <code>A</code> 的某个子数组中不同整数的个数恰好为 <code>K</code>，则称 <code>A</code> 的这个连续、不一定不同的子数组为<em>好子数组</em>。</p>
+<p>（例如，<code>[1,2,3,1,2]</code> 中有 <code>3</code> 个不同的整数：<code>1</code>，<code>2</code>，以及 <code>3</code>。）</p>
+<p>返回 <code>A</code> 中<em>好子数组</em>的数目。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs prolog">输入：<span class="hljs-symbol">A</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>], <span class="hljs-symbol">K</span> = <span class="hljs-number">2</span><br>输出：<span class="hljs-number">7</span><br>解释：恰好由 <span class="hljs-number">2</span> 个不同整数组成的子数组：[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>], [<span class="hljs-number">2</span>,<span class="hljs-number">1</span>], [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>], [<span class="hljs-number">2</span>,<span class="hljs-number">3</span>], [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>], [<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>], [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">2</span>].<br></code></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight prolog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs prolog">输入：<span class="hljs-symbol">A</span> = [<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>], <span class="hljs-symbol">K</span> = <span class="hljs-number">3</span><br>输出：<span class="hljs-number">3</span><br>解释：恰好由 <span class="hljs-number">3</span> 个不同整数组成的子数组：[<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>], [<span class="hljs-number">2</span>,<span class="hljs-number">1</span>,<span class="hljs-number">3</span>], [<span class="hljs-number">1</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>].<br></code></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ol>
+<li><code>1 &lt;= A.length &lt;= 20000</code></li>
+<li><code>1 &lt;= A[i] &lt;= A.length</code></li>
+<li><code>1 &lt;= K &lt;= A.length</code></li>
+</ol>
+<h3 id="题解-2"><a href="#题解-2" class="headerlink" title="题解"></a>题解</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">subarraysWithKDistinct</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] A, <span class="hljs-keyword">int</span> K)</span> </span>&#123;<br>        <span class="hljs-keyword">return</span> atMostKDistinct(A, K) - atMostKDistinct(A, K - <span class="hljs-number">1</span>);<br>    &#125;<br><br>    <span class="hljs-comment">/**</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> A</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@param</span> K</span><br><span class="hljs-comment">     * <span class="hljs-doctag">@return</span> 最多包含 K 个不同整数的子区间的个数</span><br><span class="hljs-comment">     */</span><br>    <span class="hljs-function"><span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> <span class="hljs-title">atMostKDistinct</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] A, <span class="hljs-keyword">int</span> K)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> len = A.length;<br>        <span class="hljs-keyword">int</span>[] freq = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[len + <span class="hljs-number">1</span>];<br><br>        <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> right = <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">// [left, right) 里不同整数的个数</span><br>        <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> res = <span class="hljs-number">0</span>;<br>        <span class="hljs-comment">// [left, right) 包含不同整数的个数小于等于 K</span><br>        <span class="hljs-keyword">while</span> (right &lt; len) &#123;<br>            <span class="hljs-keyword">if</span> (freq[A[right]] == <span class="hljs-number">0</span>) &#123;<br>                count++;<br>            &#125;<br>            freq[A[right]]++;<br>            right++;<br><br>            <span class="hljs-keyword">while</span> (count &gt; K) &#123;<br>                freq[A[left]]--;<br>                <span class="hljs-keyword">if</span> (freq[A[left]] == <span class="hljs-number">0</span>) &#123;<br>                    count--;<br>                &#125;<br>                left++;<br>            &#125;<br>            <span class="hljs-comment">// [left, right) 区间的长度就是对结果的贡献</span><br>            res += right - left;<br>        &#125;<br>        <span class="hljs-keyword">return</span> res;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="567-字符串的排列"><a href="#567-字符串的排列" class="headerlink" title="567. 字符串的排列"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/permutation-in-string/">567. 字符串的排列</a></h2><p>日期：<code>2021/02/10</code></p>
+<p>给定两个字符串 <strong>s1</strong> 和 <strong>s2</strong>，写一个函数来判断 <strong>s2</strong> 是否包含 <strong>s1</strong> 的排列。</p>
+<p>换句话说，第一个字符串的排列之一是第二个字符串的子串。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs armasm">输入: <span class="hljs-built_in">s1</span> = <span class="hljs-string">&quot;ab&quot;</span> <span class="hljs-built_in">s2</span> = <span class="hljs-string">&quot;eidbaooo&quot;</span><br>输出: True<br>解释: <span class="hljs-built_in">s2</span> 包含 <span class="hljs-built_in">s1</span> 的排列之一 (<span class="hljs-string">&quot;ba&quot;</span>).<br></code></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight armasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs armasm">输入: <span class="hljs-built_in">s1</span>= <span class="hljs-string">&quot;ab&quot;</span> <span class="hljs-built_in">s2</span> = <span class="hljs-string">&quot;eidboaoo&quot;</span><br>输出: False<br></code></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li>输入的字符串只包含小写字母</li>
+<li>两个字符串的长度都在 [1, 10,000] 之间</li>
+</ul>
+<h3 id="题解-3"><a href="#题解-3" class="headerlink" title="题解"></a>题解</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">checkInclusion</span><span class="hljs-params">(String s1, String s2)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> n = s1.length(), m = s2.length();<br>        <span class="hljs-keyword">if</span> (n &gt; m) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>        &#125;<br>        <span class="hljs-keyword">int</span>[] cnt1 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">26</span>];<br>        <span class="hljs-keyword">int</span>[] cnt2 = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">26</span>];<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; ++i) &#123;<br>            ++cnt1[s1.charAt(i) - <span class="hljs-string">&#x27;a&#x27;</span>];<br>            ++cnt2[s2.charAt(i) - <span class="hljs-string">&#x27;a&#x27;</span>];<br>        &#125;<br>        <span class="hljs-keyword">if</span> (Arrays.equals(cnt1, cnt2)) &#123;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>        &#125;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = n; i &lt; m; ++i) &#123;<br>            ++cnt2[s2.charAt(i) - <span class="hljs-string">&#x27;a&#x27;</span>];<br>            --cnt2[s2.charAt(i - n) - <span class="hljs-string">&#x27;a&#x27;</span>];<br>            <span class="hljs-keyword">if</span> (Arrays.equals(cnt1, cnt2)) &#123;<br>                <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="703-数据流中的第-K-大元素"><a href="#703-数据流中的第-K-大元素" class="headerlink" title="703. 数据流中的第 K 大元素"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/kth-largest-element-in-a-stream/">703. 数据流中的第 K 大元素</a></h2><p>日期：<code>2021/02/11</code></p>
+<p>设计一个找到数据流中第 <code>k</code> 大元素的类（class）。注意是排序后的第 <code>k</code> 大元素，不是第 <code>k</code> 个不同的元素。</p>
+<p>请实现 <code>KthLargest</code> 类：</p>
+<ul>
+<li><code>KthLargest(int k, int[] nums)</code> 使用整数 <code>k</code> 和整数流 <code>nums</code> 初始化对象。</li>
+<li><code>int add(int val)</code> 将 <code>val</code> 插入数据流 <code>nums</code> 后，返回当前数据流中第 <code>k</code> 大的元素。</li>
+</ul>
+<p><strong>示例：</strong></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><code class="hljs csharp">输入：<br>[<span class="hljs-meta"><span class="hljs-meta-string">&quot;KthLargest&quot;</span>, <span class="hljs-meta-string">&quot;add&quot;</span>, <span class="hljs-meta-string">&quot;add&quot;</span>, <span class="hljs-meta-string">&quot;add&quot;</span>, <span class="hljs-meta-string">&quot;add&quot;</span>, <span class="hljs-meta-string">&quot;add&quot;</span></span>]<br>[<span class="hljs-meta">[3, [4, 5, 8, 2</span>]], [<span class="hljs-number">3</span>], [<span class="hljs-number">5</span>], [<span class="hljs-number">10</span>], [<span class="hljs-number">9</span>], [<span class="hljs-number">4</span>]]<br>输出：<br>[<span class="hljs-meta">null, 4, 5, 5, 8, 8</span>]<br><br>解释：<br>KthLargest kthLargest = <span class="hljs-keyword">new</span> KthLargest(<span class="hljs-number">3</span>, [<span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">8</span>, <span class="hljs-number">2</span>]);<br>kthLargest.<span class="hljs-keyword">add</span>(<span class="hljs-number">3</span>);   <span class="hljs-comment">// return 4</span><br>kthLargest.<span class="hljs-keyword">add</span>(<span class="hljs-number">5</span>);   <span class="hljs-comment">// return 5</span><br>kthLargest.<span class="hljs-keyword">add</span>(<span class="hljs-number">10</span>);  <span class="hljs-comment">// return 5</span><br>kthLargest.<span class="hljs-keyword">add</span>(<span class="hljs-number">9</span>);   <span class="hljs-comment">// return 8</span><br>kthLargest.<span class="hljs-keyword">add</span>(<span class="hljs-number">4</span>);   <span class="hljs-comment">// return 8</span><br></code></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= k &lt;= 104</code></li>
+<li><code>0 &lt;= nums.length &lt;= 104</code></li>
+<li><code>-104 &lt;= nums[i] &lt;= 104</code></li>
+<li><code>-104 &lt;= val &lt;= 104</code></li>
+<li>最多调用 <code>add</code> 方法 <code>104</code> 次</li>
+<li>题目数据保证，在查找第 <code>k</code> 大元素时，数组中至少有 <code>k</code> 个元素</li>
+</ul>
+<h3 id="题解-4"><a href="#题解-4" class="headerlink" title="题解"></a>题解</h3><p>官方解答</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">KthLargest</span> </span>&#123;<br>    PriorityQueue&lt;Integer&gt; pq;<br>    <span class="hljs-keyword">int</span> k;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">KthLargest</span><span class="hljs-params">(<span class="hljs-keyword">int</span> k, <span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-keyword">this</span>.k = k;<br>        pq = <span class="hljs-keyword">new</span> PriorityQueue&lt;Integer&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> x : nums) &#123;<br>            add(x);<br>        &#125;<br>    &#125;<br>    <br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">add</span><span class="hljs-params">(<span class="hljs-keyword">int</span> val)</span> </span>&#123;<br>        pq.offer(val);<br>        <span class="hljs-keyword">if</span> (pq.size() &gt; k) &#123;<br>            pq.poll();<br>        &#125;<br>        <span class="hljs-keyword">return</span> pq.peek();<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="119-杨辉三角-II"><a href="#119-杨辉三角-II" class="headerlink" title="119. 杨辉三角 II"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/pascals-triangle-ii/">119. 杨辉三角 II</a></h2><p>日期：<code>2021/02/12</code></p>
+<p>给定一个非负索引 <em>k</em>，其中 <em>k</em> ≤ 33，返回杨辉三角的第 <em>k</em> 行。</p>
+<p><img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/PascalTriangleAnimated2.gif" srcset="/img/loading.gif" alt="img"></p>
+<p>在杨辉三角中，每个数是它左上方和右上方的数的和。</p>
+<p><strong>示例:</strong></p>
+<figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs makefile"><span class="hljs-section">输入: 3</span><br><span class="hljs-section">输出: [1,3,3,1]</span><br></code></pre></td></tr></table></figure>
+<p><strong>进阶：</strong></p>
+<p>你可以优化你的算法到 <em>O</em>(<em>k</em>) 空间复杂度吗？</p>
+<h3 id="题解-5"><a href="#题解-5" class="headerlink" title="题解"></a>题解</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Integer&gt; <span class="hljs-title">getRow</span><span class="hljs-params">(<span class="hljs-keyword">int</span> rowIndex)</span> </span>&#123;<br>        List&lt;Integer&gt; list = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();<br>        list.add(<span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; rowIndex; i++)&#123;<br>            List&lt;Integer&gt; temp = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();<br>            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; list.size(); j++)&#123;<br>                <span class="hljs-keyword">if</span>(j == <span class="hljs-number">0</span>)&#123;<br>                    temp.add(<span class="hljs-number">1</span>);<br>                &#125;<span class="hljs-keyword">else</span>&#123;<br>                    temp.add(list.get(j - <span class="hljs-number">1</span>) + list.get(j));<br>                &#125;<br>            &#125;<br>            temp.add(<span class="hljs-number">1</span>);<br>            list = temp;<br>        &#125;<br>        <span class="hljs-keyword">return</span> list;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="448-找到所有数组中消失的数字"><a href="#448-找到所有数组中消失的数字" class="headerlink" title="448. 找到所有数组中消失的数字"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-all-numbers-disappeared-in-an-array/">448. 找到所有数组中消失的数字</a></h2><p>日期：<code>2021/02/13</code></p>
+<p>给定一个范围在 1 ≤ a[i] ≤ <em>n</em> ( <em>n</em> = 数组大小 ) 的 整型数组，数组中的元素一些出现了两次，另一些只出现一次。</p>
+<p>找到所有在 [1, <em>n</em>] 范围之间没有出现在数组中的数字。</p>
+<p>您能在不使用额外空间且时间复杂度为<em>O(n)</em>的情况下完成这个任务吗? 你可以假定返回的数组不算在额外空间内。</p>
+<p><strong>示例:</strong></p>
+<figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs angelscript">输入:<br><span class="hljs-string">[4,3,2,7,8,2,3,1]</span><br><br>输出:<br><span class="hljs-string">[5,6]</span><br></code></pre></td></tr></table></figure>
+<h3 id="题解-6"><a href="#题解-6" class="headerlink" title="题解"></a>题解</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> List&lt;Integer&gt; <span class="hljs-title">findDisappearedNumbers</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> n = nums.length;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> num : nums) &#123;<br>            <span class="hljs-keyword">int</span> x = (num - <span class="hljs-number">1</span>) % n;<br>            nums[x] += n;<br>        &#125;<br>        List&lt;Integer&gt; ret = <span class="hljs-keyword">new</span> ArrayList&lt;Integer&gt;();<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-keyword">if</span> (nums[i] &lt;= n) &#123;<br>                ret.add(i + <span class="hljs-number">1</span>);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ret;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                    
+                      <a class="hover-with-bg" href="/tags/LeetCode/">LeetCode</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">每日一题</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/leetcode-week-10/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">LeetCode每日一题</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/leetcode-week-7/">
+                        <span class="hidden-mobile">LeetCode每日一题</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>

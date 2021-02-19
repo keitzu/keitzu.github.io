@@ -1,0 +1,594 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="/img/favicon.ico">
+  <link rel="icon" type="image/png" href="/img/favicon.ico">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="柯梓">
+  <meta name="keywords" content="">
+  <title>LeetCode每日一题 - 柯梓的四叠半世界</title>
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
+
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_ba1fz6golrf.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script id="fluid-configs">
+    var Fluid = window.Fluid || {};
+    var CONFIG = {"hostname":"keitzu.com","root":"/","version":"1.8.6","typing":{"enable":true,"typeSpeed":50,"cursorChar":"","loop":false},"toc":{"enable":true,"headingSelector":"h1,h2,h3,h4,h5,h6","collapseDepth":3},"anchorjs":{"enable":false,"element":"h1,h2,h3,h4,h5,h6","placement":"right","visible":"hover","icon":""},"copy_btn":true,"image_zoom":{"enable":true},"lazyload":{"enable":true,"onlypost":false},"web_analytics":{"enable":false,"baidu":null,"google":null,"gtag":null,"tencent":{"sid":null,"cid":null},"woyaola":null,"cnzz":null,"leancloud":{"app_id":null,"app_key":null,"server_url":null}}};
+  </script>
+  <script  src="/js/utils.js" ></script>
+  <script  src="/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.2.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/">&nbsp;<strong>柯梓的四叠半世界</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/tags/">
+                <i class="iconfont icon-tags-fill"></i>
+                标签
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/links/">
+                <i class="iconfont icon-link-fill"></i>
+                友链
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+          <li class="nav-item" id="search-btn">
+            <a class="nav-link" data-toggle="modal" data-target="#modalSearch">&nbsp;<i
+                class="iconfont icon-search"></i>&nbsp;</a>
+          </li>
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://static.kezi.xyz/images/background/bg-fa74fc6.jpg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="page-header text-center fade-in-up">
+            <span class="h2" id="subtitle" title="LeetCode每日一题">
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-05 19:19" pubdate>
+        2021年2月5日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4k 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      59
+       分钟
+    </span>
+  
+
+  
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">LeetCode每日一题</h1>
+            
+            <div class="markdown-body">
+              <p>力扣（<em>LeetCode</em>）是领扣网络旗下专注于程序员技术成长和企业技术人才服务的品牌，为全球程序员提供了专业的IT 技术职业化提升平台。每日练习LeetCode中的题目可以锻炼解决问题的思维能力，加深计算机数据结构与算法的理解。</p>
+<a id="more"></a>
+<h2 id="674-最长连续递增序列"><a href="#674-最长连续递增序列" class="headerlink" title="674. 最长连续递增序列"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/longest-continuous-increasing-subsequence/">674. 最长连续递增序列</a></h2><p>日期：<code>2021/01/24</code></p>
+<p>给定一个未经排序的整数数组，找到最长且 <strong>连续递增的子序列</strong>，并返回该序列的长度。</p>
+<p><strong>连续递增的子序列</strong> 可以由两个下标 <code>l</code> 和 <code>r</code>（<code>l &lt; r</code>）确定，如果对于每个 <code>l &lt;= i &lt; r</code>，都有 <code>nums[i] &lt; nums[i + 1]</code> ，那么子序列 <code>[nums[l], nums[l + 1], ..., nums[r - 1], nums[r]]</code> 就是连续递增子序列。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：nums = <span class="hljs-comment">[1,3,5,4,7]</span><br>输出：3<br>解释：最长连续递增序列是 <span class="hljs-comment">[1,3,5]</span>, 长度为3。<br>尽管 <span class="hljs-comment">[1,3,5,7]</span> 也是升序的子序列, 但它不是连续的，因为 5 和 7 在原数组里被 4 隔开。 <br></code></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：nums = <span class="hljs-comment">[2,2,2,2,2]</span><br>输出：1<br>解释：最长连续递增序列是 <span class="hljs-comment">[2]</span>, 长度为1。<br></code></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>0 &lt;= nums.length &lt;= 104</code></li>
+<li><code>-109 &lt;= nums[i] &lt;= 109</code></li>
+</ul>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findLengthOfLCIS</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> ans = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> n = nums.length;<br>        <span class="hljs-keyword">int</span> start = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>            <span class="hljs-keyword">if</span> (i &gt; <span class="hljs-number">0</span> &amp;&amp; nums[i] &lt;= nums[i - <span class="hljs-number">1</span>]) &#123;<br>                start = i;<br>            &#125;<br>            ans = Math.max(ans, i - start + <span class="hljs-number">1</span>);<br>        &#125;<br>        <span class="hljs-keyword">return</span> ans;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="959-由斜杠划分区域"><a href="#959-由斜杠划分区域" class="headerlink" title="959. 由斜杠划分区域"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/regions-cut-by-slashes/">959. 由斜杠划分区域</a></h2><p>日期：<code>2021/01/25</code></p>
+<p>在由 1 x 1 方格组成的 N x N 网格 <code>grid</code> 中，每个 1 x 1 方块由 <code>/</code>、<code>\</code> 或空格构成。这些字符会将方块划分为一些共边的区域。</p>
+<p>（请注意，反斜杠字符是转义的，因此 <code>\</code> 用 <code>&quot;\\&quot;</code> 表示。）。</p>
+<p>返回区域的数目。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs csharp">输入：<br>[<span class="hljs-meta"></span><br><span class="hljs-meta">  <span class="hljs-meta-string">&quot; /&quot;</span>,</span><br><span class="hljs-meta">  <span class="hljs-meta-string">&quot;/ &quot;</span></span><br><span class="hljs-meta"></span>]<br>输出：<span class="hljs-number">2</span><br>解释：<span class="hljs-number">2</span>x2 网格如下：<br></code></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs csharp">输入：<br>[<span class="hljs-meta"></span><br><span class="hljs-meta">  <span class="hljs-meta-string">&quot; /&quot;</span>,</span><br><span class="hljs-meta">  <span class="hljs-meta-string">&quot;  &quot;</span></span><br><span class="hljs-meta"></span>]<br>输出：<span class="hljs-number">1</span><br>解释：<span class="hljs-number">2</span>x2 网格如下：<br></code></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs lsl">输入：<br>[<br>  <span class="hljs-string">&quot;<span class="hljs-subst">\\</span>/&quot;</span>,<br>  <span class="hljs-string">&quot;/<span class="hljs-subst">\\</span>&quot;</span><br>]<br>输出：<span class="hljs-number">4</span><br>解释：（回想一下，因为 \ 字符是转义的，所以 <span class="hljs-string">&quot;<span class="hljs-subst">\\</span>/&quot;</span> 表示 \/，而 <span class="hljs-string">&quot;/<span class="hljs-subst">\\</span>&quot;</span> 表示 /\。）<br><span class="hljs-number">2</span>x2 网格如下：<br></code></pre></td></tr></table></figure>
+<p><strong>示例 4：</strong></p>
+<figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><code class="hljs lsl">输入：<br>[<br>  <span class="hljs-string">&quot;/<span class="hljs-subst">\\</span>&quot;</span>,<br>  <span class="hljs-string">&quot;<span class="hljs-subst">\\</span>/&quot;</span><br>]<br>输出：<span class="hljs-number">5</span><br>解释：（回想一下，因为 \ 字符是转义的，所以 <span class="hljs-string">&quot;/<span class="hljs-subst">\\</span>&quot;</span> 表示 /\，而 <span class="hljs-string">&quot;<span class="hljs-subst">\\</span>/&quot;</span> 表示 \/。）<br><span class="hljs-number">2</span>x2 网格如下：<br></code></pre></td></tr></table></figure>
+<p><strong>示例 5：</strong></p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs csharp">输入：<br>[<span class="hljs-meta"></span><br><span class="hljs-meta">  <span class="hljs-meta-string">&quot;//&quot;</span>,</span><br><span class="hljs-meta">  <span class="hljs-meta-string">&quot;/ &quot;</span></span><br><span class="hljs-meta"></span>]<br>输出：<span class="hljs-number">3</span><br>解释：<span class="hljs-number">2</span>x2 网格如下：<br></code></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ol>
+<li><code>1 &lt;= grid.length == grid[0].length &lt;= 30</code></li>
+<li><code>grid[i][j]</code> 是 <code>&#39;/&#39;</code>、<code>&#39;\&#39;</code>、或 <code>&#39; &#39;</code>。</li>
+</ol>
+<h3 id="题解-1"><a href="#题解-1" class="headerlink" title="题解"></a>题解</h3><p>官方解答</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br><br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">regionsBySlashes</span><span class="hljs-params">(String[] grid)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> N = grid.length;<br>        <span class="hljs-keyword">int</span> size = <span class="hljs-number">4</span> * N * N;<br><br>        UnionFind unionFind = <span class="hljs-keyword">new</span> UnionFind(size);<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; N; i++) &#123;<br>            <span class="hljs-keyword">char</span>[] row = grid[i].toCharArray();<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; N; j++) &#123;<br>                <span class="hljs-comment">// 二维网格转换为一维表格，index 表示将单元格拆分成 4 个小三角形以后，编号为 0 的小三角形的在并查集中的下标</span><br>                <span class="hljs-keyword">int</span> index = <span class="hljs-number">4</span> * (i * N + j);<br>                <span class="hljs-keyword">char</span> c = row[j];<br>                <span class="hljs-comment">// 单元格内合并</span><br>                <span class="hljs-keyword">if</span> (c == <span class="hljs-string">&#x27;/&#x27;</span>) &#123;<br>                    <span class="hljs-comment">// 合并 0、3，合并 1、2</span><br>                    unionFind.union(index, index + <span class="hljs-number">3</span>);<br>                    unionFind.union(index + <span class="hljs-number">1</span>, index + <span class="hljs-number">2</span>);<br>                &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (c == <span class="hljs-string">&#x27;\\&#x27;</span>) &#123;<br>                    <span class="hljs-comment">// 合并 0、1，合并 2、3</span><br>                    unionFind.union(index, index + <span class="hljs-number">1</span>);<br>                    unionFind.union(index + <span class="hljs-number">2</span>, index + <span class="hljs-number">3</span>);<br>                &#125; <span class="hljs-keyword">else</span> &#123;<br>                    unionFind.union(index, index + <span class="hljs-number">1</span>);<br>                    unionFind.union(index + <span class="hljs-number">1</span>, index + <span class="hljs-number">2</span>);<br>                    unionFind.union(index + <span class="hljs-number">2</span>, index + <span class="hljs-number">3</span>);<br>                &#125;<br><br>                <span class="hljs-comment">// 单元格间合并</span><br>                <span class="hljs-comment">// 向右合并：1（当前）、3（右一列）</span><br>                <span class="hljs-keyword">if</span> (j + <span class="hljs-number">1</span> &lt; N) &#123;<br>                    unionFind.union(index + <span class="hljs-number">1</span>, <span class="hljs-number">4</span> * (i * N + j + <span class="hljs-number">1</span>) + <span class="hljs-number">3</span>);<br>                &#125;<br>                <span class="hljs-comment">// 向下合并：2（当前）、0（下一行）</span><br>                <span class="hljs-keyword">if</span> (i + <span class="hljs-number">1</span> &lt; N) &#123;<br>                    unionFind.union(index + <span class="hljs-number">2</span>, <span class="hljs-number">4</span> * ((i + <span class="hljs-number">1</span>) * N + j));<br>                &#125;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> unionFind.getCount();<br>    &#125;<br><br>    <span class="hljs-keyword">private</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UnionFind</span> </span>&#123;<br><br>        <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] parent;<br><br>        <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span> count;<br><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">getCount</span><span class="hljs-params">()</span> </span>&#123;<br>            <span class="hljs-keyword">return</span> count;<br>        &#125;<br><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">UnionFind</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>            <span class="hljs-keyword">this</span>.count = n;<br>            <span class="hljs-keyword">this</span>.parent = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];<br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>                parent[i] = i;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span> </span>&#123;<br>            <span class="hljs-keyword">while</span> (x != parent[x]) &#123;<br>                parent[x] = parent[parent[x]];<br>                x = parent[x];<br>            &#125;<br>            <span class="hljs-keyword">return</span> x;<br>        &#125;<br><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">union</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span> </span>&#123;<br>            <span class="hljs-keyword">int</span> rootX = find(x);<br>            <span class="hljs-keyword">int</span> rootY = find(y);<br>            <span class="hljs-keyword">if</span> (rootX == rootY) &#123;<br>                <span class="hljs-keyword">return</span>;<br>            &#125;<br><br>            parent[rootX] = rootY;<br>            count--;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="1128-等价多米诺骨牌对的数量"><a href="#1128-等价多米诺骨牌对的数量" class="headerlink" title="1128. 等价多米诺骨牌对的数量"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/number-of-equivalent-domino-pairs/">1128. 等价多米诺骨牌对的数量</a></h2><p>日期：<code>2021/01/26</code></p>
+<p>给你一个由一些多米诺骨牌组成的列表 <code>dominoes</code>。</p>
+<p>如果其中某一张多米诺骨牌可以通过旋转 <code>0</code> 度或 <code>180</code> 度得到另一张多米诺骨牌，我们就认为这两张牌是等价的。</p>
+<p>形式上，<code>dominoes[i] = [a, b]</code> 和 <code>dominoes[j] = [c, d]</code> 等价的前提是 <code>a==c</code> 且 <code>b==d</code>，或是 <code>a==d</code> 且 <code>b==c</code>。</p>
+<p>在 <code>0 &lt;= i &lt; j &lt; dominoes.length</code> 的前提下，找出满足 <code>dominoes[i]</code> 和 <code>dominoes[j]</code> 等价的骨牌对 <code>(i, j)</code> 的数量。</p>
+<p><strong>示例：</strong></p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：dominoes = <span class="hljs-comment">[<span class="hljs-comment">[1,2]</span>,<span class="hljs-comment">[2,1]</span>,<span class="hljs-comment">[3,4]</span>,<span class="hljs-comment">[5,6]</span>]</span><br>输出：1<br></code></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= dominoes.length &lt;= 40000</code></li>
+<li><code>1 &lt;= dominoes[i][j] &lt;= 9</code></li>
+</ul>
+<h3 id="题解-2"><a href="#题解-2" class="headerlink" title="题解"></a>题解</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">numEquivDominoPairs</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[][] dominoes)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span>[] num = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[<span class="hljs-number">100</span>];<br>        <span class="hljs-keyword">int</span> ret = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span>[] domino : dominoes) &#123;<br>            <span class="hljs-keyword">int</span> val = domino[<span class="hljs-number">0</span>] &lt; domino[<span class="hljs-number">1</span>] ? domino[<span class="hljs-number">0</span>] * <span class="hljs-number">10</span> + domino[<span class="hljs-number">1</span>] : domino[<span class="hljs-number">1</span>] * <span class="hljs-number">10</span> + domino[<span class="hljs-number">0</span>];<br>            ret += num[val];<br>            num[val]++;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ret;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="1579-保证图可完全遍历"><a href="#1579-保证图可完全遍历" class="headerlink" title="1579. 保证图可完全遍历"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/remove-max-number-of-edges-to-keep-graph-fully-traversable/">1579. 保证图可完全遍历</a></h2><p>日期：<code>2021/01/27</code></p>
+<p>Alice 和 Bob 共有一个无向图，其中包含 n 个节点和 3 种类型的边：</p>
+<ul>
+<li>类型 1：只能由 Alice 遍历。</li>
+<li>类型 2：只能由 Bob 遍历。</li>
+<li>类型 3：Alice 和 Bob 都可以遍历。</li>
+</ul>
+<p>给你一个数组 <code>edges</code> ，其中 <code>edges[i] = [typei, ui, vi]</code> 表示节点 <code>ui</code> 和 <code>vi</code> 之间存在类型为 <code>typei</code> 的双向边。请你在保证图仍能够被 Alice和 Bob 完全遍历的前提下，找出可以删除的最大边数。如果从任何节点开始，Alice 和 Bob 都可以到达所有其他节点，则认为图是可以完全遍历的。</p>
+<p>返回可以删除的最大边数，如果 Alice 和 Bob 无法完全遍历图，则返回 -1 。</p>
+<p><strong>示例 1：</strong></p>
+<p><strong><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/09/06/5510ex1.png" srcset="/img/loading.gif" alt="img"></strong></p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：n = 4, edges = <span class="hljs-comment">[<span class="hljs-comment">[3,1,2]</span>,<span class="hljs-comment">[3,2,3]</span>,<span class="hljs-comment">[1,1,3]</span>,<span class="hljs-comment">[1,2,4]</span>,<span class="hljs-comment">[1,1,2]</span>,<span class="hljs-comment">[2,3,4]</span>]</span><br>输出：2<br>解释：如果删除 <span class="hljs-comment">[1,1,2]</span> 和 <span class="hljs-comment">[1,1,3]</span> 这两条边，Alice 和 Bob 仍然可以完全遍历这个图。再删除任何其他的边都无法保证图可以完全遍历。所以可以删除的最大边数是 2 。<br></code></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<p><strong><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/09/06/5510ex2.png" srcset="/img/loading.gif" alt="img"></strong></p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：n = 4, edges = <span class="hljs-comment">[<span class="hljs-comment">[3,1,2]</span>,<span class="hljs-comment">[3,2,3]</span>,<span class="hljs-comment">[1,1,4]</span>,<span class="hljs-comment">[2,1,4]</span>]</span><br>输出：0<br>解释：注意，删除任何一条边都会使 Alice 和 Bob 无法完全遍历这个图。<br></code></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<p><strong><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/09/06/5510ex3.png" srcset="/img/loading.gif" alt="img"></strong></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs lua">输入：n = <span class="hljs-number">4</span>, edges = <span class="hljs-string">[[3,2,3],[1,1,2],[2,3,4]]</span><br>输出：<span class="hljs-number">-1</span><br>解释：在当前图中，Alice 无法从其他节点到达节点 <span class="hljs-number">4</span> 。类似地，Bob 也不能达到节点 <span class="hljs-number">1</span> 。因此，图无法完全遍历。<br></code></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>1 &lt;= n &lt;= 10^5</code></li>
+<li><code>1 &lt;= edges.length &lt;= min(10^5, 3 * n * (n-1) / 2)</code></li>
+<li><code>edges[i].length == 3</code></li>
+<li><code>1 &lt;= edges[i][0] &lt;= 3</code></li>
+<li><code>1 &lt;= edges[i][1] &lt; edges[i][2] &lt;= n</code></li>
+<li>所有元组 <code>(typei, ui, vi)</code> 互不相同</li>
+</ul>
+<h3 id="题解-3"><a href="#题解-3" class="headerlink" title="题解"></a>题解</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">maxNumEdgesToRemove</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n, <span class="hljs-keyword">int</span>[][] edges)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> ret = <span class="hljs-number">0</span>;<br>        UnionFind ufAlice = <span class="hljs-keyword">new</span> UnionFind(n + <span class="hljs-number">1</span>);<br>        UnionFind ufBob = <span class="hljs-keyword">new</span> UnionFind(n + <span class="hljs-number">1</span>);<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span>[] edge : edges)&#123;<br>            <span class="hljs-keyword">if</span>(edge[<span class="hljs-number">0</span>] == <span class="hljs-number">3</span>)&#123;<br>                <span class="hljs-keyword">boolean</span> flagAlice = ufAlice.union(edge[<span class="hljs-number">1</span>], edge[<span class="hljs-number">2</span>]);<br>                <span class="hljs-keyword">boolean</span> flagBob = ufBob.union(edge[<span class="hljs-number">1</span>], edge[<span class="hljs-number">2</span>]);<br>                <span class="hljs-keyword">if</span>(!flagAlice &amp;&amp; !flagBob)&#123;<br>                    ret++;<br>                &#125;<br>            &#125;<br>        &#125;<br>         <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span>[] edge : edges)&#123;<br>            <span class="hljs-keyword">if</span>(edge[<span class="hljs-number">0</span>] == <span class="hljs-number">1</span> &amp;&amp; !ufAlice.union(edge[<span class="hljs-number">1</span>], edge[<span class="hljs-number">2</span>]))&#123;<br>                ret++;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(edge[<span class="hljs-number">0</span>] == <span class="hljs-number">2</span> &amp;&amp; !ufBob.union(edge[<span class="hljs-number">1</span>], edge[<span class="hljs-number">2</span>]))&#123;<br>                ret++;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">if</span>(ufAlice.setNum &gt; <span class="hljs-number">2</span> || ufBob.setNum &gt; <span class="hljs-number">2</span>)&#123;<br>            <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>        &#125;<br>        <span class="hljs-keyword">return</span> ret;<br>    &#125;<br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UnionFind</span> </span>&#123;<br><br>        <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] parent;   <span class="hljs-comment">//存储每个节点的父节点 </span><br>        <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] rank;     <span class="hljs-comment">//存储节点的高度</span><br>        <span class="hljs-keyword">int</span> setNum;             <span class="hljs-comment">//连通图数量</span><br><br>        <span class="hljs-comment">//初始化并查集</span><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">UnionFind</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>            <span class="hljs-keyword">this</span>.parent = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];<br>            <span class="hljs-keyword">this</span>.rank = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];<br>            <span class="hljs-keyword">this</span>.setNum = n;<br>            <span class="hljs-comment">// 将每个节点指向自己且秩设置为1</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>                <span class="hljs-keyword">this</span>.parent[i] = i;<br>                <span class="hljs-keyword">this</span>.rank[i] = <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-comment">// 查找节点的代表</span><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;<br>            <span class="hljs-keyword">if</span>(parent[x] == x)&#123;<br>                <span class="hljs-keyword">return</span> x;<br>            &#125;<br>            <span class="hljs-keyword">return</span> find(parent[x]);<br>        &#125;<br><br>        <span class="hljs-comment">// 合并两个节点</span><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">union</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>&#123;   <br>            <span class="hljs-keyword">int</span> rootX = find(x);<br>            <span class="hljs-keyword">int</span> rootY = find(y);<br>            <span class="hljs-comment">//判断是否同属一个集合</span><br>            <span class="hljs-keyword">if</span> (rootX == rootY) &#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span>(rank[rootX] == rank[rootY])&#123;<br>                <span class="hljs-comment">// 两颗子树秩相同树高度加一</span><br>                parent[rootY] = rootX;<br>                rank[rootX]++;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(rank[rootX] &gt; rank[rootY])&#123;<br>                <span class="hljs-comment">//将Y的树连接至秩更高的X上且秩不变</span><br>                parent[rootY] = rootX;<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                <span class="hljs-comment">//将X的树连接至秩更高的Y上且秩不变</span><br>                parent[rootX] = rootY;<br>            &#125;<br>            setNum--;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="724-寻找数组的中心索引"><a href="#724-寻找数组的中心索引" class="headerlink" title="724. 寻找数组的中心索引"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/find-pivot-index/">724. 寻找数组的中心索引</a></h2><p>日期：`2021/01/28</p>
+<p>给你一个整数数组 <code>nums</code>，请编写一个能够返回数组 <strong>“中心索引”</strong> 的方法。</p>
+<p>数组 <strong>中心索引</strong> 是数组的一个索引，其左侧所有元素相加的和等于右侧所有元素相加的和。</p>
+<p>如果数组不存在中心索引，返回 <code>-1</code> 。如果数组有多个中心索引，应该返回最靠近左边的那一个。</p>
+<p><strong>注意：</strong>中心索引可能出现在数组的两端。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs tap">输入：nums = [1, 7, 3, 6, 5, 6]<br>输出：3<br>解释：<br>中心索引是<span class="hljs-number"> 3 </span>。<br>左侧数之和 (1 +<span class="hljs-number"> 7 </span>+<span class="hljs-number"> 3 </span>= 11)，<br>右侧数之和 (5 +<span class="hljs-number"> 6 </span>= 11) ，二者相等。<br></code></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight fix"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs fix"><span class="hljs-attr">输入：nums </span>=<span class="hljs-string"> [1, 2, 3]</span><br><span class="hljs-string">输出：-1</span><br><span class="hljs-string">解释：</span><br><span class="hljs-string">数组中不存在满足此条件的中心索引。</span><br></code></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><code class="hljs tap">输入：nums = [2, 1, -1]<br>输出：0<br>解释：<br>中心索引是<span class="hljs-number"> 0 </span>。<br>索引<span class="hljs-number"> 0 </span>左侧不存在元素，视作和为<span class="hljs-number"> 0 </span>；<br>右侧数之和为<span class="hljs-number"> 1 </span>+ (-1) =<span class="hljs-number"> 0 </span>，二者相等。<br></code></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>nums</code> 的长度范围为 <code>[0, 10000]</code>。</li>
+<li>任何一个 <code>nums[i]</code> 将会是一个范围在 <code>[-1000, 1000]</code>的整数。</li>
+</ul>
+<h3 id="题解-4"><a href="#题解-4" class="headerlink" title="题解"></a>题解</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">pivotIndex</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> sum = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> num : nums)&#123;<br>            sum += num;<br>        &#125;<br>        <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; nums.length; i++)&#123;<br>            <span class="hljs-keyword">int</span> num = nums[i];<br>            <span class="hljs-keyword">if</span>((left * <span class="hljs-number">2</span> + num) == sum)&#123;<br>                <span class="hljs-keyword">return</span> i;<br>            &#125;<br>            left += num;<br>        &#125;<br>        <span class="hljs-keyword">return</span> -<span class="hljs-number">1</span>;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="1631-最小体力消耗路径"><a href="#1631-最小体力消耗路径" class="headerlink" title="1631. 最小体力消耗路径"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/path-with-minimum-effort/">1631. 最小体力消耗路径</a></h2><p>日期：<code>2021/01/29</code></p>
+<p>你准备参加一场远足活动。给你一个二维 <code>rows x columns</code> 的地图 <code>heights</code> ，其中 <code>heights[row][col]</code> 表示格子 <code>(row, col)</code> 的高度。一开始你在最左上角的格子 <code>(0, 0)</code> ，且你希望去最右下角的格子 <code>(rows-1, columns-1)</code> （注意下标从 <strong>0</strong> 开始编号）。你每次可以往 <strong>上</strong>，<strong>下</strong>，<strong>左</strong>，<strong>右</strong> 四个方向之一移动，你想要找到耗费 <strong>体力</strong> 最小的一条路径。</p>
+<p>一条路径耗费的 <strong>体力值</strong> 是路径上相邻格子之间 <strong>高度差绝对值</strong> 的 <strong>最大值</strong> 决定的。</p>
+<p>请你返回从左上角走到右下角的最小 <strong>体力消耗值</strong> 。</p>
+<p><strong>示例 1：</strong></p>
+<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/10/25/ex1.png" srcset="/img/loading.gif" alt="img"></p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：heights = <span class="hljs-comment">[<span class="hljs-comment">[1,2,2]</span>,<span class="hljs-comment">[3,8,2]</span>,<span class="hljs-comment">[5,3,5]</span>]</span><br>输出：2<br>解释：路径 <span class="hljs-comment">[1,3,5,3,5]</span> 连续格子的差值绝对值最大为 2 。<br>这条路径比路径 <span class="hljs-comment">[1,2,2,2,5]</span> 更优，因为另一条路径差值最大值为 3 。<br></code></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/10/25/ex2.png" srcset="/img/loading.gif" alt="img"></p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：heights = <span class="hljs-comment">[<span class="hljs-comment">[1,2,3]</span>,<span class="hljs-comment">[3,8,4]</span>,<span class="hljs-comment">[5,3,5]</span>]</span><br>输出：1<br>解释：路径 <span class="hljs-comment">[1,2,3,4,5]</span> 的相邻格子差值绝对值最大为 1 ，比路径 <span class="hljs-comment">[1,3,5,3,5]</span> 更优。<br></code></pre></td></tr></table></figure>
+<p><strong>示例 3：</strong></p>
+<p><img src="https://assets.leetcode-cn.com/aliyun-lc-upload/uploads/2020/10/25/ex3.png" srcset="/img/loading.gif" alt="img"></p>
+<figure class="highlight inform7"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><code class="hljs inform7">输入：heights = <span class="hljs-comment">[<span class="hljs-comment">[1,2,1,1,1]</span>,<span class="hljs-comment">[1,2,1,2,1]</span>,<span class="hljs-comment">[1,2,1,2,1]</span>,<span class="hljs-comment">[1,2,1,2,1]</span>,<span class="hljs-comment">[1,1,1,2,1]</span>]</span><br>输出：0<br>解释：上图所示路径不需要消耗任何体力。<br></code></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>rows == heights.length</code></li>
+<li><code>columns == heights[i].length</code></li>
+<li><code>1 &lt;= rows, columns &lt;= 100</code></li>
+<li><code>1 &lt;= heights[i][j] &lt;= 106</code></li>
+</ul>
+<h3 id="题解-5"><a href="#题解-5" class="headerlink" title="题解"></a>题解</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">minimumEffortPath</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[][] heights)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> h = heights.length;<br>        <span class="hljs-keyword">int</span> n = heights[<span class="hljs-number">0</span>].length;<br>        List&lt;<span class="hljs-keyword">int</span>[]&gt; edges = <span class="hljs-keyword">new</span> ArrayList&lt;<span class="hljs-keyword">int</span>[]&gt;();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; h; i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; n; j++)&#123;<br>                <span class="hljs-keyword">int</span> id = i * n + j;<br>                <span class="hljs-keyword">if</span>(i &gt; <span class="hljs-number">0</span>)&#123;<br>                    <span class="hljs-keyword">int</span> val = Math.abs(heights[i][j] - heights[i - <span class="hljs-number">1</span>][j]);<br>                    <span class="hljs-keyword">int</span>[] edge = &#123;id - n, id, val&#125;;<br>                    edges.add(edge);<br>                &#125;<br>                <span class="hljs-keyword">if</span>(j &gt; <span class="hljs-number">0</span>)&#123;<br>                    <span class="hljs-keyword">int</span> val = Math.abs(heights[i][j] - heights[i][j - <span class="hljs-number">1</span>]);<br>                    <span class="hljs-keyword">int</span>[] edge = &#123;id - <span class="hljs-number">1</span>, id, val&#125;;<br>                    edges.add(edge);<br>                &#125;<br>            &#125;<br>        &#125;<br>        Collections.sort(edges, <span class="hljs-keyword">new</span> Comparator&lt;<span class="hljs-keyword">int</span>[]&gt;() &#123;<br>            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] edge1, <span class="hljs-keyword">int</span>[] edge2)</span> </span>&#123;<br>                <span class="hljs-keyword">return</span> edge1[<span class="hljs-number">2</span>] - edge2[<span class="hljs-number">2</span>];<br>            &#125;<br>        &#125;);<br>        UnionFind uf = <span class="hljs-keyword">new</span> UnionFind(h * n);<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span>[] edge : edges)&#123;<br>            uf.union(edge[<span class="hljs-number">0</span>], edge[<span class="hljs-number">1</span>]);<br>            <span class="hljs-keyword">if</span>(uf.find(<span class="hljs-number">0</span>) == uf.find(h * n - <span class="hljs-number">1</span>))&#123;<br>                <span class="hljs-keyword">return</span> edge[<span class="hljs-number">2</span>];<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;<br>    &#125;<br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UnionFind</span> </span>&#123;<br><br>        <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] parent;   <span class="hljs-comment">//存储每个节点的父节点 </span><br>        <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] rank;     <span class="hljs-comment">//存储节点的高度</span><br>        <span class="hljs-keyword">int</span> setNum;             <span class="hljs-comment">//连通图数量</span><br><br>        <span class="hljs-comment">//初始化并查集</span><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">UnionFind</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>            <span class="hljs-keyword">this</span>.parent = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];<br>            <span class="hljs-keyword">this</span>.rank = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];<br>            <span class="hljs-keyword">this</span>.setNum = n;<br>            <span class="hljs-comment">// 将每个节点指向自己且秩设置为1</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>                <span class="hljs-keyword">this</span>.parent[i] = i;<br>                <span class="hljs-keyword">this</span>.rank[i] = <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-comment">// 查找节点的代表</span><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;<br>            <span class="hljs-keyword">if</span>(parent[x] == x)&#123;<br>                <span class="hljs-keyword">return</span> x;<br>            &#125;<br>            <span class="hljs-keyword">return</span> find(parent[x]);<br>        &#125;<br><br>        <span class="hljs-comment">// 合并两个节点</span><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">union</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>&#123;   <br>            <span class="hljs-keyword">int</span> rootX = find(x);<br>            <span class="hljs-keyword">int</span> rootY = find(y);<br>            <span class="hljs-comment">//判断是否同属一个集合</span><br>            <span class="hljs-keyword">if</span> (rootX == rootY) &#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span>(rank[rootX] == rank[rootY])&#123;<br>                <span class="hljs-comment">// 两颗子树秩相同树高度加一</span><br>                parent[rootY] = rootX;<br>                rank[rootX]++;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(rank[rootX] &gt; rank[rootY])&#123;<br>                <span class="hljs-comment">//将Y的树连接至秩更高的X上且秩不变</span><br>                parent[rootY] = rootX;<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                <span class="hljs-comment">//将X的树连接至秩更高的Y上且秩不变</span><br>                parent[rootX] = rootY;<br>            &#125;<br>            setNum--;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h2 id="778-水位上升的泳池中游泳"><a href="#778-水位上升的泳池中游泳" class="headerlink" title="778. 水位上升的泳池中游泳"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/swim-in-rising-water/">778. 水位上升的泳池中游泳</a></h2><p>日期：<code>2021/01/30</code></p>
+<p>在一个 N x N 的坐标方格 <code>grid</code> 中，每一个方格的值 <code>grid[i][j]</code> 表示在位置 <code>(i,j)</code> 的平台高度。</p>
+<p>现在开始下雨了。当时间为 <code>t</code> 时，此时雨水导致水池中任意位置的水位为 <code>t</code> 。你可以从一个平台游向四周相邻的任意一个平台，但是前提是此时水位必须同时淹没这两个平台。假定你可以瞬间移动无限距离，也就是默认在方格内部游动是不耗时的。当然，在你游泳的时候你必须待在坐标方格里面。</p>
+<p>你从坐标方格的左上平台 (0，0) 出发。最少耗时多久你才能到达坐标方格的右下平台 <code>(N-1, N-1)</code>？</p>
+<p><strong>示例 1:</strong></p>
+<figure class="highlight lua"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs lua">输入: <span class="hljs-string">[[0,2],[1,3]]</span><br>输出: <span class="hljs-number">3</span><br>解释:<br>时间为<span class="hljs-number">0</span>时，你位于坐标方格的位置为 (<span class="hljs-number">0</span>, <span class="hljs-number">0</span>)。<br>此时你不能游向任意方向，因为四个相邻方向平台的高度都大于当前时间为 <span class="hljs-number">0</span> 时的水位。<br><br>等时间到达 <span class="hljs-number">3</span> 时，你才可以游向平台 (<span class="hljs-number">1</span>, <span class="hljs-number">1</span>). 因为此时的水位是 <span class="hljs-number">3</span>，坐标方格中的平台没有比水位 <span class="hljs-number">3</span> 更高的，所以你可以游向坐标方格中的任意位置<br></code></pre></td></tr></table></figure>
+<p><strong>示例2:</strong></p>
+<figure class="highlight tap"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><code class="hljs tap">输入: [[0,1,2,3,4],[24,23,22,21,5],[12,13,14,15,16],[11,17,18,19,20],[10,9,8,7,6]]<br>输出: 16<br>解释:<br><span class="hljs-number"> 0 </span><span class="hljs-number"> 1 </span><span class="hljs-number"> 2 </span><span class="hljs-number"> 3 </span> 4<br>24<span class="hljs-number"> 23 </span>22<span class="hljs-number"> 21 </span> 5<br>12<span class="hljs-number"> 13 </span>14<span class="hljs-number"> 15 </span>16<br>11<span class="hljs-number"> 17 </span>18<span class="hljs-number"> 19 </span>20<br>10 <span class="hljs-number"> 9 </span><span class="hljs-number"> 8 </span><span class="hljs-number"> 7 </span> 6<br><br>最终的路线用加粗进行了标记。<br>我们必须等到时间为 16，此时才能保证平台 (0, 0) 和 (4, 4) 是连通的<br></code></pre></td></tr></table></figure>
+<p><strong>提示:</strong></p>
+<ol>
+<li><code>2 &lt;= N &lt;= 50</code>.</li>
+<li><code>grid[i][j]</code> 是 <code>[0, ..., N*N - 1]</code> 的排列。</li>
+</ol>
+<h3 id="题解-6"><a href="#题解-6" class="headerlink" title="题解"></a>题解</h3><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">swimInWater</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[][] grid)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> n = grid.length;<br>        List&lt;<span class="hljs-keyword">int</span>[]&gt; points = <span class="hljs-keyword">new</span> ArrayList&lt;<span class="hljs-keyword">int</span>[]&gt;();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)&#123;<br>            <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; n; j++)&#123;<br>                <span class="hljs-keyword">int</span> val = grid[i][j];<br>                <span class="hljs-keyword">int</span>[] point = &#123;i, j, val&#125;;<br>                points.add(point);<br>            &#125;<br>        &#125;<br>        Collections.sort(points, <span class="hljs-keyword">new</span> Comparator&lt;<span class="hljs-keyword">int</span>[]&gt;() &#123;<br>            <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">compare</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] point1, <span class="hljs-keyword">int</span>[] point2)</span> </span>&#123;<br>                <span class="hljs-keyword">return</span> point1[<span class="hljs-number">2</span>] - point2[<span class="hljs-number">2</span>];<br>            &#125;<br>        &#125;);<br>        UnionFind uf = <span class="hljs-keyword">new</span> UnionFind(n * n);<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span>[] point : points)&#123;<br>            <span class="hljs-keyword">int</span> i = point[<span class="hljs-number">0</span>];<br>            <span class="hljs-keyword">int</span> j = point[<span class="hljs-number">1</span>];<br>            <span class="hljs-keyword">int</span> val = point[<span class="hljs-number">2</span>];<br>            <span class="hljs-keyword">int</span> id = i * n + j;<br>            <span class="hljs-keyword">if</span>(i &gt; <span class="hljs-number">0</span> &amp;&amp; grid[i - <span class="hljs-number">1</span>][j] &lt;= val)&#123;<br>                uf.union(id - n, id);<br>            &#125;<br>            <span class="hljs-keyword">if</span>(j &gt; <span class="hljs-number">0</span> &amp;&amp; grid[i][j - <span class="hljs-number">1</span>] &lt;= val)&#123;<br>                uf.union(id - <span class="hljs-number">1</span>, id);<br>            &#125;<br>            <span class="hljs-keyword">if</span>(i &lt; n - <span class="hljs-number">1</span> &amp;&amp; grid[i + <span class="hljs-number">1</span>][j] &lt;= val)&#123;<br>                uf.union(id + n, id);<br>            &#125;<br>            <span class="hljs-keyword">if</span>(j &lt; n - <span class="hljs-number">1</span> &amp;&amp; grid[i][j + <span class="hljs-number">1</span>] &lt;= val)&#123;<br>                uf.union(id + <span class="hljs-number">1</span>, id);<br>            &#125;<br>            <span class="hljs-keyword">if</span>(uf.find(<span class="hljs-number">0</span>) == uf.find(n * n - <span class="hljs-number">1</span>))&#123;<br>                <span class="hljs-keyword">return</span> val;<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> grid[<span class="hljs-number">0</span>][<span class="hljs-number">0</span>];<br>    &#125;<br>    <br>    <span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">UnionFind</span> </span>&#123;<br><br>        <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] parent;   <span class="hljs-comment">//存储每个节点的父节点 </span><br>        <span class="hljs-keyword">private</span> <span class="hljs-keyword">int</span>[] rank;     <span class="hljs-comment">//存储节点的高度</span><br>        <span class="hljs-keyword">int</span> setNum;             <span class="hljs-comment">//连通图数量</span><br><br>        <span class="hljs-comment">//初始化并查集</span><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">UnionFind</span><span class="hljs-params">(<span class="hljs-keyword">int</span> n)</span> </span>&#123;<br>            <span class="hljs-keyword">this</span>.parent = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];<br>            <span class="hljs-keyword">this</span>.rank = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[n];<br>            <span class="hljs-keyword">this</span>.setNum = n;<br>            <span class="hljs-comment">// 将每个节点指向自己且秩设置为1</span><br>            <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++) &#123;<br>                <span class="hljs-keyword">this</span>.parent[i] = i;<br>                <span class="hljs-keyword">this</span>.rank[i] = <span class="hljs-number">1</span>;<br>            &#125;<br>        &#125;<br><br>        <span class="hljs-comment">// 查找节点的代表</span><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">find</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x)</span></span>&#123;<br>            <span class="hljs-keyword">if</span>(parent[x] == x)&#123;<br>                <span class="hljs-keyword">return</span> x;<br>            &#125;<br>            <span class="hljs-keyword">return</span> find(parent[x]);<br>        &#125;<br><br>        <span class="hljs-comment">// 合并两个节点</span><br>        <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">union</span><span class="hljs-params">(<span class="hljs-keyword">int</span> x, <span class="hljs-keyword">int</span> y)</span></span>&#123;   <br>            <span class="hljs-keyword">int</span> rootX = find(x);<br>            <span class="hljs-keyword">int</span> rootY = find(y);<br>            <span class="hljs-comment">//判断是否同属一个集合</span><br>            <span class="hljs-keyword">if</span> (rootX == rootY) &#123;<br>                    <span class="hljs-keyword">return</span> <span class="hljs-keyword">false</span>;<br>            &#125;<br>            <span class="hljs-keyword">if</span>(rank[rootX] == rank[rootY])&#123;<br>                <span class="hljs-comment">// 两颗子树秩相同树高度加一</span><br>                parent[rootY] = rootX;<br>                rank[rootX]++;<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(rank[rootX] &gt; rank[rootY])&#123;<br>                <span class="hljs-comment">//将Y的树连接至秩更高的X上且秩不变</span><br>                parent[rootY] = rootX;<br>            &#125;<span class="hljs-keyword">else</span>&#123;<br>                <span class="hljs-comment">//将X的树连接至秩更高的Y上且秩不变</span><br>                parent[rootX] = rootY;<br>            &#125;<br>            setNum--;<br>            <span class="hljs-keyword">return</span> <span class="hljs-keyword">true</span>;<br>        &#125;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/">数据结构与算法</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84/">数据结构</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E7%AE%97%E6%B3%95/">算法</a>
+                    
+                      <a class="hover-with-bg" href="/tags/LeetCode/">LeetCode</a>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%AF%8F%E6%97%A5%E4%B8%80%E9%A2%98/">每日一题</a>
+                    
+                      <a class="hover-with-bg" href="/tags/Java/">Java</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/leetcode-week-9/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">LeetCode每日一题</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/leetcode-week-8/">
+                        <span class="hidden-mobile">LeetCode每日一题</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+
+    
+      <a id="scroll-top-button" href="#" role="button">
+        <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+      </a>
+    
+
+    
+      <div class="modal fade" id="modalSearch" tabindex="-1" role="dialog" aria-labelledby="ModalLabel"
+     aria-hidden="true">
+  <div class="modal-dialog modal-dialog-scrollable modal-lg" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">搜索</h4>
+        <button type="button" id="local-search-close" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <input type="text" id="local-search-input" class="form-control validate">
+          <label data-error="x" data-success="v"
+                 for="local-search-input">关键词</label>
+        </div>
+        <div class="list-group" id="local-search-result"></div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+
+    
+  </main>
+
+  <footer class="text-center mt-5 py-3">
+  <div class="footer-content">
+     <a href="https://hexo.io" target="_blank" rel="nofollow noopener"><span>Hexo</span></a> <i class="iconfont icon-love"></i> <a href="https://github.com/fluid-dev/hexo-theme-fluid" target="_blank" rel="nofollow noopener"><span>Fluid</span></a> 
+  </div>
+  
+
+  
+
+  
+</footer>
+
+<!-- SCRIPTS -->
+
+  <script  src="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.min.css" />
+
+  <script>
+    NProgress.configure({"showSpinner":false,"trickleSpeed":200})
+    NProgress.start()
+    document.addEventListener('DOMContentLoaded', function() {
+      window.NProgress && window.NProgress.inc();
+    })
+    window.addEventListener('load', function() {
+      NProgress.done();
+    })
+  </script>
+
+
+<script  src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js" ></script>
+<script  src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.min.js" ></script>
+<script  src="/js/debouncer.js" ></script>
+<script  src="/js/events.js" ></script>
+<script  src="/js/plugins.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
+
+
+
+
+
+  <script defer src="https://cdn.jsdelivr.net/npm/clipboard@2.0.6/dist/clipboard.min.js" ></script>
+
+
+
+
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js" ></script>
+  <script>
+    (function (window, document) {
+      var typing = Fluid.plugins.typing;
+      var title = document.getElementById('subtitle').title;
+      
+      typing(title)
+      
+    })(window, document);
+  </script>
+
+
+
+  <script  src="/js/local-search.js" ></script>
+  <script>
+    (function () {
+      var path = "/local-search.xml";
+      var inputArea = document.querySelector("#local-search-input");
+      inputArea.onclick = function () {
+        searchFunc(path, 'local-search-input', 'local-search-result');
+        this.onclick = null
+      }
+    })()
+  </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- 主题的启动项 保持在最底部 -->
+<script  src="/js/boot.js" ></script>
+
+
+
+</body>
+</html>
