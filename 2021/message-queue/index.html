@@ -17,9 +17,25 @@
   <meta name="description" content="">
   <meta name="author" content="柯梓">
   <meta name="keywords" content="">
-  <title>归档 - 柯梓的四叠半世界</title>
+  <title>消息队列简单介绍 - 柯梓的四叠半世界</title>
 
   <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-markdown-css@4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/highlight.js@10.4.0/styles/github-gist.min.css" />
+    
+  
+
+  
+    <link  rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+  
 
 
 
@@ -47,7 +63,7 @@
 
 
 <body>
-  <header style="height: 80vh;">
+  <header style="height: 70vh;">
     <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
   <div class="container">
     <a class="navbar-brand"
@@ -153,14 +169,51 @@
 </nav>
 
     <div class="banner intro-2" id="background" parallax=true
-         style="background: url('https://static.kezi.xyz/images/background/bg-46c4440.jpg') no-repeat center center;
+         style="background: url('https://static.kezi.xyz/images/background/bg-fa74fc6.jpg') no-repeat center center;
            background-size: cover;">
       <div class="full-bg-img">
         <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
           <div class="page-header text-center fade-in-up">
-            <span class="h2" id="subtitle" title="归档">
+            <span class="h2" id="subtitle" title="消息队列简单介绍">
               
             </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-01-06 19:05" pubdate>
+        2021年1月6日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      559 字
+    </span>
+  
+
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-clock-fill"></i>
+      
+      
+      5
+       分钟
+    </span>
+  
+
+  
+  
+</div>
 
             
           </div>
@@ -173,46 +226,115 @@
 
   <main>
     
-      <div class="container nopadding-md">
-        <div class="py-5" id="board"
-          >
-          
-          <div class="container">
-            <div class="row">
-              <div class="col-12 col-md-10 m-auto">
-                
-
-<div class="list-group">
-  <p class="h4">共计 21 篇文章</p>
-  <hr>
-  
-  
-    
       
-      <p class="h5">2020</p>
-    
-    <a href="/2020/tool-list/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">常用工具与软件列表</span>
-      <time style="float: right;">09-22</time>
-    </a>
-  
-    
-    <a href="/2020/note-the-power-of-habit/" class="list-group-item list-group-item-action">
-      <span class="archive-post-title">《习惯的力量》读书笔记</span>
-      <time style="float: right;">09-16</time>
-    </a>
-  
-</div>
 
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto">
+            <!-- SEO header -->
+            <h1 style="display: none">消息队列简单介绍</h1>
+            
+            <div class="markdown-body">
+              <p>在计算机科学中，消息队列（英语：Message queue）是一种进程间通信或同一进程的不同线程间的通信方式，软件的贮列用来处理一系列的输入，通常是来自用户。消息队列提供了异步的通信协议，每一个贮列中的纪录包含详细说明的资料，包含发生的时间，输入设备的种类，以及特定的输入参数，也就是说：消息的发送者和接收者不需要同时与消息队列交互。消息会保存在队列中，直到接收者取回它。</p>
+<a id="more"></a>
+<h2 id="消息队列是什么"><a href="#消息队列是什么" class="headerlink" title="消息队列是什么"></a>消息队列是什么</h2><p>消息队列其实就是一个存放消息的容器，生产者可以产生消息放入这个容器，而消费者可以从这个容器中获取消息。</p>
+<p>消息队列是分布式系统中重要的组件之一。使用消息队列主要是为了通过异步处理提高系统性能和削峰、降低系统耦合性。</p>
+<h2 id="消息队列的好处"><a href="#消息队列的好处" class="headerlink" title="消息队列的好处"></a>消息队列的好处</h2><p>消息队列有三大好处</p>
+<ol>
+<li><p>异步处理提升性能</p>
+</li>
+<li><p>高并发下流量削峰</p>
+</li>
+<li><p>模块之间降低耦合</p>
+</li>
+</ol>
+<h3 id="异步处理"><a href="#异步处理" class="headerlink" title="异步处理"></a>异步处理</h3><p>生产者将生产的消息发送存储到消息队列之后便可以立即进行其他操作，无需等待消费者消费。消费者可以在之后从消息队列中获取消息进行处理</p>
+<h3 id="流量削峰"><a href="#流量削峰" class="headerlink" title="流量削峰"></a>流量削峰</h3><p>高并发的场景下可以将压力转移到消息队列上，消费者可以按照其处理能力平稳的从消息队列中获取消息进行处理。</p>
+<h3 id="应用解耦"><a href="#应用解耦" class="headerlink" title="应用解耦"></a>应用解耦</h3><p>使用消息队列之后，生产者和消费者之间并不直接调用，降低了模块间的耦合。</p>
+<h2 id="消息队列带来的问题"><a href="#消息队列带来的问题" class="headerlink" title="消息队列带来的问题"></a>消息队列带来的问题</h2><h3 id="系统复杂性增加"><a href="#系统复杂性增加" class="headerlink" title="系统复杂性增加"></a>系统复杂性增加</h3><p>增加消息队列之后，需要考虑消息的消费情况以及消息队列服务器的情况</p>
+<h3 id="消息一致性问题"><a href="#消息一致性问题" class="headerlink" title="消息一致性问题"></a>消息一致性问题</h3><p>增加消息队列之后，需要考虑生产者与消费者之间消息是否一致</p>
+<blockquote>
+<p>参考：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://snailclimb.gitee.io/javaguide/#/docs/system-design/distributed-system/message-queue/message-queue?id=%e6%b6%88%e6%81%af%e9%98%9f%e5%88%97%e5%85%b6%e5%ae%9e%e5%be%88%e7%ae%80%e5%8d%95">消息队列其实很简单 - JavaGuide</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.cyc2018.xyz/%E5%85%B6%E5%AE%83/%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97.html">消息队列 - CS Notes</a></li>
+</ul>
+</blockquote>
 
-
-
-
-              </div>
             </div>
-          </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/categories/%E4%B8%AD%E9%97%B4%E4%BB%B6/">中间件</a>
+                    
+                  </div>
+                
+                
+                  <div class="post-meta">
+                    <i class="iconfont icon-tags"></i>
+                    
+                      <a class="hover-with-bg" href="/tags/%E6%B6%88%E6%81%AF%E9%98%9F%E5%88%97/">消息队列</a>
+                    
+                  </div>
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/2021/leetcode-week-5/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">LeetCode每日一题 - 第五周</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/2021/leetcode-week-4/">
+                        <span class="hidden-mobile">LeetCode每日一题 - 第四周</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+          </article>
         </div>
       </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div class="toc-body" id="toc-body"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
     
 
     
@@ -295,7 +417,11 @@
 
 
 
+  <script  src="https://cdn.jsdelivr.net/npm/tocbot@4.12.0/dist/tocbot.min.js" ></script>
 
+
+
+  <script  src="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js" ></script>
 
 
 
