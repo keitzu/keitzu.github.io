@@ -196,7 +196,7 @@
     
     <span class="post-meta mr-2">
       <i class="iconfont icon-chart"></i>
-      2.2k 字
+      2.7k 字
     </span>
   
 
@@ -206,7 +206,7 @@
       <i class="iconfont icon-clock-fill"></i>
       
       
-      31
+      38
        分钟
     </span>
   
@@ -324,6 +324,20 @@
 </ol>
 <h5 id="题解-5"><a href="#题解-5" class="headerlink" title="题解"></a>题解</h5><p>使用滑动窗口并且记录下当前窗口内的<code>0</code>的数量。若数量小于等于<code>K</code>则仅右指针后移，数量大于K则左右指针整体移动。滑动到尾端时的窗口大小就是最大长度。</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">longestOnes</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] A, <span class="hljs-keyword">int</span> K)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>; <span class="hljs-comment">// 窗口内0的数量</span><br>        <span class="hljs-keyword">int</span> n = A.length; <br>        <span class="hljs-keyword">int</span> left = <span class="hljs-number">0</span>, right = <span class="hljs-number">0</span>; <span class="hljs-comment">// 左右指针</span><br>        <span class="hljs-keyword">while</span>(right &lt; n)&#123;<br>            <span class="hljs-comment">// 若右指针所值值为0，数量增加</span><br>            <span class="hljs-keyword">if</span>(A[right] == <span class="hljs-number">0</span>)&#123;<br>                count++;<br>            &#125;<br>            <span class="hljs-comment">// 若窗口内0的数量大于K,移动左指针移除最左的值</span><br>            <span class="hljs-comment">// 若移除的至为0，数量减少</span><br>            <span class="hljs-keyword">if</span>(count &gt; K &amp;&amp; A[left++] == <span class="hljs-number">0</span>)&#123;<br>                count--;<br>            &#125;<br>            <span class="hljs-comment">// 移动右指针</span><br>            right++;<br>        &#125;<br>        <span class="hljs-comment">// 因为right等于n，计算窗口大小时无需加一</span><br>        <span class="hljs-keyword">return</span> right - left;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
+<h4 id="697-数组的度"><a href="#697-数组的度" class="headerlink" title="697. 数组的度"></a><a target="_blank" rel="noopener" href="https://leetcode-cn.com/problems/degree-of-an-array/">697. 数组的度</a></h4><p>日期：<code>2021/02/20</code></p>
+<p>给定一个非空且只包含非负数的整数数组 <code>nums</code>，数组的度的定义是指数组里任一元素出现频数的最大值。</p>
+<p>你的任务是在 <code>nums</code> 中找到与 <code>nums</code> 拥有相同大小的度的最短连续子数组，返回其长度。</p>
+<p><strong>示例 1：</strong></p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs css">输入：<span class="hljs-selector-attr">[1, 2, 2, 3, 1]</span><br>输出：2<br>解释：<br>输入数组的度是2，因为元素1和2的出现频数最大，均为2.<br>连续子数组里面拥有相同度的有如下所示:<br><span class="hljs-selector-attr">[1, 2, 2, 3, 1]</span>, <span class="hljs-selector-attr">[1, 2, 2, 3]</span>, <span class="hljs-selector-attr">[2, 2, 3, 1]</span>, <span class="hljs-selector-attr">[1, 2, 2]</span>, <span class="hljs-selector-attr">[2, 2, 3]</span>, <span class="hljs-selector-attr">[2, 2]</span><br>最短连续子数组<span class="hljs-selector-attr">[2, 2]</span>的长度为2，所以返回2.<br></code></pre></td></tr></table></figure>
+<p><strong>示例 2：</strong></p>
+<figure class="highlight accesslog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><code class="hljs accesslog">输入：<span class="hljs-string">[1,2,2,3,1,4,2]</span><br>输出：<span class="hljs-number">6</span><br></code></pre></td></tr></table></figure>
+<p><strong>提示：</strong></p>
+<ul>
+<li><code>nums.length</code> 在1到 50,000 区间范围内。</li>
+<li><code>nums[i]</code> 是一个在 0 到 49,999 范围内的整数。</li>
+</ul>
+<h5 id="题解-6"><a href="#题解-6" class="headerlink" title="题解"></a>题解</h5><p>只我们只需要寻找出现次数最多的数，然后计算其第一次出现位置到最后一次出现的位置的长度。所有长度取最小值。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><code class="hljs java"><span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Solution</span> </span>&#123;<br>    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">int</span> <span class="hljs-title">findShortestSubArray</span><span class="hljs-params">(<span class="hljs-keyword">int</span>[] nums)</span> </span>&#123;<br>        <span class="hljs-keyword">int</span> n = nums.length;<br>        <span class="hljs-comment">// 获取每个数字的出现次数、第一次出现位置、最后一次出现位置</span><br>        Map&lt;Integer, <span class="hljs-keyword">int</span>[]&gt; map = <span class="hljs-keyword">new</span> HashMap&lt;&gt;();<br>        <span class="hljs-keyword">for</span>(<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; n; i++)&#123;<br>            <span class="hljs-keyword">int</span>[] count = map.getOrDefault(nums[i], <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>[]&#123;<span class="hljs-number">0</span>, i, i&#125;);<br>            count[<span class="hljs-number">0</span>]++;<br>            count[<span class="hljs-number">2</span>] = i;<br>            map.put(nums[i], count);<br>        &#125;<br>        <span class="hljs-keyword">int</span> maxCount = <span class="hljs-number">0</span>;<br>        <span class="hljs-keyword">int</span> minLength = n;<br>        <span class="hljs-comment">// 依次比较出现次数和子数组长度</span><br>        <span class="hljs-keyword">for</span>(Map.Entry&lt;Integer, <span class="hljs-keyword">int</span>[]&gt; entry : map.entrySet())&#123;<br>            <span class="hljs-keyword">int</span>[] val = entry.getValue();<br>            <span class="hljs-keyword">int</span> len = val[<span class="hljs-number">2</span>] - val[<span class="hljs-number">1</span>] + <span class="hljs-number">1</span>;<br>            <span class="hljs-comment">// 出现次数大于记录的最大值，长度设为当前长度</span><br>            <span class="hljs-keyword">if</span>(val[<span class="hljs-number">0</span>] &gt; maxCount)&#123;<br>                minLength = len;<br>                maxCount = val[<span class="hljs-number">0</span>];<br>            &#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(val[<span class="hljs-number">0</span>] == maxCount)&#123; <span class="hljs-comment">// 次数相同，取长度较小者</span><br>                minLength = Math.min(minLength, len);<br>            &#125;<br>        &#125;<br>        <span class="hljs-keyword">return</span> minLength;<br>    &#125;<br>&#125;<br></code></pre></td></tr></table></figure>
 
             </div>
             <hr>
@@ -361,6 +375,12 @@
                 <div class="post-prevnext row">
                   <article class="post-prev col-6">
                     
+                    
+                      <a href="/2021/qttabbar/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">使用QTTabBar增强资源管理器</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
                     
                   </article>
                   <article class="post-next col-6">
@@ -528,6 +548,13 @@
 
 
 
+
+  <script  src="https://cdn.jsdelivr.net/npm/mermaid@8.8.3/dist/mermaid.min.js" ></script>
+  <script>
+    if (window.mermaid) {
+      mermaid.initialize({"theme":"default"});
+    }
+  </script>
 
 
 
