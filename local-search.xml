@@ -37,6 +37,33 @@
   
   
   <entry>
+    <title>更高效 - 使用位运算替代模运算</title>
+    <link href="/use-bit-instead-of-modulo/"/>
+    <url>/use-bit-instead-of-modulo/</url>
+    
+    <content type="html"><![CDATA[<p>使用位运算替代取模能够让运算效率更高，但位运算只能在特定场景下才能替代模运算。</p><a id="more"></a><h2 id="模运算（取余）"><a href="#模运算（取余）" class="headerlink" title="模运算（取余）"></a>模运算（取余）</h2><p>模运算是计算机中一种取余操作，模是<code>Mod</code>的音译，其含义是取余。在计算机程序中模运算符通常使用<code>%</code>，运算过程如下</p><figure class="highlight dns"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><code class="hljs dns"><span class="hljs-keyword">A</span> % B = <span class="hljs-keyword">A</span> - (<span class="hljs-keyword">A</span> / B) * B<br></code></pre></td></tr></table></figure><p>模运算的应用很多，其中最常用的就是判断奇偶数了，已知一个整数n对2取模，如果余数为0，则表示n为偶数，否则n为奇数。</p><h2 id="位操作-与运算"><a href="#位操作-与运算" class="headerlink" title="位操作 - 与运算"></a>位操作 - 与运算</h2><p>与运算是计算机中一种基本的运算方式，分为逻辑运算（<code>&amp;&amp;</code>）和位运算（<code>&amp;</code>）。逻辑与仅用于处理布尔值相关的运算。假设<code>A &amp; B = C</code>，则有如下结果</p><div class="table-container"><table><thead><tr><th>A</th><th>B</th><th>C</th></tr></thead><tbody><tr><td>0</td><td>0</td><td>0</td></tr><tr><td>0</td><td>1</td><td>0</td></tr><tr><td>1</td><td>0</td><td>0</td></tr><tr><td>1</td><td>1</td><td>1</td></tr></tbody></table></div><h2 id="使用与运算代替模运算（有限制）"><a href="#使用与运算代替模运算（有限制）" class="headerlink" title="使用与运算代替模运算（有限制）"></a>使用与运算代替模运算（有限制）</h2><p>当任意正整数用<code>2</code>进行取余操作的时候，我们不难发现结果只有两种：<code>0</code>和<code>1</code>，而这结果刚好是该正整数二进制表示时的最后一位。</p><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">7 </span>--&gt; <span class="hljs-number">0111</span>   <span class="hljs-number">7</span> % <span class="hljs-number">2</span> = <span class="hljs-number">1</span><br><span class="hljs-symbol">1 </span>--&gt; <span class="hljs-number">0001</span><br><br><span class="hljs-symbol">8 </span>--&gt; <span class="hljs-number">1000</span>   <span class="hljs-number">8</span> % <span class="hljs-number">2</span> = <span class="hljs-number">0</span><br><span class="hljs-symbol">0 </span>--&gt; <span class="hljs-number">0000</span><br></code></pre></td></tr></table></figure><p>那么我们是否能使用位操作，让结果仅保留最后一位呢？</p><p>只要我们将最后一位置为<code>1</code>，其余位置为<code>0</code>，然后进行与操作不就可以了吗。</p><figure class="highlight basic"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><code class="hljs basic"><span class="hljs-symbol">7 </span>     --&gt; <span class="hljs-number">0111</span><br><span class="hljs-symbol">1 </span>     --&gt; <span class="hljs-number">0001</span><br><span class="hljs-symbol">7 </span>&amp; <span class="hljs-number">1</span>  --&gt; <span class="hljs-number">0001</span><br><br><span class="hljs-symbol">8 </span>     --&gt; <span class="hljs-number">1000</span><br><span class="hljs-symbol">1 </span>     --&gt; <span class="hljs-number">0001</span><br><span class="hljs-symbol">7 </span>&amp; <span class="hljs-number">1</span>  --&gt; <span class="hljs-number">0000</span><br></code></pre></td></tr></table></figure><p>如此计算之后，我们便可以得到<code>A % 2</code>等于<code>A &amp; 1</code>的结论。</p><p>接下来我们尝试多保留几位，并推导出公式</p><div class="table-container"><table><thead><tr><th>保留位数</th><th>取余操作公式</th><th>与操作公式</th></tr></thead><tbody><tr><td><code>1</code></td><td><code>A % 2</code></td><td><code>A &amp; 1</code></td></tr><tr><td><code>2</code></td><td><code>A % 4</code></td><td><code>A &amp; 3</code></td></tr><tr><td><code>3</code></td><td><code>A % 8</code></td><td><code>A &amp; 7</code></td></tr><tr><td><code>4</code></td><td><code>A % 16</code></td><td><code>A &amp; 15</code></td></tr><tr><td>~~~</td><td>~~~</td><td>~~~</td></tr><tr><td><code>n</code></td><td><code>A % 2^n</code></td><td><code>A &amp; (2^n - 1)</code></td></tr></tbody></table></div><p>这种方法仅在对一个<code>2^n</code>的数做取余操作时才可用。虽然使用位运算效率会更高，但是在代码中使用<code>A &amp; 1</code>以外的其他操作代替模运算会让代码可读性会降低，不推荐使用。</p>]]></content>
+    
+    
+    <categories>
+      
+      <category>小技巧</category>
+      
+    </categories>
+    
+    
+    <tags>
+      
+      <tag>位运算</tag>
+      
+      <tag>模运算</tag>
+      
+    </tags>
+    
+  </entry>
+  
+  
+  
+  <entry>
     <title>LeetCode每日一题 - 第十三周</title>
     <link href="/2021/leetcode-week-13/"/>
     <url>/2021/leetcode-week-13/</url>
